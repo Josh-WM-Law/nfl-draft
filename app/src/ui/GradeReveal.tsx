@@ -3,6 +3,7 @@ import { useStore } from '../state/store'
 export function GradeReveal() {
   const game = useStore((s) => s.game)
   const startNewLeague = useStore((s) => s.startNewLeague)
+  const playSeason = useStore((s) => s.playSeason)
 
   if (!game) return null
 
@@ -52,10 +53,10 @@ export function GradeReveal() {
           New League
         </button>
         <button
-          disabled
-          className="flex-1 py-3 bg-slate-700 text-slate-500 font-bold rounded-xl opacity-50 cursor-not-allowed"
+          onClick={playSeason}
+          className="flex-1 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
         >
-          Play the Season (M3)
+          Play the Season
         </button>
       </div>
     </div>

@@ -46,6 +46,52 @@ const valueForPositionRank = (rank: number): number =>
 const tierForValue = (v: number): 'S' | 'A' | 'B' | 'C' =>
   v >= 90 ? 'S' : v >= 80 ? 'A' : v >= 70 ? 'B' : 'C'
 
+const seedFromId = (id: string): number => {
+  let h = 0
+  for (let i = 0; i < id.length; i++) {
+    h = ((h << 5) - h + id.charCodeAt(i)) | 0
+  }
+  return Math.abs(h) || 1
+}
+
+const makeIdRng = (seed: number): (() => number) => {
+  let s = seed >>> 0 || 1
+  return () => {
+    s ^= s << 13
+    s >>>= 0
+    s ^= s >>> 17
+    s ^= s << 5
+    s >>>= 0
+    return s / 0xffffffff
+  }
+}
+
+const randInt = (rng: () => number, min: number, max: number): number =>
+  Math.round(min + rng() * (max - min))
+
+const SUBSCORE_SCHEMA: Record<Position, { keys: string[]; range: number }> = {
+  QB: { keys: ['arm', 'mobility'], range: 8 },
+  RB: { keys: ['power', 'burst'], range: 6 },
+  WR: { keys: ['separation', 'deep'], range: 6 },
+  TE: { keys: ['catch', 'block'], range: 5 },
+  OL: { keys: ['passPro', 'runBlock'], range: 5 },
+  DE: { keys: ['passRush', 'runDef'], range: 7 },
+  DT: { keys: ['passRush', 'runDef'], range: 6 },
+  LB: { keys: ['coverage', 'runDef'], range: 5 },
+  CB: { keys: ['coverage', 'ballHawk'], range: 7 },
+  S: { keys: ['coverage', 'ballHawk'], range: 5 },
+  K: { keys: [], range: 0 },
+}
+
+const seedSubscores = (id: string, position: Position): Record<string, number> => {
+  const { keys, range } = SUBSCORE_SCHEMA[position]
+  if (keys.length === 0) return {}
+  const rng = makeIdRng(seedFromId(id))
+  const out: Record<string, number> = {}
+  for (const k of keys) out[k] = randInt(rng, -range, range)
+  return out
+}
+
 const SLEEPER_URL = 'https://api.sleeper.app/v1/players/nfl'
 
 async function main() {
@@ -110,7 +156,7 @@ async function main() {
       ratings.push({
         id: p.player_id,
         value,
-        subscores: {},
+        subscores: seedSubscores(p.player_id, pos),
         tier: tierForValue(value),
         archetype: null,
         notes: '',

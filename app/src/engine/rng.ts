@@ -1,11 +1,10 @@
 export const makeRng = (seed: number): (() => number) => {
-  let state = (seed >>> 0) || 1
+  let a = (seed | 0) >>> 0
   return () => {
-    state ^= state << 13
-    state >>>= 0
-    state ^= state >>> 17
-    state ^= state << 5
-    state >>>= 0
-    return state / 0xffffffff
+    a = (a + 0x6d2b79f5) >>> 0
+    let t = a
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
   }
 }

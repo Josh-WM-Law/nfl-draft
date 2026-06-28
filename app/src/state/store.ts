@@ -17,6 +17,8 @@ import {
 } from '../engine/draft'
 import { computeGrades } from '../engine/grade'
 import { makeRng } from '../engine/rng'
+import { simSeason } from '../engine/sim'
+import { roundRobinSchedule } from '../engine/schedule'
 
 const DEFAULT_GAME_ID = 'default'
 const TEAM_COLORS = [
@@ -33,6 +35,7 @@ type Store = {
   setScreen: (screen: LeagueScreen) => void
   makePick: (playerId: string) => void
   simRestOfDraft: () => void
+  playSeason: () => void
 }
 
 const usedPlayerIds = (game: Game): Set<string> => {
@@ -172,6 +175,33 @@ export const useStore = create<Store>()((set, get) => ({
       },
     }
     updated = advanceAfterPick(updated, playersById)
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  playSeason: () => {
+    const { game, playersById } = get()
+    if (!game) return
+    const teamIds = game.teams.map((t) => t.id)
+    const schedule = roundRobinSchedule(teamIds)
+    const seasonResult = simSeason(
+      game.teams,
+      playersById,
+      game.seed + 50_000,
+      schedule,
+    )
+    const updated: Game = {
+      ...game,
+      season: {
+        weeks: seasonResult.weeks,
+        results: seasonResult.results,
+        standings: seasonResult.standings,
+        bracket: seasonResult.bracket,
+        champion: seasonResult.champion,
+        status: 'complete',
+      },
+      screen: 'season',
+    }
     set({ game: updated })
     saveGame(updated)
   },

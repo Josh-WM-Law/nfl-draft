@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useStore } from './state/store'
 import { DraftBoard } from './ui/DraftBoard'
 import { GradeReveal } from './ui/GradeReveal'
+import { SeasonScreen } from './ui/SeasonScreen'
 
 function Landing({ onStart }: { onStart: () => void }) {
   return (
@@ -63,6 +64,7 @@ export default function App() {
     case 'grade':
       return <GradeReveal />
     case 'season':
+      return <SeasonScreen />
     case 'bracket':
     case 'trophy':
       return <ComingSoon screen={game.screen} />
