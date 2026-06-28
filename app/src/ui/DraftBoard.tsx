@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from 'react'
 import { useStore } from '../state/store'
 import { PlayerCard } from './PlayerCard'
+import { RosterPanel } from './RosterPanel'
 import { ALL_POSITIONS, type Position } from '../state/types'
 import { canTeamPick } from '../engine/draft'
 
@@ -114,42 +115,48 @@ export function DraftBoard() {
         )}
       </div>
 
-      <div className="flex gap-2 px-4 py-2 overflow-x-auto bg-slate-800">
-        <button
-          onClick={() => setFilter('ALL')}
-          className={`px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap ${
-            filter === 'ALL'
-              ? 'bg-white text-black'
-              : 'bg-slate-700 text-white'
-          }`}
-        >
-          ALL
-        </button>
-        {ALL_POSITIONS.map((pos) => (
-          <button
-            key={pos}
-            onClick={() => setFilter(pos)}
-            className={`px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap ${
-              filter === pos
-                ? 'bg-white text-black'
-                : 'bg-slate-700 text-white'
-            }`}
-          >
-            {pos}
-          </button>
-        ))}
-      </div>
+      <div className="flex-1 flex overflow-hidden">
+        {currentTeam && <RosterPanel team={currentTeam} />}
 
-      <div className="flex-1 overflow-y-auto p-4">
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
-          {available.slice(0, 80).map((p) => (
-            <PlayerCard
-              key={p.id}
-              player={p}
-              onTap={() => makePick(p.id)}
-              disabled={currentTeam ? !canTeamPick(currentTeam, p.position) : true}
-            />
-          ))}
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <div className="flex gap-2 px-4 py-2 overflow-x-auto bg-slate-800 shrink-0">
+            <button
+              onClick={() => setFilter('ALL')}
+              className={`px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap ${
+                filter === 'ALL'
+                  ? 'bg-white text-black'
+                  : 'bg-slate-700 text-white'
+              }`}
+            >
+              ALL
+            </button>
+            {ALL_POSITIONS.map((pos) => (
+              <button
+                key={pos}
+                onClick={() => setFilter(pos)}
+                className={`px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap ${
+                  filter === pos
+                    ? 'bg-white text-black'
+                    : 'bg-slate-700 text-white'
+                }`}
+              >
+                {pos}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {available.slice(0, 80).map((p) => (
+                <PlayerCard
+                  key={p.id}
+                  player={p}
+                  onTap={() => makePick(p.id)}
+                  disabled={currentTeam ? !canTeamPick(currentTeam, p.position) : true}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

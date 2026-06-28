@@ -3,6 +3,7 @@ import type {
   Player,
   GameResult,
   BracketSlot,
+  SeasonAward,
 } from '../state/types'
 import {
   teamStrength,
@@ -11,6 +12,7 @@ import {
 } from './teamStrength'
 import { makeRng } from './rng'
 import type { Matchup } from './schedule'
+import { computeAwards } from './awards'
 
 const BASELINE_SCORE = 17
 const STRENGTH_SCALE = 20
@@ -95,6 +97,7 @@ export type SeasonResult = {
   }[]
   bracket: BracketSlot[]
   champion: string | null
+  awards: SeasonAward[]
 }
 
 export const simSeason = (
@@ -207,5 +210,7 @@ export const simSeason = (
     },
   ]
 
-  return { results, weeks, standings, bracket, champion }
+  const awards = computeAwards(teams, standings, playersById)
+
+  return { results, weeks, standings, bracket, champion, awards }
 }

@@ -5,7 +5,8 @@
     "nflTeam": "BUF",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4984.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "11564",
@@ -13,7 +14,8 @@
     "nflTeam": "NE",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11564.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "11566",
@@ -21,7 +23,8 @@
     "nflTeam": "WAS",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11566.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "6770",
@@ -29,7 +32,8 @@
     "nflTeam": "CIN",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6770.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "4881",
@@ -37,7 +41,8 @@
     "nflTeam": "BAL",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4881.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "11560",
@@ -45,7 +50,8 @@
     "nflTeam": "CHI",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11560.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "12508",
@@ -53,7 +59,8 @@
     "nflTeam": "NYG",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12508.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "6797",
@@ -61,7 +68,8 @@
     "nflTeam": "LAC",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6797.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "4046",
@@ -69,7 +77,8 @@
     "nflTeam": "KC",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4046.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "6904",
@@ -77,7 +86,8 @@
     "nflTeam": "PHI",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6904.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7523",
@@ -85,7 +95,8 @@
     "nflTeam": "JAX",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7523.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "11563",
@@ -93,7 +104,8 @@
     "nflTeam": "DEN",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11563.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "8183",
@@ -101,7 +113,8 @@
     "nflTeam": "SF",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8183.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "13269",
@@ -109,7 +122,8 @@
     "nflTeam": "LV",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13269.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "3294",
@@ -117,7 +131,8 @@
     "nflTeam": "DAL",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3294.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "6804",
@@ -125,7 +140,8 @@
     "nflTeam": "GB",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6804.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "4892",
@@ -133,7 +149,8 @@
     "nflTeam": "TB",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4892.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "3163",
@@ -141,7 +158,8 @@
     "nflTeam": "DET",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3163.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "12522",
@@ -149,7 +167,8 @@
     "nflTeam": "TEN",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12522.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "9758",
@@ -157,7 +176,8 @@
     "nflTeam": "HOU",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9758.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "12545",
@@ -165,7 +185,8 @@
     "nflTeam": "NO",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12545.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "4943",
@@ -173,7 +194,8 @@
     "nflTeam": "SEA",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4943.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5849",
@@ -181,7 +203,8 @@
     "nflTeam": "MIN",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5849.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "9228",
@@ -189,7 +212,8 @@
     "nflTeam": "CAR",
     "position": "QB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9228.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "9509",
@@ -197,7 +221,8 @@
     "nflTeam": "ATL",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9509.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "9221",
@@ -205,7 +230,8 @@
     "nflTeam": "DET",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9221.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "6813",
@@ -213,7 +239,8 @@
     "nflTeam": "IND",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6813.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "4034",
@@ -221,7 +248,8 @@
     "nflTeam": "SF",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4034.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "8138",
@@ -229,7 +257,8 @@
     "nflTeam": "BUF",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8138.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8151",
@@ -237,7 +266,8 @@
     "nflTeam": "KC",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8151.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "9226",
@@ -245,7 +275,8 @@
     "nflTeam": "MIA",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9226.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "12507",
@@ -253,7 +284,8 @@
     "nflTeam": "LAC",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12507.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12527",
@@ -261,7 +293,8 @@
     "nflTeam": "LV",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12527.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "4866",
@@ -269,7 +302,8 @@
     "nflTeam": "PHI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4866.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "13287",
@@ -277,7 +311,8 @@
     "nflTeam": "ARI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13287.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "9224",
@@ -285,7 +320,8 @@
     "nflTeam": "CIN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9224.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "5850",
@@ -293,7 +329,8 @@
     "nflTeam": "GB",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5850.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "11584",
@@ -301,7 +338,8 @@
     "nflTeam": "TB",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11584.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "3198",
@@ -309,7 +347,8 @@
     "nflTeam": "BAL",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3198.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "8150",
@@ -317,7 +356,8 @@
     "nflTeam": "LAR",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8150.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8155",
@@ -325,7 +365,8 @@
     "nflTeam": "NYJ",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8155.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "7543",
@@ -333,7 +374,8 @@
     "nflTeam": "NO",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7543.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7588",
@@ -341,7 +383,8 @@
     "nflTeam": "DAL",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7588.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "12529",
@@ -349,7 +392,8 @@
     "nflTeam": "NE",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12529.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12489",
@@ -357,7 +401,8 @@
     "nflTeam": "DEN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12489.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12481",
@@ -365,7 +410,8 @@
     "nflTeam": "NYG",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12481.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12490",
@@ -373,7 +419,8 @@
     "nflTeam": "JAX",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12490.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12512",
@@ -381,7 +428,8 @@
     "nflTeam": "CLE",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12512.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "6790",
@@ -389,7 +437,8 @@
     "nflTeam": "CHI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6790.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "5892",
@@ -397,7 +446,8 @@
     "nflTeam": "HOU",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5892.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "8228",
@@ -405,7 +455,8 @@
     "nflTeam": "PIT",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8228.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "7611",
@@ -413,7 +464,8 @@
     "nflTeam": "NE",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7611.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "12534",
@@ -421,7 +473,8 @@
     "nflTeam": "CHI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12534.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "5967",
@@ -429,7 +482,8 @@
     "nflTeam": "TEN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5967.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "13286",
@@ -437,7 +491,8 @@
     "nflTeam": "SEA",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13286.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "7021",
@@ -445,7 +500,8 @@
     "nflTeam": "PIT",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7021.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7594",
@@ -453,7 +509,8 @@
     "nflTeam": "CAR",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7594.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "11586",
@@ -461,7 +518,8 @@
     "nflTeam": "LAR",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11586.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "6806",
@@ -469,7 +527,8 @@
     "nflTeam": "DEN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6806.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "8154",
@@ -477,7 +536,8 @@
     "nflTeam": "ATL",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8154.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "4199",
@@ -485,7 +545,8 @@
     "nflTeam": "MIN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4199.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "7567",
@@ -493,7 +554,8 @@
     "nflTeam": "TB",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7567.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "8132",
@@ -501,7 +563,8 @@
     "nflTeam": "ARI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8132.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "4137",
@@ -509,7 +572,8 @@
     "nflTeam": "ARI",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4137.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "12533",
@@ -517,7 +581,8 @@
     "nflTeam": "WAS",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12533.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "9753",
@@ -525,7 +590,8 @@
     "nflTeam": "SEA",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9753.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "12474",
@@ -533,7 +599,8 @@
     "nflTeam": "HOU",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12474.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "11655",
@@ -541,7 +608,8 @@
     "nflTeam": "NYG",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11655.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "8408",
@@ -549,7 +617,8 @@
     "nflTeam": "MIN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8408.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11583",
@@ -557,7 +626,8 @@
     "nflTeam": "CAR",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11583.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "13337",
@@ -565,7 +635,8 @@
     "nflTeam": "KC",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13337.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13345",
@@ -573,7 +644,8 @@
     "nflTeam": "DEN",
     "position": "RB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13345.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "7564",
@@ -581,7 +653,8 @@
     "nflTeam": "CIN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7564.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "9488",
@@ -589,7 +662,8 @@
     "nflTeam": "SEA",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9488.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "9493",
@@ -597,7 +671,8 @@
     "nflTeam": "LAR",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9493.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "6786",
@@ -605,7 +680,8 @@
     "nflTeam": "DAL",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6786.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7547",
@@ -613,7 +689,8 @@
     "nflTeam": "DET",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7547.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "6794",
@@ -621,7 +698,8 @@
     "nflTeam": "MIN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6794.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "8112",
@@ -629,7 +707,8 @@
     "nflTeam": "ATL",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8112.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11632",
@@ -637,7 +716,8 @@
     "nflTeam": "NYG",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11632.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "5859",
@@ -645,7 +725,8 @@
     "nflTeam": "NE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5859.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "7569",
@@ -653,7 +734,8 @@
     "nflTeam": "HOU",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7569.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "8137",
@@ -661,7 +743,8 @@
     "nflTeam": "DAL",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8137.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8144",
@@ -669,7 +752,8 @@
     "nflTeam": "NO",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8144.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "10229",
@@ -677,7 +761,8 @@
     "nflTeam": "KC",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10229.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "6801",
@@ -685,7 +770,8 @@
     "nflTeam": "CIN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6801.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7525",
@@ -693,7 +779,8 @@
     "nflTeam": "PHI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7525.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "12526",
@@ -701,7 +788,8 @@
     "nflTeam": "CAR",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12526.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "8146",
@@ -709,7 +797,8 @@
     "nflTeam": "NYJ",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8146.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "12519",
@@ -717,7 +806,8 @@
     "nflTeam": "CHI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12519.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "11635",
@@ -725,7 +815,8 @@
     "nflTeam": "LAC",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11635.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "7526",
@@ -733,7 +824,8 @@
     "nflTeam": "DEN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7526.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "12514",
@@ -741,7 +833,8 @@
     "nflTeam": "TB",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12514.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "2133",
@@ -749,7 +842,8 @@
     "nflTeam": "LAR",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2133.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2216",
@@ -757,7 +851,8 @@
     "nflTeam": "SF",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2216.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "11620",
@@ -765,7 +860,8 @@
     "nflTeam": "CHI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11620.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "9997",
@@ -773,7 +869,8 @@
     "nflTeam": "BAL",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9997.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8148",
@@ -781,7 +878,8 @@
     "nflTeam": "DET",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8148.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "5927",
@@ -789,7 +887,8 @@
     "nflTeam": "WAS",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5927.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "4983",
@@ -797,7 +896,8 @@
     "nflTeam": "BUF",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4983.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "13279",
@@ -805,7 +905,8 @@
     "nflTeam": "TEN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13279.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "8167",
@@ -813,7 +914,8 @@
     "nflTeam": "GB",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8167.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "13281",
@@ -821,7 +923,8 @@
     "nflTeam": "NO",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13281.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "11631",
@@ -829,7 +932,8 @@
     "nflTeam": "JAX",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11631.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "8142",
@@ -837,7 +941,8 @@
     "nflTeam": "IND",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8142.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "9487",
@@ -845,7 +950,8 @@
     "nflTeam": "JAX",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9487.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "5045",
@@ -853,7 +959,8 @@
     "nflTeam": "DEN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5045.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5846",
@@ -861,7 +968,8 @@
     "nflTeam": "PIT",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5846.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "10232",
@@ -869,7 +977,8 @@
     "nflTeam": "ARI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10232.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "11628",
@@ -877,7 +986,8 @@
     "nflTeam": "ARI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11628.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "13294",
@@ -885,7 +995,8 @@
     "nflTeam": "PHI",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13294.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "5947",
@@ -893,7 +1004,8 @@
     "nflTeam": "JAX",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5947.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "11638",
@@ -901,7 +1013,8 @@
     "nflTeam": "SF",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11638.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "4037",
@@ -909,7 +1022,8 @@
     "nflTeam": "TB",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4037.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "6819",
@@ -917,7 +1031,8 @@
     "nflTeam": "PIT",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6819.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "9756",
@@ -925,7 +1040,8 @@
     "nflTeam": "MIN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9756.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8126",
@@ -933,7 +1049,8 @@
     "nflTeam": "TEN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8126.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8121",
@@ -941,7 +1058,8 @@
     "nflTeam": "NE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8121.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "9754",
@@ -949,7 +1067,8 @@
     "nflTeam": "LAC",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9754.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8134",
@@ -957,7 +1076,8 @@
     "nflTeam": "BUF",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8134.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "12530",
@@ -965,7 +1085,8 @@
     "nflTeam": "JAX",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12530.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "10222",
@@ -973,7 +1094,8 @@
     "nflTeam": "GB",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10222.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "13298",
@@ -981,7 +1103,8 @@
     "nflTeam": "CLE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13298.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "11646",
@@ -989,7 +1112,8 @@
     "nflTeam": "CAR",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11646.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "9500",
@@ -997,7 +1121,8 @@
     "nflTeam": "IND",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9500.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "11624",
@@ -1005,7 +1130,8 @@
     "nflTeam": "KC",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11624.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "7049",
@@ -1013,7 +1139,8 @@
     "nflTeam": "MIN",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7049.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "12501",
@@ -1021,7 +1148,8 @@
     "nflTeam": "GB",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12501.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12484",
@@ -1029,7 +1157,8 @@
     "nflTeam": "HOU",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12484.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "13346",
@@ -1037,7 +1166,8 @@
     "nflTeam": "CLE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13346.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13276",
@@ -1045,7 +1175,8 @@
     "nflTeam": "NYJ",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13276.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13301",
@@ -1053,7 +1184,8 @@
     "nflTeam": "WAS",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13301.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "6783",
@@ -1061,7 +1193,8 @@
     "nflTeam": "CLE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6783.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "8676",
@@ -1069,7 +1202,8 @@
     "nflTeam": "SEA",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8676.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11625",
@@ -1077,7 +1211,8 @@
     "nflTeam": "NYJ",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11625.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "9504",
@@ -1085,7 +1220,8 @@
     "nflTeam": "NE",
     "position": "WR",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9504.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8130",
@@ -1093,7 +1229,8 @@
     "nflTeam": "ARI",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8130.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11604",
@@ -1101,7 +1238,8 @@
     "nflTeam": "LV",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11604.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "12517",
@@ -1109,7 +1247,8 @@
     "nflTeam": "CHI",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12517.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12518",
@@ -1117,7 +1256,8 @@
     "nflTeam": "IND",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12518.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "9484",
@@ -1125,7 +1265,8 @@
     "nflTeam": "GB",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9484.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "12506",
@@ -1133,7 +1274,8 @@
     "nflTeam": "CLE",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12506.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "7553",
@@ -1141,7 +1283,8 @@
     "nflTeam": "ATL",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7553.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "10859",
@@ -1149,7 +1292,8 @@
     "nflTeam": "DET",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10859.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "10236",
@@ -1157,7 +1301,8 @@
     "nflTeam": "BUF",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10236.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "4217",
@@ -1165,7 +1310,8 @@
     "nflTeam": "SF",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4217.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "12493",
@@ -1173,7 +1319,8 @@
     "nflTeam": "LAC",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12493.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "3214",
@@ -1181,7 +1328,8 @@
     "nflTeam": "NE",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3214.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "5022",
@@ -1189,7 +1337,8 @@
     "nflTeam": "PHI",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5022.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5012",
@@ -1197,7 +1346,8 @@
     "nflTeam": "BAL",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5012.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "8110",
@@ -1205,7 +1355,8 @@
     "nflTeam": "DAL",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8110.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "5001",
@@ -1213,7 +1364,8 @@
     "nflTeam": "HOU",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5001.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "7002",
@@ -1221,7 +1373,8 @@
     "nflTeam": "NO",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7002.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "9480",
@@ -1229,7 +1382,8 @@
     "nflTeam": "JAX",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/9480.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "1466",
@@ -1237,7 +1391,8 @@
     "nflTeam": "KC",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1466.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 13
   },
   {
     "id": "13330",
@@ -1245,7 +1400,8 @@
     "nflTeam": "NYJ",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13330.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "8131",
@@ -1253,7 +1409,8 @@
     "nflTeam": "NYG",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8131.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11603",
@@ -1261,7 +1418,8 @@
     "nflTeam": "SEA",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11603.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "5844",
@@ -1269,7 +1427,8 @@
     "nflTeam": "MIN",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5844.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "4033",
@@ -1277,7 +1436,8 @@
     "nflTeam": "LAC",
     "position": "TE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4033.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "8415",
@@ -1285,7 +1445,8 @@
     "nflTeam": "TB",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8415.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "4933",
@@ -1293,7 +1454,8 @@
     "nflTeam": "LAR",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4933.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "202",
@@ -1301,7 +1463,8 @@
     "nflTeam": "LAR",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/202.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 16
   },
   {
     "id": "734",
@@ -1309,7 +1472,8 @@
     "nflTeam": "SF",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/734.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 16
   },
   {
     "id": "1340",
@@ -1317,7 +1481,8 @@
     "nflTeam": "PHI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1340.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 13
   },
   {
     "id": "1428",
@@ -1325,7 +1490,8 @@
     "nflTeam": "LAR",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1428.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 13
   },
   {
     "id": "2098",
@@ -1333,7 +1499,8 @@
     "nflTeam": "NE",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2098.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2172",
@@ -1341,7 +1508,8 @@
     "nflTeam": "ATL",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2172.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2525",
@@ -1349,7 +1517,8 @@
     "nflTeam": "SEA",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2525.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "2543",
@@ -1357,7 +1526,8 @@
     "nflTeam": "HOU",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2543.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "1243",
@@ -1365,7 +1535,8 @@
     "nflTeam": "SEA",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1243.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3159",
@@ -1373,7 +1544,8 @@
     "nflTeam": "WAS",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3159.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3162",
@@ -1381,7 +1553,8 @@
     "nflTeam": "BAL",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3162.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3247",
@@ -1389,7 +1562,8 @@
     "nflTeam": "CHI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3247.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3248",
@@ -1397,7 +1571,8 @@
     "nflTeam": "ARI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3248.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3376",
@@ -1405,7 +1580,8 @@
     "nflTeam": "CIN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3376.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3439",
@@ -1413,7 +1589,8 @@
     "nflTeam": "SF",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3439.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3888",
@@ -1421,7 +1598,8 @@
     "nflTeam": "NYG",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3888.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "1529",
@@ -1429,7 +1607,8 @@
     "nflTeam": "CLE",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1529.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4053",
@@ -1437,7 +1616,8 @@
     "nflTeam": "DEN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4053.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4102",
@@ -1445,7 +1625,8 @@
     "nflTeam": "BUF",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4102.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4104",
@@ -1453,7 +1634,8 @@
     "nflTeam": "CAR",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4104.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4122",
@@ -1461,7 +1643,8 @@
     "nflTeam": "TB",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4122.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4190",
@@ -1469,7 +1652,8 @@
     "nflTeam": "NYG",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4190.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4282",
@@ -1477,7 +1661,8 @@
     "nflTeam": "ATL",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4282.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4592",
@@ -1485,7 +1670,8 @@
     "nflTeam": "ARI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4592.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4598",
@@ -1493,7 +1679,8 @@
     "nflTeam": "ATL",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4598.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4693",
@@ -1501,7 +1688,8 @@
     "nflTeam": "WAS",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4693.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "1805",
@@ -1509,7 +1697,8 @@
     "nflTeam": "BAL",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1805.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "1958",
@@ -1517,7 +1706,8 @@
     "nflTeam": "CIN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1958.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "1988",
@@ -1525,7 +1715,8 @@
     "nflTeam": "JAX",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1988.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4948",
@@ -1533,7 +1724,8 @@
     "nflTeam": "CIN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4948.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4966",
@@ -1541,7 +1733,8 @@
     "nflTeam": "DEN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4966.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4970",
@@ -1549,7 +1742,8 @@
     "nflTeam": "IND",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4970.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4986",
@@ -1557,7 +1751,8 @@
     "nflTeam": "LV",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4986.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4989",
@@ -1565,7 +1760,8 @@
     "nflTeam": "BUF",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4989.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5023",
@@ -1573,7 +1769,8 @@
     "nflTeam": "NYJ",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5023.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5047",
@@ -1581,7 +1778,8 @@
     "nflTeam": "MIN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5047.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5060",
@@ -1589,7 +1787,8 @@
     "nflTeam": "HOU",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5060.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5065",
@@ -1597,7 +1796,8 @@
     "nflTeam": "SF",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5065.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5097",
@@ -1605,7 +1805,8 @@
     "nflTeam": "HOU",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5097.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5362",
@@ -1613,7 +1814,8 @@
     "nflTeam": "PHI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5362.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5363",
@@ -1621,7 +1823,8 @@
     "nflTeam": "ARI",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5363.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5423",
@@ -1629,7 +1832,8 @@
     "nflTeam": "WAS",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5423.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5439",
@@ -1637,7 +1841,8 @@
     "nflTeam": "TEN",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5439.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5454",
@@ -1645,7 +1850,8 @@
     "nflTeam": "LAR",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5454.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5610",
@@ -1653,7 +1859,8 @@
     "nflTeam": "HOU",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5610.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5668",
@@ -1661,7 +1868,8 @@
     "nflTeam": "NYG",
     "position": "OL",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5668.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5991",
@@ -1669,7 +1877,8 @@
     "nflTeam": "LV",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5991.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "3973",
@@ -1677,7 +1886,8 @@
     "nflTeam": "LAR",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3973.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "5816",
@@ -1685,7 +1895,8 @@
     "nflTeam": "SF",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5816.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5862",
@@ -1693,7 +1904,8 @@
     "nflTeam": "NYG",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5862.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5840",
@@ -1701,7 +1913,8 @@
     "nflTeam": "JAX",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5840.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5912",
@@ -1709,7 +1922,8 @@
     "nflTeam": "NO",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5912.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "7627",
@@ -1717,7 +1931,8 @@
     "nflTeam": "BUF",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7627.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "4135",
@@ -1725,7 +1940,8 @@
     "nflTeam": "BAL",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4135.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "2393",
@@ -1733,7 +1949,8 @@
     "nflTeam": "HOU",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2393.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "6900",
@@ -1741,7 +1958,8 @@
     "nflTeam": "PHI",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6900.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "4999",
@@ -1749,7 +1967,8 @@
     "nflTeam": "ARI",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4999.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "11663",
@@ -1757,7 +1976,8 @@
     "nflTeam": "MIA",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11663.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "5871",
@@ -1765,7 +1985,8 @@
     "nflTeam": "DEN",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5871.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5330",
@@ -1773,7 +1994,8 @@
     "nflTeam": "WAS",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5330.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "6124",
@@ -1781,7 +2003,8 @@
     "nflTeam": "CHI",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6124.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "2311",
@@ -1789,7 +2012,8 @@
     "nflTeam": "SEA",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2311.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "10883",
@@ -1797,7 +2021,8 @@
     "nflTeam": "NYJ",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10883.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "6782",
@@ -1805,7 +2030,8 @@
     "nflTeam": "NO",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6782.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7678",
@@ -1813,7 +2039,8 @@
     "nflTeam": "NYJ",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7678.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "11328",
@@ -1821,7 +2048,8 @@
     "nflTeam": "MIN",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11328.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8091",
@@ -1829,7 +2057,8 @@
     "nflTeam": "PIT",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8091.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "957",
@@ -1837,7 +2066,8 @@
     "nflTeam": "NO",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/957.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 15
   },
   {
     "id": "2033",
@@ -1845,7 +2075,8 @@
     "nflTeam": "NYG",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2033.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2064",
@@ -1853,7 +2084,8 @@
     "nflTeam": "SEA",
     "position": "DE",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2064.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "6125",
@@ -1861,7 +2093,8 @@
     "nflTeam": "TEN",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6125.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "3172",
@@ -1869,7 +2102,8 @@
     "nflTeam": "IND",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3172.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "5847",
@@ -1877,7 +2111,8 @@
     "nflTeam": "CIN",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5847.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6118",
@@ -1885,7 +2120,8 @@
     "nflTeam": "DAL",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6118.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5841",
@@ -1893,7 +2129,8 @@
     "nflTeam": "BUF",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5841.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6784",
@@ -1901,7 +2138,8 @@
     "nflTeam": "CAR",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6784.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "6818",
@@ -1909,7 +2147,8 @@
     "nflTeam": "BAL",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6818.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "10916",
@@ -1917,7 +2156,8 @@
     "nflTeam": "LAR",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10916.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "3558",
@@ -1925,7 +2165,8 @@
     "nflTeam": "KC",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3558.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "5297",
@@ -1933,7 +2174,8 @@
     "nflTeam": "MIA",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5297.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "7696",
@@ -1941,7 +2183,8 @@
     "nflTeam": "NE",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7696.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "843",
@@ -1949,7 +2192,8 @@
     "nflTeam": "PIT",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/843.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 15
   },
   {
     "id": "3220",
@@ -1957,7 +2201,8 @@
     "nflTeam": "SEA",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3220.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3256",
@@ -1965,7 +2210,8 @@
     "nflTeam": "GB",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3256.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "4032",
@@ -1973,7 +2219,8 @@
     "nflTeam": "CIN",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4032.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "5020",
@@ -1981,7 +2228,8 @@
     "nflTeam": "CIN",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5020.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4121",
@@ -1989,7 +2237,8 @@
     "nflTeam": "SF",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4121.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "2592",
@@ -1997,7 +2246,8 @@
     "nflTeam": "CHI",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2592.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "3188",
@@ -2005,7 +2255,8 @@
     "nflTeam": "HOU",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3188.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3218",
@@ -2013,7 +2264,8 @@
     "nflTeam": "TB",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3218.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3236",
@@ -2021,7 +2273,8 @@
     "nflTeam": "CLE",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3236.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3281",
@@ -2029,7 +2282,8 @@
     "nflTeam": "NYJ",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3281.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3322",
@@ -2037,7 +2291,8 @@
     "nflTeam": "NYG",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3322.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "4092",
@@ -2045,7 +2300,8 @@
     "nflTeam": "LAC",
     "position": "DT",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4092.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "7640",
@@ -2053,7 +2309,8 @@
     "nflTeam": "GB",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7640.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "4960",
@@ -2061,7 +2318,8 @@
     "nflTeam": "BAL",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4960.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "4070",
@@ -2069,7 +2327,8 @@
     "nflTeam": "PIT",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4070.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "11687",
@@ -2077,7 +2336,8 @@
     "nflTeam": "GB",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11687.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "7841",
@@ -2085,7 +2345,8 @@
     "nflTeam": "NYJ",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7841.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "10914",
@@ -2093,7 +2354,8 @@
     "nflTeam": "LAC",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10914.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8266",
@@ -2101,7 +2363,8 @@
     "nflTeam": "LV",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8266.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "12578",
@@ -2109,7 +2372,8 @@
     "nflTeam": "CLE",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12578.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "5346",
@@ -2117,7 +2381,8 @@
     "nflTeam": "GB",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5346.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "6815",
@@ -2125,7 +2390,8 @@
     "nflTeam": "PHI",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6815.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "5041",
@@ -2133,7 +2399,8 @@
     "nflTeam": "SF",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5041.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "8280",
@@ -2141,7 +2408,8 @@
     "nflTeam": "DEN",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8280.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "13377",
@@ -2149,7 +2417,8 @@
     "nflTeam": "NYG",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13377.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13375",
@@ -2157,7 +2426,8 @@
     "nflTeam": "WAS",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13375.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "5332",
@@ -2165,7 +2435,8 @@
     "nflTeam": "JAX",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5332.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "10917",
@@ -2173,7 +2444,8 @@
     "nflTeam": "LAR",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10917.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "13365",
@@ -2181,7 +2453,8 @@
     "nflTeam": "TEN",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13365.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13388",
@@ -2189,7 +2462,8 @@
     "nflTeam": "IND",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13388.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "7648",
@@ -2197,7 +2471,8 @@
     "nflTeam": "KC",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7648.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7672",
@@ -2205,7 +2480,8 @@
     "nflTeam": "SEA",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7672.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "13379",
@@ -2213,7 +2489,8 @@
     "nflTeam": "TB",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13379.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "6949",
@@ -2221,7 +2498,8 @@
     "nflTeam": "MIA",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6949.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "13363",
@@ -2229,7 +2507,8 @@
     "nflTeam": "NYJ",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13363.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "8311",
@@ -2237,7 +2516,8 @@
     "nflTeam": "BUF",
     "position": "LB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8311.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "7669",
@@ -2245,7 +2525,8 @@
     "nflTeam": "NYG",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7669.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "5341",
@@ -2253,7 +2534,8 @@
     "nflTeam": "LV",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5341.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "3160",
@@ -2261,7 +2543,8 @@
     "nflTeam": "PIT",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3160.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "4071",
@@ -2269,7 +2552,8 @@
     "nflTeam": "BAL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4071.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4129",
@@ -2277,7 +2561,8 @@
     "nflTeam": "JAX",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4129.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4964",
@@ -2285,7 +2570,8 @@
     "nflTeam": "CLE",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4964.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5864",
@@ -2293,7 +2579,8 @@
     "nflTeam": "MIN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5864.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "5946",
@@ -2301,7 +2588,8 @@
     "nflTeam": "PIT",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5946.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6333",
@@ -2309,7 +2597,8 @@
     "nflTeam": "GB",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6333.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "7133",
@@ -2317,7 +2606,8 @@
     "nflTeam": "MIN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7133.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7641",
@@ -2325,7 +2615,8 @@
     "nflTeam": "DEN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7641.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7642",
@@ -2333,7 +2624,8 @@
     "nflTeam": "CAR",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7642.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7667",
@@ -2341,7 +2633,8 @@
     "nflTeam": "CLE",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7667.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7687",
@@ -2349,7 +2642,8 @@
     "nflTeam": "NYJ",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7687.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "11656",
@@ -2357,7 +2651,8 @@
     "nflTeam": "BAL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11656.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "11662",
@@ -2365,7 +2660,8 @@
     "nflTeam": "PHI",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11662.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "10882",
@@ -2373,7 +2669,8 @@
     "nflTeam": "LAR",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10882.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "6876",
@@ -2381,7 +2678,8 @@
     "nflTeam": "MIA",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6876.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "11006",
@@ -2389,7 +2687,8 @@
     "nflTeam": "DAL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11006.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "5968",
@@ -2397,7 +2696,8 @@
     "nflTeam": "SF",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5968.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "7294",
@@ -2405,7 +2705,8 @@
     "nflTeam": "MIN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7294.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "4107",
@@ -2413,7 +2714,8 @@
     "nflTeam": "BAL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4107.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4982",
@@ -2421,7 +2723,8 @@
     "nflTeam": "ATL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4982.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5054",
@@ -2429,7 +2732,8 @@
     "nflTeam": "NE",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5054.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5222",
@@ -2437,7 +2741,8 @@
     "nflTeam": "CIN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5222.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5372",
@@ -2445,7 +2750,8 @@
     "nflTeam": "DET",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5372.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5493",
@@ -2453,7 +2759,8 @@
     "nflTeam": "IND",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5493.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "6025",
@@ -2461,7 +2768,8 @@
     "nflTeam": "CAR",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6025.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6836",
@@ -2469,7 +2777,8 @@
     "nflTeam": "ATL",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6836.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "6896",
@@ -2477,7 +2786,8 @@
     "nflTeam": "WAS",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6896.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7117",
@@ -2485,7 +2795,8 @@
     "nflTeam": "KC",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7117.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7419",
@@ -2493,7 +2804,8 @@
     "nflTeam": "MIN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7419.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "7628",
@@ -2501,7 +2813,8 @@
     "nflTeam": "LV",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7628.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7630",
@@ -2509,7 +2822,8 @@
     "nflTeam": "NYG",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7630.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "7682",
@@ -2517,7 +2831,8 @@
     "nflTeam": "LAC",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7682.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "8752",
@@ -2525,7 +2840,8 @@
     "nflTeam": "DEN",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8752.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "8857",
@@ -2533,7 +2849,8 @@
     "nflTeam": "KC",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8857.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "10897",
@@ -2541,7 +2858,8 @@
     "nflTeam": "CHI",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10897.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "11749",
@@ -2549,7 +2867,8 @@
     "nflTeam": "LAC",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11749.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "12625",
@@ -2557,7 +2876,8 @@
     "nflTeam": "IND",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12625.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12631",
@@ -2565,7 +2885,8 @@
     "nflTeam": "SF",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12631.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12638",
@@ -2573,7 +2894,8 @@
     "nflTeam": "NO",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12638.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12657",
@@ -2581,7 +2903,8 @@
     "nflTeam": "ARI",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12657.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "12675",
@@ -2589,7 +2912,8 @@
     "nflTeam": "MIA",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/12675.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "3838",
@@ -2597,7 +2921,8 @@
     "nflTeam": "WAS",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3838.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "4124",
@@ -2605,7 +2930,8 @@
     "nflTeam": "WAS",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4124.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "5048",
@@ -2613,7 +2939,8 @@
     "nflTeam": "NO",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5048.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5051",
@@ -2621,7 +2948,8 @@
     "nflTeam": "LAC",
     "position": "CB",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5051.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "10905",
@@ -2629,7 +2957,8 @@
     "nflTeam": "DET",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/10905.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 3
   },
   {
     "id": "8339",
@@ -2637,7 +2966,8 @@
     "nflTeam": "BAL",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8339.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "4971",
@@ -2645,7 +2975,8 @@
     "nflTeam": "LAC",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4971.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "13376",
@@ -2653,7 +2984,8 @@
     "nflTeam": "DAL",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13376.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13371",
@@ -2661,7 +2993,8 @@
     "nflTeam": "CHI",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13371.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13384",
@@ -2669,7 +3002,8 @@
     "nflTeam": "IND",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13384.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13368",
@@ -2677,7 +3011,8 @@
     "nflTeam": "LV",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13368.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13360",
@@ -2685,7 +3020,8 @@
     "nflTeam": "CLE",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13360.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13406",
@@ -2693,7 +3029,8 @@
     "nflTeam": "HOU",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13406.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "13389",
@@ -2701,7 +3038,8 @@
     "nflTeam": "ATL",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13389.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "7136",
@@ -2709,7 +3047,8 @@
     "nflTeam": "LAR",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7136.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   },
   {
     "id": "8392",
@@ -2717,7 +3056,8 @@
     "nflTeam": "WAS",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8392.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "11705",
@@ -2725,7 +3065,8 @@
     "nflTeam": "TB",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11705.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "4081",
@@ -2733,7 +3074,8 @@
     "nflTeam": "ARI",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4081.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "13385",
@@ -2741,7 +3083,8 @@
     "nflTeam": "KC",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13385.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "7659",
@@ -2749,7 +3092,8 @@
     "nflTeam": "CAR",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7659.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 5
   },
   {
     "id": "11674",
@@ -2757,7 +3101,8 @@
     "nflTeam": "NYG",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/11674.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 2
   },
   {
     "id": "13397",
@@ -2765,7 +3110,8 @@
     "nflTeam": "DET",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13397.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "5876",
@@ -2773,7 +3119,8 @@
     "nflTeam": "SEA",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5876.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "13369",
@@ -2781,7 +3128,8 @@
     "nflTeam": "GB",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13369.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "8314",
@@ -2789,7 +3137,8 @@
     "nflTeam": "HOU",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8314.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "5017",
@@ -2797,7 +3146,8 @@
     "nflTeam": "ATL",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5017.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "13399",
@@ -2805,7 +3155,8 @@
     "nflTeam": "LAC",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/13399.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 0
   },
   {
     "id": "8323",
@@ -2813,7 +3164,8 @@
     "nflTeam": "PIT",
     "position": "S",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/8323.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 4
   },
   {
     "id": "7933",
@@ -2821,7 +3173,8 @@
     "nflTeam": "CAR",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7933.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 1
   },
   {
     "id": "650",
@@ -2829,7 +3182,8 @@
     "nflTeam": "ATL",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/650.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 19
   },
   {
     "id": "1945",
@@ -2837,7 +3191,8 @@
     "nflTeam": "PIT",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/1945.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2020",
@@ -2845,7 +3200,8 @@
     "nflTeam": "CHI",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2020.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 12
   },
   {
     "id": "2747",
@@ -2853,7 +3209,8 @@
     "nflTeam": "SEA",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/2747.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 11
   },
   {
     "id": "3451",
@@ -2861,7 +3218,8 @@
     "nflTeam": "HOU",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3451.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "3678",
@@ -2869,7 +3227,8 @@
     "nflTeam": "DEN",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/3678.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 10
   },
   {
     "id": "4195",
@@ -2877,7 +3236,8 @@
     "nflTeam": "PHI",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4195.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4227",
@@ -2885,7 +3245,8 @@
     "nflTeam": "KC",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4227.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "4233",
@@ -2893,7 +3254,8 @@
     "nflTeam": "MIA",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/4233.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 9
   },
   {
     "id": "5119",
@@ -2901,7 +3263,8 @@
     "nflTeam": "NYJ",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5119.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "5189",
@@ -2909,7 +3272,8 @@
     "nflTeam": "SF",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/5189.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 8
   },
   {
     "id": "6083",
@@ -2917,7 +3281,8 @@
     "nflTeam": "LV",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6083.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6528",
@@ -2925,7 +3290,8 @@
     "nflTeam": "TEN",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6528.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "6650",
@@ -2933,7 +3299,8 @@
     "nflTeam": "TB",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/6650.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 7
   },
   {
     "id": "7042",
@@ -2941,6 +3308,7 @@
     "nflTeam": "BUF",
     "position": "K",
     "photoUrl": "https://sleepercdn.com/content/nfl/players/7042.jpg",
-    "status": "active"
+    "status": "active",
+    "yearsExp": 6
   }
 ]

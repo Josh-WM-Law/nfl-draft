@@ -17,6 +17,7 @@ export type PlayerCore = {
   position: Position
   photoUrl: string
   status: 'active' | 'retired' | 'cut'
+  yearsExp: number
 }
 
 export type PlayerRating = {
@@ -94,6 +95,20 @@ export type BracketSlot = {
   result?: GameResult
 }
 
+export type SeasonAward = {
+  id: 'MVP' | 'OPOY' | 'DPOY' | 'OROY' | 'DROY' | 'GM_OF_YEAR'
+  name: string
+  emoji: string
+  winnerPlayerId: string | null
+  winnerName: string
+  winnerPhotoUrl?: string
+  teamId: string
+  teamName: string
+  teamColor: string
+  position: string
+  reason: string
+}
+
 export type Season = {
   weeks: {
     weekNumber: number
@@ -112,6 +127,7 @@ export type Season = {
   // Week-by-week reveal: 0 = nothing shown, 1..7 = that many reg-season weeks
   // revealed, 8 = semifinals revealed, 9 = final revealed.
   revealedThrough?: number
+  awards?: SeasonAward[]
 }
 
 export type LeagueScreen =

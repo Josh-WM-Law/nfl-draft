@@ -16,6 +16,7 @@ const mkPlayer = (
   position,
   photoUrl: '',
   status: 'active',
+  yearsExp: 5,
   value,
   subscores,
   tier: 'B',

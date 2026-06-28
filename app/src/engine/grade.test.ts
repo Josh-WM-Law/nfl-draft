@@ -21,6 +21,7 @@ const mkPlayer = (id: string, value: number): Player => ({
   position: 'QB',
   photoUrl: '',
   status: 'active',
+  yearsExp: 5,
   value,
   subscores: {},
   tier: 'B',

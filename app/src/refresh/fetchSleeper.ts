@@ -152,6 +152,7 @@ async function main() {
         position: pos,
         photoUrl: `https://sleepercdn.com/content/nfl/players/${p.player_id}.jpg`,
         status: 'active',
+        yearsExp: p.years_exp ?? 0,
       })
       ratings.push({
         id: p.player_id,

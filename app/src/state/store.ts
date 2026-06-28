@@ -254,6 +254,7 @@ export const useStore = create<Store>()((set, get) => ({
         standings: seasonResult.standings,
         bracket: seasonResult.bracket,
         champion: seasonResult.champion,
+        awards: seasonResult.awards,
         status: 'complete',
         revealedThrough: mode === 'instant' ? 9 : 0,
       },

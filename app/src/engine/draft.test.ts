@@ -30,6 +30,7 @@ const makePlayer = (
   position,
   photoUrl: '',
   status: 'active',
+  yearsExp: 5,
   value,
   subscores: {},
   tier: value >= 90 ? 'S' : value >= 80 ? 'A' : value >= 70 ? 'B' : 'C',
