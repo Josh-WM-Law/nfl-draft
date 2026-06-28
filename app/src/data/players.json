@@ -1,0 +1,2946 @@
+[
+  {
+    "id": "4984",
+    "name": "Josh Allen",
+    "nflTeam": "BUF",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4984.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11564",
+    "name": "Drake Maye",
+    "nflTeam": "NE",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11564.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11566",
+    "name": "Jayden Daniels",
+    "nflTeam": "WAS",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11566.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6770",
+    "name": "Joe Burrow",
+    "nflTeam": "CIN",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6770.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4881",
+    "name": "Lamar Jackson",
+    "nflTeam": "BAL",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4881.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11560",
+    "name": "Caleb Williams",
+    "nflTeam": "CHI",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11560.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12508",
+    "name": "Jaxson Dart",
+    "nflTeam": "NYG",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12508.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6797",
+    "name": "Justin Herbert",
+    "nflTeam": "LAC",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6797.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4046",
+    "name": "Patrick Mahomes",
+    "nflTeam": "KC",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4046.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6904",
+    "name": "Jalen Hurts",
+    "nflTeam": "PHI",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6904.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7523",
+    "name": "Trevor Lawrence",
+    "nflTeam": "JAX",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7523.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11563",
+    "name": "Bo Nix",
+    "nflTeam": "DEN",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11563.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8183",
+    "name": "Brock Purdy",
+    "nflTeam": "SF",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8183.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13269",
+    "name": "Fernando Mendoza",
+    "nflTeam": "LV",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13269.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3294",
+    "name": "Dak Prescott",
+    "nflTeam": "DAL",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3294.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6804",
+    "name": "Jordan Love",
+    "nflTeam": "GB",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6804.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4892",
+    "name": "Baker Mayfield",
+    "nflTeam": "TB",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4892.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3163",
+    "name": "Jared Goff",
+    "nflTeam": "DET",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3163.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12522",
+    "name": "Cam Ward",
+    "nflTeam": "TEN",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12522.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9758",
+    "name": "C.J. Stroud",
+    "nflTeam": "HOU",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9758.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12545",
+    "name": "Tyler Shough",
+    "nflTeam": "NO",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12545.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4943",
+    "name": "Sam Darnold",
+    "nflTeam": "SEA",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4943.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5849",
+    "name": "Kyler Murray",
+    "nflTeam": "MIN",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5849.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9228",
+    "name": "Bryce Young",
+    "nflTeam": "CAR",
+    "position": "QB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9228.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9509",
+    "name": "Bijan Robinson",
+    "nflTeam": "ATL",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9509.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9221",
+    "name": "Jahmyr Gibbs",
+    "nflTeam": "DET",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9221.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6813",
+    "name": "Jonathan Taylor",
+    "nflTeam": "IND",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6813.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4034",
+    "name": "Christian McCaffrey",
+    "nflTeam": "SF",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4034.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8138",
+    "name": "James Cook",
+    "nflTeam": "BUF",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8138.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8151",
+    "name": "Kenneth Walker",
+    "nflTeam": "KC",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8151.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9226",
+    "name": "De'Von Achane",
+    "nflTeam": "MIA",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9226.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12507",
+    "name": "Omarion Hampton",
+    "nflTeam": "LAC",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12507.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12527",
+    "name": "Ashton Jeanty",
+    "nflTeam": "LV",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12527.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4866",
+    "name": "Saquon Barkley",
+    "nflTeam": "PHI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4866.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13287",
+    "name": "Jeremiyah Love",
+    "nflTeam": "ARI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13287.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9224",
+    "name": "Chase Brown",
+    "nflTeam": "CIN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9224.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5850",
+    "name": "Josh Jacobs",
+    "nflTeam": "GB",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5850.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11584",
+    "name": "Bucky Irving",
+    "nflTeam": "TB",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11584.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3198",
+    "name": "Derrick Henry",
+    "nflTeam": "BAL",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3198.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8150",
+    "name": "Kyren Williams",
+    "nflTeam": "LAR",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8150.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8155",
+    "name": "Breece Hall",
+    "nflTeam": "NYJ",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8155.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7543",
+    "name": "Travis Etienne",
+    "nflTeam": "NO",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7543.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7588",
+    "name": "Javonte Williams",
+    "nflTeam": "DAL",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7588.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12529",
+    "name": "TreVeyon Henderson",
+    "nflTeam": "NE",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12529.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12489",
+    "name": "RJ Harvey",
+    "nflTeam": "DEN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12489.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12481",
+    "name": "Cam Skattebo",
+    "nflTeam": "NYG",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12481.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12490",
+    "name": "Bhayshul Tuten",
+    "nflTeam": "JAX",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12490.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12512",
+    "name": "Quinshon Judkins",
+    "nflTeam": "CLE",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12512.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6790",
+    "name": "D'Andre Swift",
+    "nflTeam": "CHI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6790.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5892",
+    "name": "David Montgomery",
+    "nflTeam": "HOU",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5892.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8228",
+    "name": "Jaylen Warren",
+    "nflTeam": "PIT",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8228.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7611",
+    "name": "Rhamondre Stevenson",
+    "nflTeam": "NE",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7611.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12534",
+    "name": "Kyle Monangai",
+    "nflTeam": "CHI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12534.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5967",
+    "name": "Tony Pollard",
+    "nflTeam": "TEN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5967.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13286",
+    "name": "Jadarian Price",
+    "nflTeam": "SEA",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13286.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7021",
+    "name": "Rico Dowdle",
+    "nflTeam": "PIT",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7021.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7594",
+    "name": "Chuba Hubbard",
+    "nflTeam": "CAR",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7594.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11586",
+    "name": "Blake Corum",
+    "nflTeam": "LAR",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11586.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6806",
+    "name": "J.K. Dobbins",
+    "nflTeam": "DEN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6806.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8154",
+    "name": "Brian Robinson",
+    "nflTeam": "ATL",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8154.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4199",
+    "name": "Aaron Jones",
+    "nflTeam": "MIN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4199.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7567",
+    "name": "Kenny Gainwell",
+    "nflTeam": "TB",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7567.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8132",
+    "name": "Tyler Allgeier",
+    "nflTeam": "ARI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8132.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4137",
+    "name": "James Conner",
+    "nflTeam": "ARI",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4137.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12533",
+    "name": "Jacory Croskey-Merritt",
+    "nflTeam": "WAS",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12533.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9753",
+    "name": "Zach Charbonnet",
+    "nflTeam": "SEA",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9753.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12474",
+    "name": "Woody Marks",
+    "nflTeam": "HOU",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12474.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11655",
+    "name": "Tyrone Tracy",
+    "nflTeam": "NYG",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11655.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8408",
+    "name": "Jordan Mason",
+    "nflTeam": "MIN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8408.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11583",
+    "name": "Jonathon Brooks",
+    "nflTeam": "CAR",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11583.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13337",
+    "name": "Emmett Johnson",
+    "nflTeam": "KC",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13337.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13345",
+    "name": "Jonah Coleman",
+    "nflTeam": "DEN",
+    "position": "RB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13345.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7564",
+    "name": "Ja'Marr Chase",
+    "nflTeam": "CIN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7564.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9488",
+    "name": "Jaxon Smith-Njigba",
+    "nflTeam": "SEA",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9488.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9493",
+    "name": "Puka Nacua",
+    "nflTeam": "LAR",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9493.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6786",
+    "name": "CeeDee Lamb",
+    "nflTeam": "DAL",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6786.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7547",
+    "name": "Amon-Ra St. Brown",
+    "nflTeam": "DET",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7547.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6794",
+    "name": "Justin Jefferson",
+    "nflTeam": "MIN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6794.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8112",
+    "name": "Drake London",
+    "nflTeam": "ATL",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8112.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11632",
+    "name": "Malik Nabers",
+    "nflTeam": "NYG",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11632.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5859",
+    "name": "A.J. Brown",
+    "nflTeam": "NE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5859.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7569",
+    "name": "Nico Collins",
+    "nflTeam": "HOU",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7569.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8137",
+    "name": "George Pickens",
+    "nflTeam": "DAL",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8137.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8144",
+    "name": "Chris Olave",
+    "nflTeam": "NO",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8144.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10229",
+    "name": "Rashee Rice",
+    "nflTeam": "KC",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10229.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6801",
+    "name": "Tee Higgins",
+    "nflTeam": "CIN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6801.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7525",
+    "name": "DeVonta Smith",
+    "nflTeam": "PHI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7525.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12526",
+    "name": "Tetairoa McMillan",
+    "nflTeam": "CAR",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12526.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8146",
+    "name": "Garrett Wilson",
+    "nflTeam": "NYJ",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8146.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12519",
+    "name": "Luther Burden",
+    "nflTeam": "CHI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12519.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11635",
+    "name": "Ladd McConkey",
+    "nflTeam": "LAC",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11635.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7526",
+    "name": "Jaylen Waddle",
+    "nflTeam": "DEN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7526.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12514",
+    "name": "Emeka Egbuka",
+    "nflTeam": "TB",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12514.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2133",
+    "name": "Davante Adams",
+    "nflTeam": "LAR",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2133.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2216",
+    "name": "Mike Evans",
+    "nflTeam": "SF",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2216.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11620",
+    "name": "Rome Odunze",
+    "nflTeam": "CHI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11620.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9997",
+    "name": "Zay Flowers",
+    "nflTeam": "BAL",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9997.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8148",
+    "name": "Jameson Williams",
+    "nflTeam": "DET",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8148.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5927",
+    "name": "Terry McLaurin",
+    "nflTeam": "WAS",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5927.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4983",
+    "name": "DJ Moore",
+    "nflTeam": "BUF",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4983.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13279",
+    "name": "Carnell Tate",
+    "nflTeam": "TEN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13279.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8167",
+    "name": "Christian Watson",
+    "nflTeam": "GB",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8167.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13281",
+    "name": "Jordyn Tyson",
+    "nflTeam": "NO",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13281.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11631",
+    "name": "Brian Thomas",
+    "nflTeam": "JAX",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11631.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8142",
+    "name": "Alec Pierce",
+    "nflTeam": "IND",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8142.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9487",
+    "name": "Parker Washington",
+    "nflTeam": "JAX",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9487.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5045",
+    "name": "Courtland Sutton",
+    "nflTeam": "DEN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5045.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5846",
+    "name": "DK Metcalf",
+    "nflTeam": "PIT",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5846.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10232",
+    "name": "Michael Wilson",
+    "nflTeam": "ARI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10232.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11628",
+    "name": "Marvin Harrison",
+    "nflTeam": "ARI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11628.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13294",
+    "name": "Makai Lemon",
+    "nflTeam": "PHI",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13294.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5947",
+    "name": "Jakobi Meyers",
+    "nflTeam": "JAX",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5947.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11638",
+    "name": "Ricky Pearsall",
+    "nflTeam": "SF",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11638.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4037",
+    "name": "Chris Godwin",
+    "nflTeam": "TB",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4037.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6819",
+    "name": "Michael Pittman",
+    "nflTeam": "PIT",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6819.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9756",
+    "name": "Jordan Addison",
+    "nflTeam": "MIN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9756.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8126",
+    "name": "Wan'Dale Robinson",
+    "nflTeam": "TEN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8126.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8121",
+    "name": "Romeo Doubs",
+    "nflTeam": "NE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8121.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9754",
+    "name": "Quentin Johnston",
+    "nflTeam": "LAC",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9754.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8134",
+    "name": "Khalil Shakir",
+    "nflTeam": "BUF",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8134.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12530",
+    "name": "Travis Hunter",
+    "nflTeam": "JAX",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12530.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10222",
+    "name": "Jayden Reed",
+    "nflTeam": "GB",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10222.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13298",
+    "name": "KC Concepcion",
+    "nflTeam": "CLE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13298.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11646",
+    "name": "Jalen Coker",
+    "nflTeam": "CAR",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11646.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9500",
+    "name": "Josh Downs",
+    "nflTeam": "IND",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9500.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11624",
+    "name": "Xavier Worthy",
+    "nflTeam": "KC",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11624.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7049",
+    "name": "Jauan Jennings",
+    "nflTeam": "MIN",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7049.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12501",
+    "name": "Matthew Golden",
+    "nflTeam": "GB",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12501.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12484",
+    "name": "Jayden Higgins",
+    "nflTeam": "HOU",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12484.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13346",
+    "name": "Denzel Boston",
+    "nflTeam": "CLE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13346.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13276",
+    "name": "Omar Cooper",
+    "nflTeam": "NYJ",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13276.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13301",
+    "name": "Antonio Williams",
+    "nflTeam": "WAS",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13301.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6783",
+    "name": "Jerry Jeudy",
+    "nflTeam": "CLE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6783.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8676",
+    "name": "Rashid Shaheed",
+    "nflTeam": "SEA",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8676.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11625",
+    "name": "Adonai Mitchell",
+    "nflTeam": "NYJ",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11625.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9504",
+    "name": "Kayshon Boutte",
+    "nflTeam": "NE",
+    "position": "WR",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9504.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8130",
+    "name": "Trey McBride",
+    "nflTeam": "ARI",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8130.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11604",
+    "name": "Brock Bowers",
+    "nflTeam": "LV",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11604.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12517",
+    "name": "Colston Loveland",
+    "nflTeam": "CHI",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12517.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12518",
+    "name": "Tyler Warren",
+    "nflTeam": "IND",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12518.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9484",
+    "name": "Tucker Kraft",
+    "nflTeam": "GB",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9484.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12506",
+    "name": "Harold Fannin",
+    "nflTeam": "CLE",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12506.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7553",
+    "name": "Kyle Pitts",
+    "nflTeam": "ATL",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7553.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10859",
+    "name": "Sam LaPorta",
+    "nflTeam": "DET",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10859.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10236",
+    "name": "Dalton Kincaid",
+    "nflTeam": "BUF",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10236.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4217",
+    "name": "George Kittle",
+    "nflTeam": "SF",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4217.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12493",
+    "name": "Oronde Gadsden",
+    "nflTeam": "LAC",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12493.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3214",
+    "name": "Hunter Henry",
+    "nflTeam": "NE",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3214.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5022",
+    "name": "Dallas Goedert",
+    "nflTeam": "PHI",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5022.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5012",
+    "name": "Mark Andrews",
+    "nflTeam": "BAL",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5012.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8110",
+    "name": "Jake Ferguson",
+    "nflTeam": "DAL",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8110.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5001",
+    "name": "Dalton Schultz",
+    "nflTeam": "HOU",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5001.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7002",
+    "name": "Juwan Johnson",
+    "nflTeam": "NO",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7002.jpg",
+    "status": "active"
+  },
+  {
+    "id": "9480",
+    "name": "Brenton Strange",
+    "nflTeam": "JAX",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/9480.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1466",
+    "name": "Travis Kelce",
+    "nflTeam": "KC",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1466.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13330",
+    "name": "Kenyon Sadiq",
+    "nflTeam": "NYJ",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13330.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8131",
+    "name": "Isaiah Likely",
+    "nflTeam": "NYG",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8131.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11603",
+    "name": "AJ Barner",
+    "nflTeam": "SEA",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11603.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5844",
+    "name": "T.J. Hockenson",
+    "nflTeam": "MIN",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5844.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4033",
+    "name": "David Njoku",
+    "nflTeam": "LAC",
+    "position": "TE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4033.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8415",
+    "name": "Haggai Ndubuisi",
+    "nflTeam": "TB",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8415.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4933",
+    "name": "Anthony McMeans",
+    "nflTeam": "LAR",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4933.jpg",
+    "status": "active"
+  },
+  {
+    "id": "202",
+    "name": "Andrew Whitworth",
+    "nflTeam": "LAR",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/202.jpg",
+    "status": "active"
+  },
+  {
+    "id": "734",
+    "name": "Trent Williams",
+    "nflTeam": "SF",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/734.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1340",
+    "name": "Lane Johnson",
+    "nflTeam": "PHI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1340.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1428",
+    "name": "David Quessenberry",
+    "nflTeam": "LAR",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1428.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2098",
+    "name": "Morgan Moses",
+    "nflTeam": "NE",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2098.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2172",
+    "name": "Jake Matthews",
+    "nflTeam": "ATL",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2172.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2525",
+    "name": "Bobby Hart",
+    "nflTeam": "SEA",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2525.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2543",
+    "name": "Trent Brown",
+    "nflTeam": "HOU",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2543.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1243",
+    "name": "J.R. Sweezy",
+    "nflTeam": "SEA",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1243.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3159",
+    "name": "Laremy Tunsil",
+    "nflTeam": "WAS",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3159.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3162",
+    "name": "Ronnie Stanley",
+    "nflTeam": "BAL",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3162.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3247",
+    "name": "Joe Thuney",
+    "nflTeam": "CHI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3247.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3248",
+    "name": "Isaac Seumalo",
+    "nflTeam": "ARI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3248.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3376",
+    "name": "Ted Karras",
+    "nflTeam": "CIN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3376.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3439",
+    "name": "Jake Brendel",
+    "nflTeam": "SF",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3439.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3888",
+    "name": "Lucas Patrick",
+    "nflTeam": "NYG",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3888.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1529",
+    "name": "J.C. Tretter",
+    "nflTeam": "CLE",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1529.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4053",
+    "name": "Garett Bolles",
+    "nflTeam": "DEN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4053.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4102",
+    "name": "Dion Dawkins",
+    "nflTeam": "BUF",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4102.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4104",
+    "name": "Taylor Moton",
+    "nflTeam": "CAR",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4104.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4122",
+    "name": "Dan Feeney",
+    "nflTeam": "TB",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4122.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4190",
+    "name": "Jermaine Eluemunor",
+    "nflTeam": "NYG",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4190.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4282",
+    "name": "Corey Levin",
+    "nflTeam": "ATL",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4282.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4592",
+    "name": "Elijah Wilkinson",
+    "nflTeam": "ARI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4592.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4598",
+    "name": "Storm Norton",
+    "nflTeam": "ATL",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4598.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4693",
+    "name": "Andrew Wylie",
+    "nflTeam": "WAS",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4693.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1805",
+    "name": "Alejandro Villanueva",
+    "nflTeam": "BAL",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1805.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1958",
+    "name": "Xavier Su'a-Filo",
+    "nflTeam": "CIN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1958.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1988",
+    "name": "Brandon Linder",
+    "nflTeam": "JAX",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1988.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4948",
+    "name": "Orlando Brown",
+    "nflTeam": "CIN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4948.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4966",
+    "name": "Mike McGlinchey",
+    "nflTeam": "DEN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4966.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4970",
+    "name": "Quenton Nelson",
+    "nflTeam": "IND",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4970.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4986",
+    "name": "Kolton Miller",
+    "nflTeam": "LV",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4986.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4989",
+    "name": "Austin Corbett",
+    "nflTeam": "BUF",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4989.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5023",
+    "name": "Chukwuma Okorafor",
+    "nflTeam": "NYJ",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5023.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5047",
+    "name": "Brian O'Neill",
+    "nflTeam": "MIN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5047.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5060",
+    "name": "Braden Smith",
+    "nflTeam": "HOU",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5060.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5065",
+    "name": "Brandon Parker",
+    "nflTeam": "SF",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5065.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5097",
+    "name": "Wyatt Teller",
+    "nflTeam": "HOU",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5097.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5362",
+    "name": "Jordan Mailata",
+    "nflTeam": "PHI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5362.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5363",
+    "name": "Matt Pryor",
+    "nflTeam": "ARI",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5363.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5423",
+    "name": "Trent Scott",
+    "nflTeam": "WAS",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5423.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5439",
+    "name": "Austin Schlottmann",
+    "nflTeam": "TEN",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5439.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5454",
+    "name": "Coleman Shelton",
+    "nflTeam": "LAR",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5454.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5610",
+    "name": "Evan Brown",
+    "nflTeam": "HOU",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5610.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5668",
+    "name": "Aaron Stinnie",
+    "nflTeam": "NYG",
+    "position": "OL",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5668.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5991",
+    "name": "Maxx Crosby",
+    "nflTeam": "LV",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5991.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3973",
+    "name": "Myles Garrett",
+    "nflTeam": "LAR",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3973.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5816",
+    "name": "Nick Bosa",
+    "nflTeam": "SF",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5816.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5862",
+    "name": "Brian Burns",
+    "nflTeam": "NYG",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5862.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5840",
+    "name": "Josh Hines-Allen",
+    "nflTeam": "JAX",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5840.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5912",
+    "name": "Carl Granderson",
+    "nflTeam": "NO",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5912.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7627",
+    "name": "Greg Rousseau",
+    "nflTeam": "BUF",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7627.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4135",
+    "name": "Trey Hendrickson",
+    "nflTeam": "BAL",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4135.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2393",
+    "name": "Danielle Hunter",
+    "nflTeam": "HOU",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2393.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6900",
+    "name": "Jonathan Greenard",
+    "nflTeam": "PHI",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6900.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4999",
+    "name": "Josh Sweat",
+    "nflTeam": "ARI",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4999.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11663",
+    "name": "Chop Robinson",
+    "nflTeam": "MIA",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11663.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5871",
+    "name": "Zach Allen",
+    "nflTeam": "DEN",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5871.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5330",
+    "name": "Dorance Armstrong",
+    "nflTeam": "WAS",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5330.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6124",
+    "name": "Montez Sweat",
+    "nflTeam": "CHI",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6124.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2311",
+    "name": "Leonard Williams",
+    "nflTeam": "SEA",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2311.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10883",
+    "name": "Will McDonald",
+    "nflTeam": "NYJ",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10883.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6782",
+    "name": "Chase Young",
+    "nflTeam": "NO",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6782.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7678",
+    "name": "Joseph Ossai",
+    "nflTeam": "NYJ",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7678.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11328",
+    "name": "Jalen Redmond",
+    "nflTeam": "MIN",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11328.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8091",
+    "name": "J.T. Jones",
+    "nflTeam": "PIT",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8091.jpg",
+    "status": "active"
+  },
+  {
+    "id": "957",
+    "name": "Cameron Jordan",
+    "nflTeam": "NO",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/957.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2033",
+    "name": "Shelby Harris",
+    "nflTeam": "NYG",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2033.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2064",
+    "name": "DeMarcus Lawrence",
+    "nflTeam": "SEA",
+    "position": "DE",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2064.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6125",
+    "name": "Jeffery Simmons",
+    "nflTeam": "TEN",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6125.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3172",
+    "name": "DeForest Buckner",
+    "nflTeam": "IND",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3172.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5847",
+    "name": "Dexter Lawrence",
+    "nflTeam": "CIN",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5847.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6118",
+    "name": "Quinnen Williams",
+    "nflTeam": "DAL",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6118.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5841",
+    "name": "Ed Oliver",
+    "nflTeam": "BUF",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5841.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6784",
+    "name": "Derrick Brown",
+    "nflTeam": "CAR",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6784.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6818",
+    "name": "Nnamdi Madubuike",
+    "nflTeam": "BAL",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6818.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10916",
+    "name": "Kobie Turner",
+    "nflTeam": "LAR",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10916.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3558",
+    "name": "Chris Jones",
+    "nflTeam": "KC",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3558.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5297",
+    "name": "Zach Sieler",
+    "nflTeam": "MIA",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5297.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7696",
+    "name": "Milton Williams",
+    "nflTeam": "NE",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7696.jpg",
+    "status": "active"
+  },
+  {
+    "id": "843",
+    "name": "Cameron Heyward",
+    "nflTeam": "PIT",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/843.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3220",
+    "name": "Jarran Reed",
+    "nflTeam": "SEA",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3220.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3256",
+    "name": "Javon Hargrave",
+    "nflTeam": "GB",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3256.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4032",
+    "name": "Jonathan Allen",
+    "nflTeam": "CIN",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4032.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5020",
+    "name": "B.J. Hill",
+    "nflTeam": "CIN",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5020.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4121",
+    "name": "Eddie Vanderdoes",
+    "nflTeam": "SF",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4121.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2592",
+    "name": "Grady Jarrett",
+    "nflTeam": "CHI",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2592.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3188",
+    "name": "Sheldon Rankins",
+    "nflTeam": "HOU",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3188.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3218",
+    "name": "A'Shawn Robinson",
+    "nflTeam": "TB",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3218.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3236",
+    "name": "Maliek Collins",
+    "nflTeam": "CLE",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3236.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3281",
+    "name": "David Onyemata",
+    "nflTeam": "NYJ",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3281.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3322",
+    "name": "DJ Reader",
+    "nflTeam": "NYG",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3322.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4092",
+    "name": "Dalvin Tomlinson",
+    "nflTeam": "LAC",
+    "position": "DT",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4092.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7640",
+    "name": "Micah Parsons",
+    "nflTeam": "GB",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7640.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4960",
+    "name": "Roquan Smith",
+    "nflTeam": "BAL",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4960.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4070",
+    "name": "T.J. Watt",
+    "nflTeam": "PIT",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4070.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11687",
+    "name": "Edgerrin Cooper",
+    "nflTeam": "GB",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11687.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7841",
+    "name": "Jamien Sherwood",
+    "nflTeam": "NYJ",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7841.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10914",
+    "name": "Daiyan Henley",
+    "nflTeam": "LAC",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10914.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8266",
+    "name": "Quay Walker",
+    "nflTeam": "LV",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8266.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12578",
+    "name": "Carson Schwesinger",
+    "nflTeam": "CLE",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12578.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5346",
+    "name": "Zaire Franklin",
+    "nflTeam": "GB",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5346.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6815",
+    "name": "Zack Baun",
+    "nflTeam": "PHI",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6815.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5041",
+    "name": "Fred Warner",
+    "nflTeam": "SF",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5041.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8280",
+    "name": "Nik Bonitto",
+    "nflTeam": "DEN",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8280.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13377",
+    "name": "Arvell Reese",
+    "nflTeam": "NYG",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13377.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13375",
+    "name": "Sonny Styles",
+    "nflTeam": "WAS",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13375.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5332",
+    "name": "Foyesade Oluokun",
+    "nflTeam": "JAX",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5332.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10917",
+    "name": "Byron Young",
+    "nflTeam": "LAR",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10917.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13365",
+    "name": "Anthony Hill",
+    "nflTeam": "TEN",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13365.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13388",
+    "name": "CJ Allen",
+    "nflTeam": "IND",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13388.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7648",
+    "name": "Nick Bolton",
+    "nflTeam": "KC",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7648.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7672",
+    "name": "Ernest Jones",
+    "nflTeam": "SEA",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7672.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13379",
+    "name": "Josiah Trotter",
+    "nflTeam": "TB",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13379.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6949",
+    "name": "Jordyn Brooks",
+    "nflTeam": "MIA",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6949.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13363",
+    "name": "David Bailey",
+    "nflTeam": "NYJ",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13363.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8311",
+    "name": "Terrel Bernard",
+    "nflTeam": "BUF",
+    "position": "LB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8311.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7669",
+    "name": "Paulson Adebo",
+    "nflTeam": "NYG",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7669.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5341",
+    "name": "Taron Johnson",
+    "nflTeam": "LV",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5341.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3160",
+    "name": "Jalen Ramsey",
+    "nflTeam": "PIT",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3160.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4071",
+    "name": "Marlon Humphrey",
+    "nflTeam": "BAL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4071.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4129",
+    "name": "Jourdan Lewis",
+    "nflTeam": "JAX",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4129.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4964",
+    "name": "Denzel Ward",
+    "nflTeam": "CLE",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4964.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5864",
+    "name": "Byron Murphy",
+    "nflTeam": "MIN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5864.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5946",
+    "name": "Jamel Dean",
+    "nflTeam": "PIT",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5946.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6333",
+    "name": "Keisean Nixon",
+    "nflTeam": "GB",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6333.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7133",
+    "name": "Isaiah Rodgers",
+    "nflTeam": "MIN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7133.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7641",
+    "name": "Pat Surtain",
+    "nflTeam": "DEN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7641.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7642",
+    "name": "Jaycee Horn",
+    "nflTeam": "CAR",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7642.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7667",
+    "name": "Tyson Campbell",
+    "nflTeam": "CLE",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7667.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7687",
+    "name": "Nahshon Wright",
+    "nflTeam": "NYJ",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7687.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11656",
+    "name": "Nate Wiggins",
+    "nflTeam": "BAL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11656.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11662",
+    "name": "Quinyon Mitchell",
+    "nflTeam": "PHI",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11662.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10882",
+    "name": "Emmanuel Forbes",
+    "nflTeam": "LAR",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10882.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6876",
+    "name": "A.J. Green",
+    "nflTeam": "MIA",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6876.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11006",
+    "name": "Ameer Speed",
+    "nflTeam": "DAL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11006.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5968",
+    "name": "Mark Fields",
+    "nflTeam": "SF",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5968.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7294",
+    "name": "Amari Henderson",
+    "nflTeam": "MIN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7294.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4107",
+    "name": "Chidobe Awuzie",
+    "nflTeam": "BAL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4107.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4982",
+    "name": "Mike Hughes",
+    "nflTeam": "ATL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4982.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5054",
+    "name": "Carlton Davis",
+    "nflTeam": "NE",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5054.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5222",
+    "name": "Jalen Davis",
+    "nflTeam": "CIN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5222.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5372",
+    "name": "D.J. Reed",
+    "nflTeam": "DET",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5372.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5493",
+    "name": "Charvarius Ward",
+    "nflTeam": "IND",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5493.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6025",
+    "name": "Mike Jackson",
+    "nflTeam": "CAR",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6025.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6836",
+    "name": "A.J. Terrell",
+    "nflTeam": "ATL",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6836.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6896",
+    "name": "Amik Robertson",
+    "nflTeam": "WAS",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6896.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7117",
+    "name": "L'Jarius Sneed",
+    "nflTeam": "KC",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7117.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7419",
+    "name": "James Pierre",
+    "nflTeam": "MIN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7419.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7628",
+    "name": "Eric Stokes",
+    "nflTeam": "LV",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7628.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7630",
+    "name": "Greg Newsome",
+    "nflTeam": "NYG",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7630.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7682",
+    "name": "Elijah Molden",
+    "nflTeam": "LAC",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7682.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8752",
+    "name": "Ja'Quan McMillian",
+    "nflTeam": "DEN",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8752.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8857",
+    "name": "Kader Kohou",
+    "nflTeam": "KC",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8857.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10897",
+    "name": "Tyrique Stevenson",
+    "nflTeam": "CHI",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10897.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11749",
+    "name": "Cam Hart",
+    "nflTeam": "LAC",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11749.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12625",
+    "name": "Justin Walley",
+    "nflTeam": "IND",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12625.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12631",
+    "name": "Upton Stout",
+    "nflTeam": "SF",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12631.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12638",
+    "name": "Quincy Riley",
+    "nflTeam": "NO",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12638.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12657",
+    "name": "Denzel Burke",
+    "nflTeam": "ARI",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12657.jpg",
+    "status": "active"
+  },
+  {
+    "id": "12675",
+    "name": "Jason Marshall",
+    "nflTeam": "MIA",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/12675.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3838",
+    "name": "Antonio Hamilton",
+    "nflTeam": "WAS",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3838.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4124",
+    "name": "Ahkello Witherspoon",
+    "nflTeam": "WAS",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4124.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5048",
+    "name": "Isaac Yiadom",
+    "nflTeam": "NO",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5048.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5051",
+    "name": "Donte Jackson",
+    "nflTeam": "LAC",
+    "position": "CB",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5051.jpg",
+    "status": "active"
+  },
+  {
+    "id": "10905",
+    "name": "Brian Branch",
+    "nflTeam": "DET",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/10905.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8339",
+    "name": "Kyle Hamilton",
+    "nflTeam": "BAL",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8339.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4971",
+    "name": "Derwin James",
+    "nflTeam": "LAC",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4971.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13376",
+    "name": "Caleb Downs",
+    "nflTeam": "DAL",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13376.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13371",
+    "name": "Dillon Thieneman",
+    "nflTeam": "CHI",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13371.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13384",
+    "name": "AJ Haulcy",
+    "nflTeam": "IND",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13384.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13368",
+    "name": "Jermod McCoy",
+    "nflTeam": "LV",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13368.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13360",
+    "name": "Emmanuel McNeil-Warren",
+    "nflTeam": "CLE",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13360.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13406",
+    "name": "Kamari Ramsey",
+    "nflTeam": "HOU",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13406.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13389",
+    "name": "Avieon Terrell",
+    "nflTeam": "ATL",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13389.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7136",
+    "name": "Kam Curl",
+    "nflTeam": "LAR",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7136.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8392",
+    "name": "Nick Cross",
+    "nflTeam": "WAS",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8392.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11705",
+    "name": "Tykee Smith",
+    "nflTeam": "TB",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11705.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4081",
+    "name": "Budda Baker",
+    "nflTeam": "ARI",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4081.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13385",
+    "name": "Mansoor Delane",
+    "nflTeam": "KC",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13385.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7659",
+    "name": "Tre'von Moehrig",
+    "nflTeam": "CAR",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7659.jpg",
+    "status": "active"
+  },
+  {
+    "id": "11674",
+    "name": "Tyler Nubin",
+    "nflTeam": "NYG",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/11674.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13397",
+    "name": "Keith Abney",
+    "nflTeam": "DET",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13397.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5876",
+    "name": "Julian Love",
+    "nflTeam": "SEA",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5876.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13369",
+    "name": "Brandon Cisse",
+    "nflTeam": "GB",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13369.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8314",
+    "name": "Jalen Pitre",
+    "nflTeam": "HOU",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8314.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5017",
+    "name": "Jessie Bates",
+    "nflTeam": "ATL",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5017.jpg",
+    "status": "active"
+  },
+  {
+    "id": "13399",
+    "name": "Genesis Smith",
+    "nflTeam": "LAC",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/13399.jpg",
+    "status": "active"
+  },
+  {
+    "id": "8323",
+    "name": "Jaquan Brisker",
+    "nflTeam": "PIT",
+    "position": "S",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/8323.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7933",
+    "name": "Alex Kessman",
+    "nflTeam": "CAR",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7933.jpg",
+    "status": "active"
+  },
+  {
+    "id": "650",
+    "name": "Nick Folk",
+    "nflTeam": "ATL",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/650.jpg",
+    "status": "active"
+  },
+  {
+    "id": "1945",
+    "name": "Chris Boswell",
+    "nflTeam": "PIT",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/1945.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2020",
+    "name": "Cairo Santos",
+    "nflTeam": "CHI",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2020.jpg",
+    "status": "active"
+  },
+  {
+    "id": "2747",
+    "name": "Jason Myers",
+    "nflTeam": "SEA",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/2747.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3451",
+    "name": "Ka'imi Fairbairn",
+    "nflTeam": "HOU",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3451.jpg",
+    "status": "active"
+  },
+  {
+    "id": "3678",
+    "name": "Wil Lutz",
+    "nflTeam": "DEN",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/3678.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4195",
+    "name": "Jake Elliott",
+    "nflTeam": "PHI",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4195.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4227",
+    "name": "Harrison Butker",
+    "nflTeam": "KC",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4227.jpg",
+    "status": "active"
+  },
+  {
+    "id": "4233",
+    "name": "Zane Gonzalez",
+    "nflTeam": "MIA",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/4233.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5119",
+    "name": "Jason Sanders",
+    "nflTeam": "NYJ",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5119.jpg",
+    "status": "active"
+  },
+  {
+    "id": "5189",
+    "name": "Eddy Pineiro",
+    "nflTeam": "SF",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/5189.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6083",
+    "name": "Matt Gay",
+    "nflTeam": "LV",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6083.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6528",
+    "name": "Joey Slye",
+    "nflTeam": "TEN",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6528.jpg",
+    "status": "active"
+  },
+  {
+    "id": "6650",
+    "name": "Chase McLaughlin",
+    "nflTeam": "TB",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/6650.jpg",
+    "status": "active"
+  },
+  {
+    "id": "7042",
+    "name": "Tyler Bass",
+    "nflTeam": "BUF",
+    "position": "K",
+    "photoUrl": "https://sleepercdn.com/content/nfl/players/7042.jpg",
+    "status": "active"
+  }
+]

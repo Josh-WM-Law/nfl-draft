@@ -1,0 +1,3314 @@
+[
+  {
+    "id": "4984",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11564",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11566",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6770",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4881",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11560",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12508",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6797",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4046",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6904",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7523",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11563",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8183",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13269",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3294",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6804",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4892",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3163",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12522",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9758",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12545",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4943",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5849",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9228",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9509",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9221",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6813",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4034",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8138",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8151",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9226",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12507",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12527",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4866",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13287",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9224",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5850",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11584",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3198",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8150",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8155",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7543",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7588",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12529",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12489",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12481",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12490",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12512",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6790",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5892",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8228",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7611",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12534",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5967",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13286",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7021",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7594",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11586",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6806",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8154",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4199",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7567",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8132",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4137",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12533",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9753",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12474",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11655",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8408",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11583",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13337",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13345",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7564",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9488",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9493",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6786",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7547",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6794",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8112",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11632",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5859",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7569",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8137",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8144",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10229",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6801",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7525",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12526",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8146",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12519",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11635",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7526",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12514",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2133",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2216",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11620",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9997",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8148",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5927",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4983",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13279",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8167",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13281",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11631",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8142",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9487",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5045",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5846",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10232",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11628",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13294",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5947",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11638",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4037",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6819",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9756",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8126",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8121",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9754",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8134",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12530",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10222",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13298",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11646",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9500",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11624",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7049",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12501",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12484",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13346",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13276",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13301",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6783",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8676",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11625",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9504",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8130",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11604",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12517",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12518",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9484",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12506",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7553",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10859",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10236",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4217",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12493",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3214",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5022",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5012",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8110",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5001",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7002",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "9480",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1466",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13330",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8131",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11603",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5844",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4033",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8415",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4933",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "202",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "734",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1340",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1428",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2098",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2172",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2525",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2543",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1243",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3159",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3162",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3247",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3248",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3376",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3439",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3888",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1529",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4053",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4102",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4104",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4122",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4190",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4282",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4592",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4598",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4693",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1805",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1958",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1988",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4948",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4966",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4970",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4986",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4989",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5023",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5047",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5060",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5065",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5097",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5362",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5363",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5423",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5439",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5454",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5610",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5668",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5991",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3973",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5816",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5862",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5840",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5912",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7627",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4135",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2393",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6900",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4999",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11663",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5871",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5330",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6124",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2311",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10883",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6782",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7678",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11328",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8091",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "957",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2033",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2064",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6125",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3172",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5847",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6118",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5841",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6784",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6818",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10916",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3558",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5297",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7696",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "843",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3220",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3256",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4032",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5020",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4121",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2592",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3188",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3218",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3236",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3281",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3322",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4092",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7640",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4960",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4070",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11687",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7841",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10914",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8266",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12578",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5346",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6815",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5041",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8280",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13377",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13375",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5332",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10917",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13365",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13388",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7648",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7672",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13379",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6949",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13363",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8311",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7669",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5341",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3160",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4071",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4129",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4964",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5864",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5946",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6333",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7133",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7641",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7642",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7667",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7687",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11656",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11662",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10882",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6876",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11006",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5968",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7294",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4107",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4982",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5054",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5222",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5372",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5493",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6025",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6836",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6896",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7117",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7419",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7628",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7630",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7682",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8752",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8857",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10897",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11749",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12625",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12631",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12638",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12657",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "12675",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3838",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4124",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5048",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5051",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "10905",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8339",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4971",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13376",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13371",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13384",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13368",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13360",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13406",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13389",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7136",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8392",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11705",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4081",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13385",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7659",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "11674",
+    "value": 63,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13397",
+    "value": 61,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5876",
+    "value": 59,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13369",
+    "value": 57,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8314",
+    "value": 55,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5017",
+    "value": 53,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "13399",
+    "value": 51,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "8323",
+    "value": 50,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7933",
+    "value": 95,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "650",
+    "value": 93,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "1945",
+    "value": 91,
+    "subscores": {},
+    "tier": "S",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2020",
+    "value": 89,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "2747",
+    "value": 87,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3451",
+    "value": 85,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "3678",
+    "value": 83,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4195",
+    "value": 81,
+    "subscores": {},
+    "tier": "A",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4227",
+    "value": 79,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "4233",
+    "value": 77,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5119",
+    "value": 75,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "5189",
+    "value": 73,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6083",
+    "value": 71,
+    "subscores": {},
+    "tier": "B",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6528",
+    "value": 69,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "6650",
+    "value": 67,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  },
+  {
+    "id": "7042",
+    "value": 65,
+    "subscores": {},
+    "tier": "C",
+    "archetype": null,
+    "notes": "",
+    "needsRating": true
+  }
+]

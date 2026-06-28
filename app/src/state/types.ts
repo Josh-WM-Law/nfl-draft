@@ -1,5 +1,50 @@
 export const CURRENT_SCHEMA_VERSION = 1
 
+export type Position =
+  | 'QB' | 'RB' | 'WR' | 'TE' | 'OL'
+  | 'DE' | 'DT' | 'LB' | 'CB' | 'S' | 'K'
+
+export const ALL_POSITIONS: Position[] = [
+  'QB', 'RB', 'WR', 'TE', 'OL', 'DE', 'DT', 'LB', 'CB', 'S', 'K',
+]
+
+export type Tier = 'S' | 'A' | 'B' | 'C'
+
+export type PlayerCore = {
+  id: string
+  name: string
+  nflTeam: string
+  position: Position
+  photoUrl: string
+  status: 'active' | 'retired' | 'cut'
+}
+
+export type PlayerRating = {
+  id: string
+  value: number
+  subscores: Record<string, number>
+  tier: Tier
+  archetype: string | null
+  notes: string
+  needsRating: boolean
+}
+
+export type Player = PlayerCore & PlayerRating
+
+export const ROSTER_SLOTS: Position[] = [
+  'QB',
+  'RB',
+  'WR', 'WR',
+  'TE',
+  'OL', 'OL', 'OL', 'OL', 'OL',
+  'DE', 'DT', 'LB',
+  'CB', 'CB',
+  'S',
+  'K',
+]
+
+export const ROSTER_SIZE = ROSTER_SLOTS.length
+
 export type TeamSeat = {
   id: string
   name: string
@@ -66,12 +111,22 @@ export type Season = {
   status: 'not_started' | 'regular_season' | 'playoffs' | 'complete'
 }
 
+export type LeagueScreen =
+  | 'landing'
+  | 'setup'
+  | 'draft'
+  | 'grade'
+  | 'season'
+  | 'bracket'
+  | 'trophy'
+
 export type Game = {
   schemaVersion: number
   id: string
   name: string
   createdAt: string
   seed: number
+  screen: LeagueScreen
   teams: TeamSeat[]
   draft: Draft
   season: Season
@@ -83,6 +138,7 @@ export const createEmptyGame = (id: string, name: string, seed: number): Game =>
   name,
   createdAt: new Date().toISOString(),
   seed,
+  screen: 'landing',
   teams: [],
   draft: {
     order: [],
