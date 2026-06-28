@@ -109,6 +109,9 @@ export type Season = {
   bracket: BracketSlot[]
   champion: string | null
   status: 'not_started' | 'regular_season' | 'playoffs' | 'complete'
+  // Week-by-week reveal: 0 = nothing shown, 1..7 = that many reg-season weeks
+  // revealed, 8 = semifinals revealed, 9 = final revealed.
+  revealedThrough?: number
 }
 
 export type LeagueScreen =

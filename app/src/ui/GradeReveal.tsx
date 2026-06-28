@@ -53,10 +53,18 @@ export function GradeReveal() {
           New League
         </button>
         <button
-          onClick={playSeason}
+          onClick={() => playSeason('weekly')}
           className="flex-1 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
         >
           Play the Season
+        </button>
+      </div>
+      <div className="text-center mt-3">
+        <button
+          onClick={() => playSeason('instant')}
+          className="text-xs text-slate-400 underline"
+        >
+          or sim instantly to the champion
         </button>
       </div>
     </div>

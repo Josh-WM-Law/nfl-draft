@@ -1,44 +1,150 @@
+import { useState, useEffect } from 'react'
 import { useStore } from '../state/store'
+import type { GameResult } from '../state/types'
 
 export function SeasonScreen() {
   const game = useStore((s) => s.game)
-  const startNewLeague = useStore((s) => s.startNewLeague)
+  const advanceReveal = useStore((s) => s.advanceReveal)
   const setScreen = useStore((s) => s.setScreen)
+  const [activeWeek, setActiveWeek] = useState(1)
+
+  useEffect(() => {
+    const r = game?.season.revealedThrough ?? 0
+    if (r > 0) setActiveWeek(Math.min(r, 7))
+  }, [game?.season.revealedThrough])
 
   if (!game) return null
 
   const teamById = new Map(game.teams.map((t) => [t.id, t]))
-  const champion = game.season.champion
-    ? teamById.get(game.season.champion)
-    : null
-  const bracket = game.season.bracket
-  const semis = bracket.filter((b) => b.round === 'semifinal')
-  const finalSlot = bracket.find((b) => b.round === 'final')
+  const revealed = game.season.revealedThrough ?? 0
+  const resultsByWeek = new Map<number, GameResult[]>()
+  for (const r of game.season.results) {
+    if (r.weekNumber > 7) continue
+    const arr = resultsByWeek.get(r.weekNumber) ?? []
+    arr.push(r)
+    resultsByWeek.set(r.weekNumber, arr)
+  }
+
+  // Standings up to revealed week
+  const standingsAtWeek = (week: number) => {
+    const rec = new Map<string, { wins: number; losses: number; pd: number }>()
+    for (const t of game.teams) rec.set(t.id, { wins: 0, losses: 0, pd: 0 })
+    for (const r of game.season.results) {
+      if (r.weekNumber > week) continue
+      const home = rec.get(r.homeTeamId)
+      const away = rec.get(r.awayTeamId)
+      if (!home || !away) continue
+      home.pd += r.homeScore - r.awayScore
+      away.pd += r.awayScore - r.homeScore
+      if (r.homeScore > r.awayScore) {
+        home.wins++
+        away.losses++
+      } else if (r.awayScore > r.homeScore) {
+        away.wins++
+        home.losses++
+      } else {
+        home.wins += 0.5
+        away.wins += 0.5
+      }
+    }
+    return Array.from(rec.entries())
+      .map(([id, r]) => ({ teamId: id, ...r }))
+      .sort((a, b) => b.wins - a.wins || b.pd - a.pd)
+  }
+
+  const standings = standingsAtWeek(revealed)
+  const visibleWeek = Math.min(activeWeek, Math.max(1, revealed))
+  const weekResults = resultsByWeek.get(visibleWeek) ?? []
+  const canSeeWeek = visibleWeek <= revealed
 
   return (
-    <div className="min-h-screen bg-slate-950 p-6 text-white">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-3xl font-black">SEASON</h1>
+    <div className="min-h-screen bg-slate-950 p-4 text-white">
+      <div className="flex items-center justify-between mb-3">
+        <h1 className="text-2xl font-black">SEASON</h1>
         <button
           onClick={() => setScreen('grade')}
-          className="text-sm text-slate-400 underline"
+          className="text-xs text-slate-400 underline"
         >
           Back to grades
         </button>
       </div>
 
-      {champion && (
-        <div className="mb-6 p-4 rounded-2xl bg-amber-500 text-black text-center">
-          <div className="text-xs uppercase tracking-[0.4em] font-bold">
-            Champion
+      <div className="flex gap-1 mb-4 overflow-x-auto pb-1">
+        {[1, 2, 3, 4, 5, 6, 7].map((w) => {
+          const unlocked = w <= revealed
+          return (
+            <button
+              key={w}
+              onClick={() => setActiveWeek(w)}
+              disabled={!unlocked}
+              className={`px-3 py-2 rounded-lg text-sm font-bold whitespace-nowrap ${
+                visibleWeek === w
+                  ? 'bg-white text-black'
+                  : unlocked
+                    ? 'bg-slate-700 text-white'
+                    : 'bg-slate-800 text-slate-600'
+              }`}
+            >
+              Wk {w}
+            </button>
+          )
+        })}
+      </div>
+
+      <section className="mb-6 space-y-2">
+        {canSeeWeek ? (
+          weekResults.map((r, i) => {
+            const home = teamById.get(r.homeTeamId)
+            const away = teamById.get(r.awayTeamId)
+            const homeWon = r.homeScore > r.awayScore
+            return (
+              <div key={i} className="rounded-xl bg-slate-900 overflow-hidden">
+                <div className="flex">
+                  <div
+                    className="w-2"
+                    style={{ background: home?.color ?? '#888' }}
+                  />
+                  <div className="flex-1 p-3">
+                    <div
+                      className={`flex justify-between ${
+                        homeWon ? 'font-bold' : 'text-slate-400'
+                      }`}
+                    >
+                      <span>{home?.name}</span>
+                      <span className="text-2xl">{r.homeScore}</span>
+                    </div>
+                    <div
+                      className={`flex justify-between ${
+                        !homeWon ? 'font-bold' : 'text-slate-400'
+                      }`}
+                    >
+                      <span>{away?.name}</span>
+                      <span className="text-2xl">{r.awayScore}</span>
+                    </div>
+                    {r.headline && (
+                      <div className="text-xs text-slate-500 italic mt-1">
+                        {r.headline}
+                      </div>
+                    )}
+                  </div>
+                  <div
+                    className="w-2"
+                    style={{ background: away?.color ?? '#888' }}
+                  />
+                </div>
+              </div>
+            )
+          })
+        ) : (
+          <div className="text-center text-slate-500 py-8">
+            Tap "Next Week" to reveal these games.
           </div>
-          <div className="text-4xl font-black mt-1">{champion.name}</div>
-        </div>
-      )}
+        )}
+      </section>
 
       <section className="mb-6">
         <h2 className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-          Standings
+          Standings · Through Week {Math.min(revealed, 7)}
         </h2>
         <table className="w-full text-sm">
           <thead>
@@ -50,27 +156,38 @@ export function SeasonScreen() {
             </tr>
           </thead>
           <tbody>
-            {game.season.standings.map((s) => {
+            {standings.map((s, idx) => {
               const t = teamById.get(s.teamId)
               if (!t) return null
+              const inPlayoffs = idx < 4 && revealed >= 7
               return (
-                <tr key={s.teamId} className="border-b border-slate-900">
-                  <td className="py-1 flex items-center gap-2">
+                <tr
+                  key={s.teamId}
+                  className={`border-b border-slate-900 ${
+                    inPlayoffs ? 'bg-amber-500/5' : ''
+                  }`}
+                >
+                  <td className="py-1.5 flex items-center gap-2">
                     <span
                       className="w-3 h-3 rounded-sm"
                       style={{ background: t.color }}
                     />
                     {t.name}
+                    {inPlayoffs && (
+                      <span className="text-[10px] text-amber-400 font-bold">
+                        × {idx + 1}
+                      </span>
+                    )}
                   </td>
-                  <td className="py-1 text-right">{s.wins}</td>
-                  <td className="py-1 text-right">{s.losses}</td>
+                  <td className="py-1.5 text-right">{s.wins}</td>
+                  <td className="py-1.5 text-right">{s.losses}</td>
                   <td
-                    className={`py-1 text-right ${
-                      s.pointDiff > 0 ? 'text-green-400' : 'text-red-400'
+                    className={`py-1.5 text-right ${
+                      s.pd > 0 ? 'text-green-400' : s.pd < 0 ? 'text-red-400' : ''
                     }`}
                   >
-                    {s.pointDiff > 0 ? '+' : ''}
-                    {s.pointDiff}
+                    {s.pd > 0 ? '+' : ''}
+                    {s.pd}
                   </td>
                 </tr>
               )
@@ -79,113 +196,23 @@ export function SeasonScreen() {
         </table>
       </section>
 
-      <section className="mb-6">
-        <h2 className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-          Playoffs
-        </h2>
-        <div className="grid grid-cols-3 gap-2 text-xs">
-          {semis.map((s) => (
-            <div key={s.matchupId} className="rounded-lg bg-slate-900 p-2">
-              <div className="text-[10px] uppercase text-slate-500">
-                Semifinal
-              </div>
-              {s.result && (
-                <>
-                  <div
-                    className={`flex justify-between ${
-                      s.winnerId === s.teamAId ? 'font-bold' : 'text-slate-400'
-                    }`}
-                  >
-                    <span>{teamById.get(s.teamAId ?? '')?.name}</span>
-                    <span>{s.result.homeScore}</span>
-                  </div>
-                  <div
-                    className={`flex justify-between ${
-                      s.winnerId === s.teamBId ? 'font-bold' : 'text-slate-400'
-                    }`}
-                  >
-                    <span>{teamById.get(s.teamBId ?? '')?.name}</span>
-                    <span>{s.result.awayScore}</span>
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-          {finalSlot && finalSlot.result && (
-            <div className="rounded-lg bg-amber-900/40 p-2 border border-amber-500/40">
-              <div className="text-[10px] uppercase text-amber-400">Final</div>
-              <div
-                className={`flex justify-between ${
-                  finalSlot.winnerId === finalSlot.teamAId
-                    ? 'font-bold'
-                    : 'text-slate-400'
-                }`}
-              >
-                <span>{teamById.get(finalSlot.teamAId ?? '')?.name}</span>
-                <span>{finalSlot.result.homeScore}</span>
-              </div>
-              <div
-                className={`flex justify-between ${
-                  finalSlot.winnerId === finalSlot.teamBId
-                    ? 'font-bold'
-                    : 'text-slate-400'
-                }`}
-              >
-                <span>{teamById.get(finalSlot.teamBId ?? '')?.name}</span>
-                <span>{finalSlot.result.awayScore}</span>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      <section className="mb-6">
-        <h2 className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-          Headlines
-        </h2>
-        <div className="space-y-1 text-sm">
-          {game.season.results.slice(0, 10).map((r, i) => {
-            const home = teamById.get(r.homeTeamId)
-            const away = teamById.get(r.awayTeamId)
-            const homeWon = r.homeScore > r.awayScore
-            return (
-              <div
-                key={i}
-                className="flex justify-between border-b border-slate-900 py-1"
-              >
-                <span className="text-slate-300">
-                  <span
-                    className={homeWon ? 'font-bold' : 'text-slate-500'}
-                  >
-                    {home?.name}
-                  </span>{' '}
-                  {r.homeScore}–{r.awayScore}{' '}
-                  <span
-                    className={!homeWon ? 'font-bold' : 'text-slate-500'}
-                  >
-                    {away?.name}
-                  </span>
-                </span>
-                <span className="text-slate-400 italic text-xs">
-                  {r.headline}
-                </span>
-              </div>
-            )
-          })}
-          {game.season.results.length > 10 && (
-            <div className="text-xs text-slate-500 italic text-center pt-2">
-              + {game.season.results.length - 10} more games
-            </div>
-          )}
-        </div>
-      </section>
-
-      <button
-        onClick={() => startNewLeague(1)}
-        className="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl"
-      >
-        New League
-      </button>
+      <div className="sticky bottom-0 -mx-4 px-4 py-3 bg-slate-950 border-t border-slate-800">
+        {revealed < 7 ? (
+          <button
+            onClick={advanceReveal}
+            className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-xl"
+          >
+            Reveal Week {revealed + 1} →
+          </button>
+        ) : (
+          <button
+            onClick={advanceReveal}
+            className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
+          >
+            Start Playoffs →
+          </button>
+        )}
+      </div>
     </div>
   )
 }

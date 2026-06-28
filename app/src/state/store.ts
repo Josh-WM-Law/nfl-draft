@@ -35,7 +35,8 @@ type Store = {
   setScreen: (screen: LeagueScreen) => void
   makePick: (playerId: string) => void
   simRestOfDraft: () => void
-  playSeason: () => void
+  playSeason: (mode?: 'weekly' | 'instant') => void
+  advanceReveal: () => void
 }
 
 const usedPlayerIds = (game: Game): Set<string> => {
@@ -179,7 +180,7 @@ export const useStore = create<Store>()((set, get) => ({
     saveGame(updated)
   },
 
-  playSeason: () => {
+  playSeason: (mode = 'weekly') => {
     const { game, playersById } = get()
     if (!game) return
     const teamIds = game.teams.map((t) => t.id)
@@ -199,8 +200,27 @@ export const useStore = create<Store>()((set, get) => ({
         bracket: seasonResult.bracket,
         champion: seasonResult.champion,
         status: 'complete',
+        revealedThrough: mode === 'instant' ? 9 : 0,
       },
-      screen: 'season',
+      screen: mode === 'instant' ? 'trophy' : 'season',
+    }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  advanceReveal: () => {
+    const { game } = get()
+    if (!game) return
+    const current = game.season.revealedThrough ?? 0
+    if (current >= 9) return
+    const next = current + 1
+    let screen = game.screen
+    if (next === 8 && game.screen === 'season') screen = 'bracket'
+    if (next === 9) screen = 'trophy'
+    const updated: Game = {
+      ...game,
+      season: { ...game.season, revealedThrough: next },
+      screen,
     }
     set({ game: updated })
     saveGame(updated)

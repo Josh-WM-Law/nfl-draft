@@ -3,6 +3,8 @@ import { useStore } from './state/store'
 import { DraftBoard } from './ui/DraftBoard'
 import { GradeReveal } from './ui/GradeReveal'
 import { SeasonScreen } from './ui/SeasonScreen'
+import { BracketScreen } from './ui/BracketScreen'
+import { TrophyScreen } from './ui/TrophyScreen'
 
 function Landing({ onStart }: { onStart: () => void }) {
   return (
@@ -21,25 +23,6 @@ function Landing({ onStart }: { onStart: () => void }) {
         className="px-8 py-4 bg-sky-500 hover:bg-sky-400 text-black font-black uppercase tracking-wider rounded-2xl text-xl"
       >
         Start Draft
-      </button>
-    </div>
-  )
-}
-
-function ComingSoon({ screen }: { screen: string }) {
-  const startNewLeague = useStore((s) => s.startNewLeague)
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-      <p className="text-sm tracking-[0.4em] uppercase text-amber-400 mb-4">
-        Coming Soon
-      </p>
-      <h1 className="text-5xl font-black mb-6 uppercase">{screen}</h1>
-      <p className="text-slate-400 mb-12">Ships in a later milestone.</p>
-      <button
-        onClick={() => startNewLeague(1)}
-        className="px-6 py-3 bg-slate-700 text-white font-bold rounded-xl"
-      >
-        New League
       </button>
     </div>
   )
@@ -66,8 +49,9 @@ export default function App() {
     case 'season':
       return <SeasonScreen />
     case 'bracket':
+      return <BracketScreen />
     case 'trophy':
-      return <ComingSoon screen={game.screen} />
+      return <TrophyScreen />
     default:
       return <Landing onStart={() => startNewLeague(1)} />
   }
