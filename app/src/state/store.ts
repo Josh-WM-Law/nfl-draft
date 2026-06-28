@@ -30,10 +30,15 @@ type Store = {
   players: Player[]
   playersById: Map<string, Player>
   game: Game | null
+  lastPickSnapshot: Game | null
   initialize: () => void
   startNewLeague: (humanCount?: number) => void
   setScreen: (screen: LeagueScreen) => void
+  updateTeam: (teamId: string, patch: { name?: string; color?: string }) => void
+  setHumanCount: (count: number) => void
+  startDraftFromSetup: () => void
   makePick: (playerId: string) => void
+  undoLastPick: () => void
   simRestOfDraft: () => void
   playSeason: (mode?: 'weekly' | 'instant') => void
   advanceReveal: () => void
@@ -99,6 +104,7 @@ export const useStore = create<Store>()((set, get) => ({
   players: [],
   playersById: new Map(),
   game: null,
+  lastPickSnapshot: null,
 
   initialize: () => {
     if (get().players.length > 0) return
@@ -128,16 +134,56 @@ export const useStore = create<Store>()((set, get) => ({
       isComputer: i >= humanCount,
       roster: Array(ROSTER_SIZE).fill(null),
     }))
-    const teamIds = teams.map((t) => t.id)
     game.teams = teams
-    game.draft.order = teamIds
-    game.draft.picks = generatePicks(teamIds, ROSTER_SIZE)
-    game.draft.status = 'in_progress'
-    game.draft.currentPickIdx = 0
-    game.screen = 'draft'
+    game.draft.order = teams.map((t) => t.id)
+    game.draft.picks = generatePicks(game.draft.order, ROSTER_SIZE)
+    game.screen = 'setup'
+    set({ game, lastPickSnapshot: null })
+    saveGame(game)
+  },
 
-    const advanced = advanceAfterPick(game, get().playersById)
-    set({ game: advanced })
+  updateTeam: (teamId, patch) => {
+    const { game } = get()
+    if (!game) return
+    const newTeams = game.teams.map((t) =>
+      t.id === teamId ? { ...t, ...patch } : t,
+    )
+    const updated = { ...game, teams: newTeams }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  setHumanCount: (count) => {
+    const { game } = get()
+    if (!game) return
+    const clamped = Math.max(1, Math.min(8, count))
+    const newTeams = game.teams.map((t, i) => ({
+      ...t,
+      isComputer: i >= clamped,
+      name:
+        i < clamped
+          ? t.name.startsWith('CPU')
+            ? i === 0
+              ? 'You'
+              : `Player ${i + 1}`
+            : t.name
+          : `CPU ${i - clamped + 1}`,
+    }))
+    const updated = { ...game, teams: newTeams }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  startDraftFromSetup: () => {
+    const { game, playersById } = get()
+    if (!game) return
+    const ready: Game = {
+      ...game,
+      draft: { ...game.draft, status: 'in_progress', currentPickIdx: 0 },
+      screen: 'draft',
+    }
+    const advanced = advanceAfterPick(ready, playersById)
+    set({ game: advanced, lastPickSnapshot: null })
     saveGame(advanced)
   },
 
@@ -162,6 +208,8 @@ export const useStore = create<Store>()((set, get) => ({
     if (!canTeamPick(team, player.position)) return
     if (usedPlayerIds(game).has(playerId)) return
 
+    const snapshot: Game = JSON.parse(JSON.stringify(game))
+
     const newTeams = game.teams.slice()
     newTeams[teamIdx] = fillSlot(team, playerId, player.position)
     const newPicks = game.draft.picks.slice()
@@ -176,8 +224,15 @@ export const useStore = create<Store>()((set, get) => ({
       },
     }
     updated = advanceAfterPick(updated, playersById)
-    set({ game: updated })
+    set({ game: updated, lastPickSnapshot: snapshot })
     saveGame(updated)
+  },
+
+  undoLastPick: () => {
+    const { lastPickSnapshot } = get()
+    if (!lastPickSnapshot) return
+    set({ game: lastPickSnapshot, lastPickSnapshot: null })
+    saveGame(lastPickSnapshot)
   },
 
   playSeason: (mode = 'weekly') => {

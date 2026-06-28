@@ -73,8 +73,15 @@ export const pickForCPU = (
   if (eligible.length === 0) {
     throw new Error(`No eligible players in pool for CPU team ${team.id}`)
   }
-  const sorted = eligible.slice().sort((a, b) => b.value - a.value)
-  const topN = Math.min(8, sorted.length)
+  // Light position-need bonus: gently nudge toward needs, never overrides
+  // serious value gaps. Empty team: QB +0.5, WR +1.0, OL +2.5 — small vs.
+  // value range of ~50..95.
+  const scored = eligible.map((p) => ({
+    p,
+    score: p.value + (open[p.position] ?? 0) * 0.5,
+  }))
+  scored.sort((a, b) => b.score - a.score)
+  const topN = Math.min(8, scored.length)
   const idx = Math.floor(rng() * topN)
-  return sorted[idx].id
+  return scored[idx].p.id
 }

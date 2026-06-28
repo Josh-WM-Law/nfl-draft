@@ -1,8 +1,47 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useStore } from '../state/store'
 import { PlayerCard } from './PlayerCard'
 import { ALL_POSITIONS, type Position } from '../state/types'
 import { canTeamPick } from '../engine/draft'
+
+const UNDO_WINDOW_MS = 5000
+
+function UndoToast() {
+  const lastSnapshot = useStore((s) => s.lastPickSnapshot)
+  const undoLastPick = useStore((s) => s.undoLastPick)
+  const [remaining, setRemaining] = useState(UNDO_WINDOW_MS)
+
+  useEffect(() => {
+    if (!lastSnapshot) return
+    setRemaining(UNDO_WINDOW_MS)
+    const start = Date.now()
+    const tick = setInterval(() => {
+      const elapsed = Date.now() - start
+      const left = Math.max(0, UNDO_WINDOW_MS - elapsed)
+      setRemaining(left)
+      if (left <= 0) {
+        clearInterval(tick)
+        // Clear snapshot once window expires
+        useStore.setState({ lastPickSnapshot: null })
+      }
+    }, 100)
+    return () => clearInterval(tick)
+  }, [lastSnapshot])
+
+  if (!lastSnapshot || remaining <= 0) return null
+  const seconds = Math.ceil(remaining / 1000)
+  return (
+    <button
+      onClick={undoLastPick}
+      className="fixed top-3 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-white text-black rounded-full font-bold shadow-lg flex items-center gap-2"
+    >
+      <span>Undo pick</span>
+      <span className="text-xs bg-black text-white px-2 py-0.5 rounded-full">
+        {seconds}s
+      </span>
+    </button>
+  )
+}
 
 type Filter = Position | 'ALL'
 
@@ -34,6 +73,7 @@ export function DraftBoard() {
 
   return (
     <div className="flex flex-col h-screen bg-slate-950">
+      <UndoToast />
       <div className="flex gap-2 p-3 bg-slate-900">
         {game.teams.map((t) => {
           const isCurrent = t.id === currentTeam?.id
