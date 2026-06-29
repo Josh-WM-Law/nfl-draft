@@ -4,14 +4,20 @@ import type { BracketSlot } from '../state/types'
 const SlotCard = ({
   slot,
   revealed,
+  showTeams,
   teamById,
+  seedA,
+  seedB,
 }: {
   slot: BracketSlot
   revealed: boolean
+  showTeams: boolean
   teamById: Map<string, { name: string; color: string }>
+  seedA?: number
+  seedB?: number
 }) => {
-  const a = slot.teamAId ? teamById.get(slot.teamAId) : null
-  const b = slot.teamBId ? teamById.get(slot.teamBId) : null
+  const a = showTeams && slot.teamAId ? teamById.get(slot.teamAId) : null
+  const b = showTeams && slot.teamBId ? teamById.get(slot.teamBId) : null
   const winnerIsA = slot.winnerId === slot.teamAId
   const isFinal = slot.round === 'final'
   return (
@@ -41,8 +47,13 @@ const SlotCard = ({
             }`}
           >
             <span>
-              {a?.name ?? '—'}
-              {!isFinal && (
+              {seedA !== undefined && (
+                <span className="text-amber-400/80 text-[10px] font-bold mr-1.5">
+                  #{seedA}
+                </span>
+              )}
+              {a?.name ?? (showTeams ? '—' : 'Semifinal winner')}
+              {!isFinal && a && (
                 <span className="ml-1.5 text-[9px] text-slate-500 font-normal uppercase tracking-wider">
                   home
                 </span>
@@ -65,8 +76,13 @@ const SlotCard = ({
             }`}
           >
             <span>
-              {!isFinal && <span className="text-slate-500 mr-1">@</span>}
-              {b?.name ?? '—'}
+              {seedB !== undefined && (
+                <span className="text-amber-400/80 text-[10px] font-bold mr-1.5">
+                  #{seedB}
+                </span>
+              )}
+              {!isFinal && b && <span className="text-slate-500 mr-1">@</span>}
+              {b?.name ?? (showTeams ? '—' : 'Semifinal winner')}
             </span>
             <span>{revealed && slot.result ? slot.result.awayScore : ''}</span>
           </div>
@@ -110,20 +126,33 @@ export function BracketScreen() {
         </button>
       </div>
 
+      {!semisRevealed && (
+        <div className="text-center text-sm text-slate-400 mb-4">
+          The matchups are set. Tap below when you're ready to play the
+          semifinals.
+        </div>
+      )}
+
       <div className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center">
         <div className="space-y-3">
           {semi1 && (
             <SlotCard
               slot={semi1}
               revealed={semisRevealed}
+              showTeams={true}
               teamById={teamById}
+              seedA={1}
+              seedB={4}
             />
           )}
           {semi2 && (
             <SlotCard
               slot={semi2}
               revealed={semisRevealed}
+              showTeams={true}
               teamById={teamById}
+              seedA={2}
+              seedB={3}
             />
           )}
         </div>
@@ -133,6 +162,7 @@ export function BracketScreen() {
             <SlotCard
               slot={finalSlot}
               revealed={finalRevealed}
+              showTeams={semisRevealed}
               teamById={teamById}
             />
           )}

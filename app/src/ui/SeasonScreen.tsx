@@ -214,10 +214,10 @@ export function SeasonScreen() {
           </button>
         ) : (
           <button
-            onClick={advanceReveal}
+            onClick={() => setScreen('bracket')}
             className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
           >
-            Start Playoffs →
+            {revealed === 7 ? 'See the Playoff Bracket →' : 'Back to Playoffs →'}
           </button>
         )}
       </div>
