@@ -110,7 +110,12 @@ export function SeasonScreen() {
                         homeWon ? 'font-bold' : 'text-slate-400'
                       }`}
                     >
-                      <span>{home?.name}</span>
+                      <span>
+                        {home?.name}
+                        <span className="ml-1.5 text-[10px] text-slate-500 font-normal uppercase tracking-wider">
+                          home
+                        </span>
+                      </span>
                       <span className="text-2xl">{r.homeScore}</span>
                     </div>
                     <div
@@ -118,7 +123,10 @@ export function SeasonScreen() {
                         !homeWon ? 'font-bold' : 'text-slate-400'
                       }`}
                     >
-                      <span>{away?.name}</span>
+                      <span>
+                        <span className="text-slate-500 mr-1">@</span>
+                        {away?.name}
+                      </span>
                       <span className="text-2xl">{r.awayScore}</span>
                     </div>
                     {r.headline && (

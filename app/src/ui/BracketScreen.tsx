@@ -13,16 +13,20 @@ const SlotCard = ({
   const a = slot.teamAId ? teamById.get(slot.teamAId) : null
   const b = slot.teamBId ? teamById.get(slot.teamBId) : null
   const winnerIsA = slot.winnerId === slot.teamAId
+  const isFinal = slot.round === 'final'
   return (
     <div
       className={`rounded-xl bg-slate-900 overflow-hidden border ${
-        revealed && slot.round === 'final'
+        revealed && isFinal
           ? 'border-amber-500/60'
           : 'border-slate-800'
       }`}
     >
-      <div className="text-[10px] uppercase tracking-wider text-slate-500 px-3 pt-2">
-        {slot.round === 'semifinal' ? 'Semifinal' : 'Championship'}
+      <div className="text-[10px] uppercase tracking-wider text-slate-500 px-3 pt-2 flex justify-between">
+        <span>{isFinal ? 'Championship' : 'Semifinal'}</span>
+        {isFinal && (
+          <span className="text-amber-400/70">Neutral Site</span>
+        )}
       </div>
       <div className="flex">
         <div className="w-1.5" style={{ background: a?.color ?? '#444' }} />
@@ -36,7 +40,14 @@ const SlotCard = ({
                 : 'text-slate-300'
             }`}
           >
-            <span>{a?.name ?? '—'}</span>
+            <span>
+              {a?.name ?? '—'}
+              {!isFinal && (
+                <span className="ml-1.5 text-[9px] text-slate-500 font-normal uppercase tracking-wider">
+                  home
+                </span>
+              )}
+            </span>
             <span>{revealed && slot.result ? slot.result.homeScore : ''}</span>
           </div>
         </div>
@@ -53,7 +64,10 @@ const SlotCard = ({
                 : 'text-slate-300'
             }`}
           >
-            <span>{b?.name ?? '—'}</span>
+            <span>
+              {!isFinal && <span className="text-slate-500 mr-1">@</span>}
+              {b?.name ?? '—'}
+            </span>
             <span>{revealed && slot.result ? slot.result.awayScore : ''}</span>
           </div>
         </div>
