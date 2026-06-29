@@ -5,6 +5,7 @@ import type {
   BracketSlot,
   SeasonAward,
   Position,
+  QuarterScore,
 } from '../state/types'
 import { ROSTER_SLOTS } from '../state/types'
 import {
@@ -113,6 +114,60 @@ const buildHeadline = (
   if (winner === 'TIE') return 'Went to the wire'
   if (Math.abs(top.val) < 5) return 'Tight one all the way'
   return top.msg
+}
+
+// Split a final score into a sequence of TD (7) / FG (3) / safety (2) events.
+const splitScoreIntoEvents = (
+  total: number,
+  rng: () => number,
+): number[] => {
+  const events: number[] = []
+  let remaining = total
+  while (remaining >= 7) {
+    if (rng() < 0.7 || remaining < 10) {
+      events.push(7)
+      remaining -= 7
+    } else {
+      events.push(3)
+      remaining -= 3
+    }
+  }
+  while (remaining >= 3) {
+    events.push(3)
+    remaining -= 3
+  }
+  if (remaining === 2) {
+    events.push(2)
+  } else if (remaining === 1) {
+    if (events.length > 0) events[events.length - 1] += 1
+    else events.push(1)
+  }
+  return events
+}
+
+const distributeEvents = (
+  events: number[],
+  rng: () => number,
+): [number, number, number, number] => {
+  const q: [number, number, number, number] = [0, 0, 0, 0]
+  for (const e of events) {
+    const i = Math.floor(rng() * 4)
+    q[i] += e
+  }
+  return q
+}
+
+export const splitGameByQuarter = (
+  homeTotal: number,
+  awayTotal: number,
+  seed: number,
+): QuarterScore[] => {
+  const rng = makeRng(seed)
+  const homeEvents = splitScoreIntoEvents(homeTotal, rng)
+  const awayEvents = splitScoreIntoEvents(awayTotal, rng)
+  const homeQ = distributeEvents(homeEvents, rng)
+  const awayQ = distributeEvents(awayEvents, rng)
+  return homeQ.map((h, i) => ({ home: h, away: awayQ[i] }))
 }
 
 export const simGame = (
@@ -279,6 +334,11 @@ export const simSeason = (
       teamBId: seeds[3].id,
       winnerId: semi1WinnerId,
       result: semi1,
+      quarterScores: splitGameByQuarter(
+        semi1.homeScore,
+        semi1.awayScore,
+        semi1Seed + 11,
+      ),
     },
     {
       matchupId: 'semi-2',
@@ -287,6 +347,11 @@ export const simSeason = (
       teamBId: seeds[2].id,
       winnerId: semi2WinnerId,
       result: semi2,
+      quarterScores: splitGameByQuarter(
+        semi2.homeScore,
+        semi2.awayScore,
+        semi2Seed + 11,
+      ),
     },
     {
       matchupId: 'final',
@@ -295,6 +360,11 @@ export const simSeason = (
       teamBId: semi2WinnerId,
       winnerId: champion,
       result: finalGame,
+      quarterScores: splitGameByQuarter(
+        finalGame.homeScore,
+        finalGame.awayScore,
+        finalSeed + 11,
+      ),
     },
   ]
 

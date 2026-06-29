@@ -3,43 +3,49 @@ import type { BracketSlot } from '../state/types'
 
 const SlotCard = ({
   slot,
-  revealed,
   showTeams,
   teamById,
   seedA,
   seedB,
+  revealedQuarters,
 }: {
   slot: BracketSlot
-  revealed: boolean
   showTeams: boolean
   teamById: Map<string, { name: string; color: string }>
   seedA?: number
   seedB?: number
+  revealedQuarters: number
 }) => {
   const a = showTeams && slot.teamAId ? teamById.get(slot.teamAId) : null
   const b = showTeams && slot.teamBId ? teamById.get(slot.teamBId) : null
   const winnerIsA = slot.winnerId === slot.teamAId
   const isFinal = slot.round === 'final'
+  const fullyPlayed = revealedQuarters >= 4
+
+  const quarterScores = slot.quarterScores ?? []
+  const visible = quarterScores.slice(0, revealedQuarters)
+  const homeRunning = visible.reduce((s, q) => s + q.home, 0)
+  const awayRunning = visible.reduce((s, q) => s + q.away, 0)
+  const showScores = revealedQuarters > 0 && showTeams
+
   return (
     <div
       className={`rounded-xl bg-slate-900 overflow-hidden border ${
-        revealed && isFinal
+        fullyPlayed && isFinal
           ? 'border-amber-500/60'
           : 'border-slate-800'
       }`}
     >
       <div className="text-[10px] uppercase tracking-wider text-slate-500 px-3 pt-2 flex justify-between">
         <span>{isFinal ? 'Championship' : 'Semifinal'}</span>
-        {isFinal && (
-          <span className="text-amber-400/70">Neutral Site</span>
-        )}
+        {isFinal && <span className="text-amber-400/70">Neutral Site</span>}
       </div>
       <div className="flex">
         <div className="w-1.5" style={{ background: a?.color ?? '#444' }} />
         <div className="flex-1 px-3 py-2">
           <div
             className={`flex justify-between ${
-              revealed
+              fullyPlayed
                 ? winnerIsA
                   ? 'font-bold'
                   : 'text-slate-500'
@@ -59,7 +65,7 @@ const SlotCard = ({
                 </span>
               )}
             </span>
-            <span>{revealed && slot.result ? slot.result.homeScore : ''}</span>
+            <span>{showScores ? homeRunning : ''}</span>
           </div>
         </div>
       </div>
@@ -68,7 +74,7 @@ const SlotCard = ({
         <div className="flex-1 px-3 py-2">
           <div
             className={`flex justify-between ${
-              revealed
+              fullyPlayed
                 ? !winnerIsA
                   ? 'font-bold'
                   : 'text-slate-500'
@@ -84,11 +90,20 @@ const SlotCard = ({
               {!isFinal && b && <span className="text-slate-500 mr-1">@</span>}
               {b?.name ?? (showTeams ? '—' : 'Semifinal winner')}
             </span>
-            <span>{revealed && slot.result ? slot.result.awayScore : ''}</span>
+            <span>{showScores ? awayRunning : ''}</span>
           </div>
         </div>
       </div>
-      {revealed && slot.result?.headline && (
+      {visible.length > 0 && showTeams && (
+        <div className="px-3 pb-1.5 text-[10px] text-slate-500 flex gap-2 flex-wrap">
+          {visible.map((q, i) => (
+            <span key={i}>
+              Q{i + 1}: {q.home}–{q.away}
+            </span>
+          ))}
+        </div>
+      )}
+      {fullyPlayed && slot.result?.headline && (
         <div className="text-xs text-slate-500 italic px-3 pb-2">
           {slot.result.headline}
         </div>
@@ -99,14 +114,21 @@ const SlotCard = ({
 
 export function BracketScreen() {
   const game = useStore((s) => s.game)
-  const advanceReveal = useStore((s) => s.advanceReveal)
+  const advanceSemisQuarter = useStore((s) => s.advanceSemisQuarter)
+  const advanceFinalQuarter = useStore((s) => s.advanceFinalQuarter)
   const setScreen = useStore((s) => s.setScreen)
 
   if (!game) return null
 
-  const revealed = game.season.revealedThrough ?? 0
-  const semisRevealed = revealed >= 8
-  const finalRevealed = revealed >= 9
+  const semisQ = game.season.semisQuarter ?? 0
+  const finalQ = game.season.finalQuarter ?? 0
+  // Back-compat for saves that pre-date quarter counters
+  const legacyRevealed = game.season.revealedThrough ?? 0
+  const effSemisQ = legacyRevealed >= 8 ? Math.max(semisQ, 4) : semisQ
+  const effFinalQ = legacyRevealed >= 9 ? Math.max(finalQ, 4) : finalQ
+
+  const semisComplete = effSemisQ >= 4
+  const finalComplete = effFinalQ >= 4
 
   const teamById = new Map(game.teams.map((t) => [t.id, t]))
   const bracket = game.season.bracket
@@ -126,10 +148,9 @@ export function BracketScreen() {
         </button>
       </div>
 
-      {!semisRevealed && (
+      {effSemisQ === 0 && (
         <div className="text-center text-sm text-slate-400 mb-4">
-          The matchups are set. Tap below when you're ready to play the
-          semifinals.
+          The matchups are set. Tap below when you're ready for kickoff.
         </div>
       )}
 
@@ -138,21 +159,21 @@ export function BracketScreen() {
           {semi1 && (
             <SlotCard
               slot={semi1}
-              revealed={semisRevealed}
               showTeams={true}
               teamById={teamById}
               seedA={1}
               seedB={4}
+              revealedQuarters={effSemisQ}
             />
           )}
           {semi2 && (
             <SlotCard
               slot={semi2}
-              revealed={semisRevealed}
               showTeams={true}
               teamById={teamById}
               seedA={2}
               seedB={3}
+              revealedQuarters={effSemisQ}
             />
           )}
         </div>
@@ -161,32 +182,32 @@ export function BracketScreen() {
           {finalSlot && (
             <SlotCard
               slot={finalSlot}
-              revealed={finalRevealed}
-              showTeams={semisRevealed}
+              showTeams={semisComplete}
               teamById={teamById}
+              revealedQuarters={effFinalQ}
             />
           )}
         </div>
       </div>
 
       <div className="mt-8">
-        {!semisRevealed && (
+        {!semisComplete && (
           <button
-            onClick={advanceReveal}
+            onClick={advanceSemisQuarter}
             className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-xl"
           >
-            Play the Semifinals →
+            Play Q{effSemisQ + 1} of the Semifinals →
           </button>
         )}
-        {semisRevealed && !finalRevealed && (
+        {semisComplete && !finalComplete && (
           <button
-            onClick={advanceReveal}
-            className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
+            onClick={advanceFinalQuarter}
+            className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-xl"
           >
-            Play the Championship →
+            Play Q{effFinalQ + 1} of the Championship →
           </button>
         )}
-        {finalRevealed && (
+        {finalComplete && (
           <button
             onClick={() => setScreen('trophy')}
             className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"

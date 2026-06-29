@@ -86,6 +86,8 @@ export type GameResult = {
   headline?: string
 }
 
+export type QuarterScore = { home: number; away: number }
+
 export type BracketSlot = {
   matchupId: string
   round: 'semifinal' | 'final'
@@ -93,6 +95,7 @@ export type BracketSlot = {
   teamBId: string | null
   winnerId: string | null
   result?: GameResult
+  quarterScores?: QuarterScore[]
 }
 
 export type SeasonAward = {
@@ -127,6 +130,10 @@ export type Season = {
   // Week-by-week reveal: 0 = nothing shown, 1..7 = that many reg-season weeks
   // revealed, 8 = semifinals revealed, 9 = final revealed.
   revealedThrough?: number
+  // Playoff quarter reveal (0..4). Semis advance in lockstep, then the
+  // championship. revealedThrough still records the high-water mark.
+  semisQuarter?: number
+  finalQuarter?: number
   awards?: SeasonAward[]
 }
 

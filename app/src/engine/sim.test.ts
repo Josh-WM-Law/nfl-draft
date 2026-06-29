@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { simGame, simSeason } from './sim'
+import { simGame, simSeason, splitGameByQuarter } from './sim'
 import { roundRobinSchedule } from './schedule'
 import type { Player, TeamSeat } from '../state/types'
 import { ROSTER_SLOTS } from '../state/types'
@@ -109,6 +109,37 @@ describe('simGame', () => {
     }
     expect(aWins).toBeGreaterThan(50)
     expect(bWins).toBeGreaterThanOrEqual(10)
+  })
+})
+
+describe('splitGameByQuarter', () => {
+  it('quarter scores sum to total', () => {
+    for (const seed of [1, 42, 1234, 99999]) {
+      const q = splitGameByQuarter(24, 17, seed)
+      expect(q.reduce((s, x) => s + x.home, 0)).toBe(24)
+      expect(q.reduce((s, x) => s + x.away, 0)).toBe(17)
+    }
+  })
+
+  it('returns exactly 4 quarters', () => {
+    const q = splitGameByQuarter(20, 14, 7)
+    expect(q.length).toBe(4)
+  })
+
+  it('handles a 0–0 game', () => {
+    const q = splitGameByQuarter(0, 0, 1)
+    expect(q).toEqual([
+      { home: 0, away: 0 },
+      { home: 0, away: 0 },
+      { home: 0, away: 0 },
+      { home: 0, away: 0 },
+    ])
+  })
+
+  it('is deterministic for the same seed', () => {
+    const a = splitGameByQuarter(31, 28, 555)
+    const b = splitGameByQuarter(31, 28, 555)
+    expect(a).toEqual(b)
   })
 })
 

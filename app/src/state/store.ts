@@ -42,6 +42,8 @@ type Store = {
   simRestOfDraft: () => void
   playSeason: (mode?: 'weekly' | 'instant') => void
   advanceReveal: () => void
+  advanceSemisQuarter: () => void
+  advanceFinalQuarter: () => void
 }
 
 const usedPlayerIds = (game: Game): Set<string> => {
@@ -246,6 +248,7 @@ export const useStore = create<Store>()((set, get) => ({
       game.seed + 50_000,
       schedule,
     )
+    const isInstant = mode === 'instant'
     const updated: Game = {
       ...game,
       season: {
@@ -256,9 +259,11 @@ export const useStore = create<Store>()((set, get) => ({
         champion: seasonResult.champion,
         awards: seasonResult.awards,
         status: 'complete',
-        revealedThrough: mode === 'instant' ? 9 : 0,
+        revealedThrough: isInstant ? 9 : 0,
+        semisQuarter: isInstant ? 4 : 0,
+        finalQuarter: isInstant ? 4 : 0,
       },
-      screen: mode === 'instant' ? 'trophy' : 'season',
+      screen: isInstant ? 'trophy' : 'season',
     }
     set({ game: updated })
     saveGame(updated)
@@ -277,6 +282,48 @@ export const useStore = create<Store>()((set, get) => ({
       ...game,
       season: { ...game.season, revealedThrough: next },
       screen,
+    }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  advanceSemisQuarter: () => {
+    const { game } = get()
+    if (!game) return
+    const current = game.season.semisQuarter ?? 0
+    if (current >= 4) return
+    const next = current + 1
+    const newRevealed =
+      next === 4
+        ? Math.max(8, game.season.revealedThrough ?? 0)
+        : game.season.revealedThrough
+    const updated: Game = {
+      ...game,
+      season: {
+        ...game.season,
+        semisQuarter: next,
+        revealedThrough: newRevealed,
+      },
+    }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  advanceFinalQuarter: () => {
+    const { game } = get()
+    if (!game) return
+    const current = game.season.finalQuarter ?? 0
+    if (current >= 4) return
+    const next = current + 1
+    const newRevealed =
+      next === 4 ? 9 : game.season.revealedThrough
+    const updated: Game = {
+      ...game,
+      season: {
+        ...game.season,
+        finalQuarter: next,
+        revealedThrough: newRevealed,
+      },
     }
     set({ game: updated })
     saveGame(updated)
