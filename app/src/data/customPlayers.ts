@@ -44,4 +44,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-mac-woolsey',
+      name: 'Mac Woolsey',
+      nflTeam: 'WLY',
+      position: 'QB',
+      photoUrl: '/players/mac-woolsey.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-mac-woolsey',
+      value: 91,
+      subscores: { arm: 5, mobility: 5 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
