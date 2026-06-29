@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "refresh": "tsx src/refresh/fetchSleeper.ts"
+    "refresh": "tsx src/refresh/fetchSleeper.ts",
+    "madden": "tsx src/refresh/applyMaddenTop100.ts"
   },
   "dependencies": {
     "react": "^19.2.7",

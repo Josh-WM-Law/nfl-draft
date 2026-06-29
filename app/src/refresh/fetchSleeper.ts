@@ -37,10 +37,42 @@ const POSITION_MAP: Record<string, Position> = {
 }
 
 const POSITION_TARGETS: Record<Position, number> = {
-  QB: 24, RB: 48, WR: 64, TE: 24,
-  OT: 32, OG: 32, C: 16,
-  DE: 24, DT: 24, LB: 40, CB: 48, S: 24, K: 16,
+  QB: 36, RB: 48, WR: 64, TE: 24,
+  OT: 48, OG: 48, C: 24,
+  DE: 48, DT: 36, LB: 56, CB: 72, S: 40, K: 16,
 }
+
+// Elite players Sleeper's search_rank sort doesn't surface, AND some that
+// Sleeper tags with generic positions (OL, DL, DB) and would otherwise land
+// in the wrong specific bucket. We specify the position explicitly to
+// override whatever Sleeper says.
+type ForceInclude = { name: string; position: Position }
+const FORCE_INCLUDE: ForceInclude[] = [
+  { name: 'Christian Gonzalez', position: 'CB' },
+  { name: 'Joe Thuney', position: 'OG' },
+  { name: 'Creed Humphrey', position: 'C' },
+  { name: 'Quinn Meinerz', position: 'OG' },
+  { name: 'Laremy Tunsil', position: 'OT' },
+  { name: 'Quenton Nelson', position: 'OG' },
+  { name: 'Trent McDuffie', position: 'CB' },
+  { name: 'Will Anderson', position: 'DE' },
+  { name: 'Aidan Hutchinson', position: 'DE' },
+  { name: 'Derek Stingley', position: 'CB' },
+  { name: 'Trey Smith', position: 'OG' },
+  { name: 'Jaylon Johnson', position: 'CB' },
+  { name: 'Sauce Gardner', position: 'CB' },
+  { name: 'Drue Tranquill', position: 'LB' },
+  { name: 'Jalen Carter', position: 'DT' },
+  { name: 'Minkah Fitzpatrick', position: 'S' },
+]
+
+const normalizeForceName = (n: string): string =>
+  n
+    .toLowerCase()
+    .replace(/[.'’`]/g, '')
+    .replace(/\s+(jr|sr|ii|iii|iv|v)\.?$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
 
 const valueForPositionRank = (rank: number): number =>
   Math.max(95 - 2 * rank, 50)
@@ -170,6 +202,57 @@ async function main() {
       })
     })
     console.log(`  ${pos}: selected ${top.length}/${byPosition[pos].length} candidates`)
+  }
+
+  // FORCE_INCLUDE searches the full Sleeper dump (not the active-only
+  // filter) because some top OL/DL/DB are marked inactive in Sleeper. We
+  // also override the position with the declared one, since Sleeper tags
+  // some elite players as generic OL/DL/DB.
+  for (const force of FORCE_INCLUDE) {
+    const target = normalizeForceName(force.name)
+    const match = all.find((p) => {
+      if (!p.team) return false
+      const fullName =
+        p.full_name?.trim() ||
+        `${p.first_name ?? ''} ${p.last_name ?? ''}`.trim()
+      return normalizeForceName(fullName) === target
+    })
+    if (!match) {
+      console.warn(`  FORCE_INCLUDE not found in Sleeper: ${force.name}`)
+      continue
+    }
+    // Remove any existing entry (may have been classified into the wrong bucket
+    // by Sleeper's generic position tag).
+    const existingIdx = cores.findIndex((c: any) => c.id === match.player_id)
+    if (existingIdx !== -1) {
+      cores.splice(existingIdx, 1)
+      const ratingIdx = ratings.findIndex((r: any) => r.id === match.player_id)
+      if (ratingIdx !== -1) ratings.splice(ratingIdx, 1)
+    }
+    const name =
+      match.full_name?.trim() ||
+      `${match.first_name ?? ''} ${match.last_name ?? ''}`.trim() ||
+      `Player ${match.player_id}`
+    const defaultValue = 80
+    cores.push({
+      id: match.player_id,
+      name,
+      nflTeam: match.team,
+      position: force.position,
+      photoUrl: `https://sleepercdn.com/content/nfl/players/${match.player_id}.jpg`,
+      status: 'active',
+      yearsExp: match.years_exp ?? 0,
+    })
+    ratings.push({
+      id: match.player_id,
+      value: defaultValue,
+      subscores: seedSubscores(match.player_id, force.position),
+      tier: tierForValue(defaultValue),
+      archetype: null,
+      notes: '',
+      needsRating: true,
+    })
+    console.log(`  FORCE-INCLUDE: ${name} (${force.position})`)
   }
 
   const dataDir = resolve(process.cwd(), 'src/data')
