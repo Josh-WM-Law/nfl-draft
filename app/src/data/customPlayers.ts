@@ -16,9 +16,9 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
     },
     rating: {
       id: 'custom-brady-woolsey',
-      value: 89,
+      value: 91,
       subscores: { separation: 6, deep: 4 },
-      tier: 'A',
+      tier: 'S',
       archetype: null,
       notes: '',
       needsRating: false,
@@ -36,9 +36,9 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
     },
     rating: {
       id: 'custom-jake-woolsey',
-      value: 89,
+      value: 91,
       subscores: { power: 5, burst: 5 },
-      tier: 'A',
+      tier: 'S',
       archetype: null,
       notes: '',
       needsRating: false,
