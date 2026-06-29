@@ -51,15 +51,16 @@ describe('generateSnakeOrder', () => {
 })
 
 describe('generatePicks', () => {
-  it('produces 136 picks for 8 teams x 17 rounds', () => {
+  it('produces picks for an 8-team x ROSTER_SIZE draft', () => {
     const teams = Array.from({ length: 8 }, (_, i) => `t${i + 1}`)
-    const picks = generatePicks(teams, 17)
-    expect(picks.length).toBe(136)
+    const picks = generatePicks(teams, ROSTER_SIZE)
+    expect(picks.length).toBe(8 * ROSTER_SIZE)
     expect(picks[0]).toMatchObject({ pickNumber: 1, round: 1, teamId: 't1', playerId: null })
     expect(picks[7]).toMatchObject({ pickNumber: 8, round: 1, teamId: 't8' })
     expect(picks[8]).toMatchObject({ pickNumber: 9, round: 2, teamId: 't8' })
     expect(picks[15]).toMatchObject({ pickNumber: 16, round: 2, teamId: 't1' })
-    expect(picks[135]).toMatchObject({ pickNumber: 136, round: 17, teamId: 't8' })
+    const last = picks.length - 1
+    expect(picks[last]).toMatchObject({ pickNumber: picks.length, round: ROSTER_SIZE })
   })
 })
 
@@ -69,7 +70,10 @@ describe('openSlotsByPosition', () => {
     const open = openSlotsByPosition(team)
     expect(open.QB).toBe(1)
     expect(open.WR).toBe(2)
-    expect(open.OL).toBe(5)
+    expect(open.OT).toBe(2)
+    expect(open.OG).toBe(2)
+    expect(open.C).toBe(1)
+    expect(open.LB).toBe(2)
     expect(open.CB).toBe(2)
     expect(open.K).toBe(1)
   })

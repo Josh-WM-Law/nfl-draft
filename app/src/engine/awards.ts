@@ -14,7 +14,7 @@ export type Award = {
   reason: string
 }
 
-const OFFENSE_POSITIONS = new Set(['QB', 'RB', 'WR', 'TE', 'OL'])
+const OFFENSE_POSITIONS = new Set(['QB', 'RB', 'WR', 'TE', 'OT', 'OG', 'C'])
 const DEFENSE_POSITIONS = new Set(['DE', 'DT', 'LB', 'CB', 'S'])
 
 const MVP_POSITION_BONUS: Record<string, number> = {
@@ -22,7 +22,9 @@ const MVP_POSITION_BONUS: Record<string, number> = {
   RB: 1.1,
   WR: 1.1,
   TE: 0.9,
-  OL: 0.6,
+  OT: 0.7,
+  OG: 0.6,
+  C: 0.6,
   DE: 1.0,
   DT: 0.8,
   LB: 0.9,

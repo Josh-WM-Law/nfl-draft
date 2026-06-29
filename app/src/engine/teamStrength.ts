@@ -6,7 +6,9 @@ export const POSITION_WEIGHTS: Record<Position, number> = {
   RB: 1.0,
   WR: 1.2,
   TE: 0.8,
-  OL: 1.0,
+  OT: 1.2,
+  OG: 0.9,
+  C: 0.9,
   DE: 1.2,
   DT: 1.0,
   LB: 0.9,
@@ -15,7 +17,7 @@ export const POSITION_WEIGHTS: Record<Position, number> = {
   K: 0.3,
 }
 
-const OFFENSE = new Set<Position>(['QB', 'RB', 'WR', 'TE', 'OL'])
+const OFFENSE = new Set<Position>(['QB', 'RB', 'WR', 'TE', 'OT', 'OG', 'C'])
 const DEFENSE = new Set<Position>(['DE', 'DT', 'LB', 'CB', 'S'])
 
 export const teamStrength = (
@@ -65,7 +67,9 @@ export const passMatchupEdge = (
     QB: ['arm'],
     WR: ['separation', 'deep'],
     TE: ['catch'],
-    OL: ['passPro'],
+    OT: ['passPro'],
+    OG: ['passPro'],
+    C: ['passPro'],
   })
   const def = sumSubscores(defender, playersById, {
     DE: ['passRush'],
@@ -84,7 +88,9 @@ export const runMatchupEdge = (
 ): number => {
   const off = sumSubscores(attacker, playersById, {
     RB: ['power', 'burst'],
-    OL: ['runBlock'],
+    OT: ['runBlock'],
+    OG: ['runBlock'],
+    C: ['runBlock'],
     TE: ['block'],
     QB: ['mobility'],
   })

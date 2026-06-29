@@ -16,7 +16,8 @@ type SleeperPlayer = {
 }
 
 type Position =
-  | 'QB' | 'RB' | 'WR' | 'TE' | 'OL'
+  | 'QB' | 'RB' | 'WR' | 'TE'
+  | 'OT' | 'OG' | 'C'
   | 'DE' | 'DT' | 'LB' | 'CB' | 'S' | 'K'
 
 const POSITION_MAP: Record<string, Position> = {
@@ -24,9 +25,9 @@ const POSITION_MAP: Record<string, Position> = {
   RB: 'RB', FB: 'RB',
   WR: 'WR',
   TE: 'TE',
-  OT: 'OL', T: 'OL', LT: 'OL', RT: 'OL',
-  G: 'OL', OG: 'OL', LG: 'OL', RG: 'OL',
-  C: 'OL', OL: 'OL',
+  OT: 'OT', T: 'OT', LT: 'OT', RT: 'OT',
+  G: 'OG', OG: 'OG', LG: 'OG', RG: 'OG',
+  C: 'C',
   DE: 'DE',
   DT: 'DT', NT: 'DT',
   LB: 'LB', OLB: 'LB', ILB: 'LB', MLB: 'LB',
@@ -36,8 +37,9 @@ const POSITION_MAP: Record<string, Position> = {
 }
 
 const POSITION_TARGETS: Record<Position, number> = {
-  QB: 24, RB: 48, WR: 64, TE: 24, OL: 48,
-  DE: 24, DT: 24, LB: 24, CB: 48, S: 24, K: 16,
+  QB: 24, RB: 48, WR: 64, TE: 24,
+  OT: 32, OG: 32, C: 16,
+  DE: 24, DT: 24, LB: 40, CB: 48, S: 24, K: 16,
 }
 
 const valueForPositionRank = (rank: number): number =>
@@ -74,7 +76,9 @@ const SUBSCORE_SCHEMA: Record<Position, { keys: string[]; range: number }> = {
   RB: { keys: ['power', 'burst'], range: 6 },
   WR: { keys: ['separation', 'deep'], range: 6 },
   TE: { keys: ['catch', 'block'], range: 5 },
-  OL: { keys: ['passPro', 'runBlock'], range: 5 },
+  OT: { keys: ['passPro', 'runBlock'], range: 5 },
+  OG: { keys: ['passPro', 'runBlock'], range: 5 },
+  C: { keys: ['passPro', 'runBlock'], range: 4 },
   DE: { keys: ['passRush', 'runDef'], range: 7 },
   DT: { keys: ['passRush', 'runDef'], range: 6 },
   LB: { keys: ['coverage', 'runDef'], range: 5 },
@@ -113,7 +117,8 @@ async function main() {
   console.log(`  → ${candidates.length} active candidates after status/team/position filter`)
 
   const byPosition: Record<Position, SleeperPlayer[]> = {
-    QB: [], RB: [], WR: [], TE: [], OL: [],
+    QB: [], RB: [], WR: [], TE: [],
+    OT: [], OG: [], C: [],
     DE: [], DT: [], LB: [], CB: [], S: [], K: [],
   }
   for (const p of candidates) {

@@ -1,11 +1,14 @@
-export const CURRENT_SCHEMA_VERSION = 1
+export const CURRENT_SCHEMA_VERSION = 2
 
 export type Position =
-  | 'QB' | 'RB' | 'WR' | 'TE' | 'OL'
+  | 'QB' | 'RB' | 'WR' | 'TE'
+  | 'OT' | 'OG' | 'C'
   | 'DE' | 'DT' | 'LB' | 'CB' | 'S' | 'K'
 
 export const ALL_POSITIONS: Position[] = [
-  'QB', 'RB', 'WR', 'TE', 'OL', 'DE', 'DT', 'LB', 'CB', 'S', 'K',
+  'QB', 'RB', 'WR', 'TE',
+  'OT', 'OG', 'C',
+  'DE', 'DT', 'LB', 'CB', 'S', 'K',
 ]
 
 export type Tier = 'S' | 'A' | 'B' | 'C'
@@ -37,8 +40,11 @@ export const ROSTER_SLOTS: Position[] = [
   'RB',
   'WR', 'WR',
   'TE',
-  'OL', 'OL', 'OL', 'OL', 'OL',
-  'DE', 'DT', 'LB',
+  'OT', 'OT',
+  'OG', 'OG',
+  'C',
+  'DE', 'DT',
+  'LB', 'LB',
   'CB', 'CB',
   'S',
   'K',

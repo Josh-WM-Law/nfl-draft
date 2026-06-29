@@ -7,7 +7,7 @@ import {
   ROSTER_SIZE,
   createEmptyGame,
 } from './types'
-import { saveGame, loadGame } from './persistence'
+import { saveGame, loadGame, deleteGame } from './persistence'
 import { loadAllPlayers } from '../data/loadPlayers'
 import {
   generatePicks,
@@ -117,7 +117,8 @@ export const useStore = create<Store>()((set, get) => ({
       const saved = loadGame(DEFAULT_GAME_ID)
       if (saved) set({ game: saved })
     } catch (e) {
-      console.warn('Could not restore saved game:', e)
+      console.warn('Could not restore saved game (likely schema mismatch); clearing it:', e)
+      deleteGame(DEFAULT_GAME_ID)
     }
   },
 

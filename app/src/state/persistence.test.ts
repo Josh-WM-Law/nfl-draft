@@ -45,6 +45,6 @@ describe('persistence', () => {
   it('throws SchemaVersionError on save when game schema mismatches current', () => {
     const stale: Game = { ...createEmptyGame('x', 'X', 1), schemaVersion: 999 }
     expect(() => saveGame(stale)).toThrow(SchemaVersionError)
-    expect(CURRENT_SCHEMA_VERSION).toBe(1)
+    expect(CURRENT_SCHEMA_VERSION).toBe(2)
   })
 })
