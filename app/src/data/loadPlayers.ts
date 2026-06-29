@@ -1,5 +1,6 @@
 import playersData from './players.json'
 import ratingsData from './ratings.json'
+import { CUSTOM_PLAYERS } from './customPlayers'
 import type { Player, PlayerCore, PlayerRating } from '../state/types'
 
 export const loadAllPlayers = (): Player[] => {
@@ -12,6 +13,9 @@ export const loadAllPlayers = (): Player[] => {
     const rating = ratingsById.get(core.id)
     if (!rating) continue
     result.push({ ...core, ...rating })
+  }
+  for (const custom of CUSTOM_PLAYERS) {
+    result.push({ ...custom.core, ...custom.rating })
   }
   return result
 }
