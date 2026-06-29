@@ -24,4 +24,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-jake-woolsey',
+      name: 'Jake Woolsey',
+      nflTeam: 'WLY',
+      position: 'RB',
+      photoUrl: '/players/jake-woolsey.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-jake-woolsey',
+      value: 89,
+      subscores: { power: 5, burst: 5 },
+      tier: 'A',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
