@@ -86,6 +86,13 @@ export type Draft = {
   orderRevealedCount?: number
 }
 
+export type PlayerFeature = {
+  playerId: string
+  playerName: string
+  position: Position
+  statLine: string
+}
+
 export type GameResult = {
   weekNumber: number
   homeTeamId: string
@@ -93,6 +100,8 @@ export type GameResult = {
   homeScore: number
   awayScore: number
   headline?: string
+  offensiveFeature?: PlayerFeature
+  defensiveFeature?: PlayerFeature
 }
 
 export type QuarterScore = { home: number; away: number }

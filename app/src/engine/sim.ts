@@ -17,6 +17,7 @@ import {
 import { makeRng } from './rng'
 import type { Matchup } from './schedule'
 import { computeAwards } from './awards'
+import { generateGameFeatures } from './playerFeatures'
 
 const BASELINE_SCORE = 17
 const STRENGTH_SCALE = 20
@@ -25,13 +26,6 @@ const NOISE_AMPLITUDE = 4
 const HOME_FIELD_BONUS = 3
 const FLUX_CHANCE = 0.05
 const FLUX_DELTA = 15
-const FLUX_HEADLINE_THRESHOLD = 18
-
-const lastName = (full: string): string => {
-  const parts = full.split(' ').filter(Boolean)
-  if (parts.length === 0) return full
-  return parts.slice(1).join(' ') || parts[0]
-}
 
 type FluxEvent = {
   playerName: string
@@ -67,53 +61,6 @@ const rollPlayerFlux = (
     })
   })
   return { fluxMap, events }
-}
-
-const buildHeadline = (
-  aPass: number,
-  aRun: number,
-  bPass: number,
-  bRun: number,
-  scoreA: number,
-  scoreB: number,
-  fluxEvents: { team: 'A' | 'B'; event: FluxEvent }[],
-): string => {
-  // Surface biggest flux event if it meets threshold
-  const topFlux = fluxEvents
-    .filter((f) => f.event.impact >= FLUX_HEADLINE_THRESHOLD)
-    .sort((a, b) => b.event.impact - a.event.impact)[0]
-  if (topFlux) {
-    const name = lastName(topFlux.event.playerName)
-    const slot = topFlux.event.slot
-    if (topFlux.event.delta > 0) {
-      const great = [
-        `${name} (${slot}) had the game of his life`,
-        `${name} (${slot}) was unstoppable`,
-        `${name} (${slot}) put up vintage numbers`,
-      ]
-      return great[Math.abs(scoreA + scoreB) % great.length]
-    }
-    const off = [
-      `${name} (${slot}) couldn't find a rhythm`,
-      `${name} (${slot}) had a day to forget`,
-      `${name} (${slot}) was a no-show`,
-    ]
-    return off[Math.abs(scoreA + scoreB) % off.length]
-  }
-
-  // Fall back to matchup-based headline
-  const winner = scoreA > scoreB ? 'A' : scoreB > scoreA ? 'B' : 'TIE'
-  const edges = [
-    { val: aPass, msg: 'Air raid lit up the secondary' },
-    { val: aRun, msg: 'Ground game bullied the front' },
-    { val: -bPass, msg: 'Pass rush flipped the script' },
-    { val: -bRun, msg: 'Stopped on the ground' },
-  ]
-  edges.sort((a, b) => Math.abs(b.val) - Math.abs(a.val))
-  const top = edges[0]
-  if (winner === 'TIE') return 'Went to the wire'
-  if (Math.abs(top.val) < 5) return 'Tight one all the way'
-  return top.msg
 }
 
 // Split a final score into a sequence of TD (7) / FG (3) / safety (2) events.
@@ -208,10 +155,19 @@ export const simGame = (
   scoreA = Math.max(0, Math.round(scoreA))
   scoreB = Math.max(0, Math.round(scoreB))
 
-  const fluxEventsForHeadline: { team: 'A' | 'B'; event: FluxEvent }[] = [
-    ...aFlux.events.map((e) => ({ team: 'A' as const, event: e })),
-    ...bFlux.events.map((e) => ({ team: 'B' as const, event: e })),
-  ]
+  // Winning team's stat features (offensive + defensive standouts)
+  const winningTeam = scoreA >= scoreB ? teamA : teamB
+  const winningScore = Math.max(scoreA, scoreB)
+  const combinedFlux = new Map<string, number>()
+  for (const [k, v] of aFlux.fluxMap) combinedFlux.set(k, v)
+  for (const [k, v] of bFlux.fluxMap) combinedFlux.set(k, v)
+  const features = generateGameFeatures(
+    winningTeam,
+    winningScore,
+    playersById,
+    combinedFlux,
+    seed + 333,
+  )
 
   return {
     weekNumber,
@@ -219,7 +175,8 @@ export const simGame = (
     awayTeamId: teamB.id,
     homeScore: scoreA,
     awayScore: scoreB,
-    headline: buildHeadline(aPass, aRun, bPass, bRun, scoreA, scoreB, fluxEventsForHeadline),
+    offensiveFeature: features.offense,
+    defensiveFeature: features.defense,
   }
 }
 

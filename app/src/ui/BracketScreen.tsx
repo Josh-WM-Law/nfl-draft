@@ -103,7 +103,27 @@ const SlotCard = ({
           ))}
         </div>
       )}
-      {fullyPlayed && slot.result?.headline && (
+      {fullyPlayed && (slot.result?.offensiveFeature || slot.result?.defensiveFeature) && (
+        <div className="px-3 pb-2 space-y-1.5 text-xs">
+          {slot.result.offensiveFeature && (
+            <div>
+              <div className="text-[9px] uppercase tracking-widest text-amber-400 font-bold">
+                OFF · {slot.result.offensiveFeature.playerName} ({slot.result.offensiveFeature.position})
+              </div>
+              <div className="text-slate-300">{slot.result.offensiveFeature.statLine}</div>
+            </div>
+          )}
+          {slot.result.defensiveFeature && (
+            <div>
+              <div className="text-[9px] uppercase tracking-widest text-sky-400 font-bold">
+                DEF · {slot.result.defensiveFeature.playerName} ({slot.result.defensiveFeature.position})
+              </div>
+              <div className="text-slate-300">{slot.result.defensiveFeature.statLine}</div>
+            </div>
+          )}
+        </div>
+      )}
+      {fullyPlayed && !slot.result?.offensiveFeature && !slot.result?.defensiveFeature && slot.result?.headline && (
         <div className="text-xs text-slate-500 italic px-3 pb-2">
           {slot.result.headline}
         </div>

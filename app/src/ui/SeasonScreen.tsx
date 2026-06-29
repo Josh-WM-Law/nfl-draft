@@ -129,7 +129,27 @@ export function SeasonScreen() {
                       </span>
                       <span className="text-2xl">{r.awayScore}</span>
                     </div>
-                    {r.headline && (
+                    {(r.offensiveFeature || r.defensiveFeature) && (
+                      <div className="mt-2 space-y-1.5 text-xs">
+                        {r.offensiveFeature && (
+                          <div>
+                            <div className="text-[9px] uppercase tracking-widest text-amber-400 font-bold">
+                              OFF · {r.offensiveFeature.playerName} ({r.offensiveFeature.position})
+                            </div>
+                            <div className="text-slate-300">{r.offensiveFeature.statLine}</div>
+                          </div>
+                        )}
+                        {r.defensiveFeature && (
+                          <div>
+                            <div className="text-[9px] uppercase tracking-widest text-sky-400 font-bold">
+                              DEF · {r.defensiveFeature.playerName} ({r.defensiveFeature.position})
+                            </div>
+                            <div className="text-slate-300">{r.defensiveFeature.statLine}</div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {!r.offensiveFeature && !r.defensiveFeature && r.headline && (
                       <div className="text-xs text-slate-500 italic mt-1">
                         {r.headline}
                       </div>
