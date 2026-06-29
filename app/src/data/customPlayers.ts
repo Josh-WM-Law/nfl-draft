@@ -64,4 +64,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-ben-woolsey',
+      name: 'Ben Woolsey',
+      nflTeam: 'WLY',
+      position: 'QB',
+      photoUrl: '/players/ben-woolsey.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-ben-woolsey',
+      value: 91,
+      subscores: { arm: 7, mobility: 3 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
