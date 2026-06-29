@@ -91,12 +91,15 @@ export function DraftBoard() {
     <div className="flex flex-col h-screen bg-slate-950">
       <UndoToast />
       <div className="flex gap-2 p-3 bg-slate-900">
-        {game.teams.map((t) => {
+        {game.draft.order.map((teamId, idx) => {
+          const t = game.teams.find((x) => x.id === teamId)
+          if (!t) return null
           const isCurrent = t.id === currentTeam?.id
           const isViewed = viewingTeamId === t.id && !isCurrent
           const owned = game.draft.picks.filter(
             (p) => p.teamId === t.id && p.playerId,
           ).length
+          const pickNumber = idx + 1
           return (
             <button
               key={t.id}
@@ -106,6 +109,9 @@ export function DraftBoard() {
               } ${isViewed ? 'ring-2 ring-amber-400' : ''}`}
               style={{ background: t.color }}
             >
+              <div className="text-[9px] uppercase tracking-wider text-white/70 font-bold">
+                #{pickNumber}
+              </div>
               <div className="text-xs font-bold text-white truncate">
                 {t.name}
               </div>
