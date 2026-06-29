@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react'
 import { useStore } from '../state/store'
 import { PlayerCard } from './PlayerCard'
 import { RosterPanel } from './RosterPanel'
-import { ALL_POSITIONS, type Position } from '../state/types'
+import { ALL_POSITIONS, ROSTER_SIZE, type Position } from '../state/types'
 import { canTeamPick } from '../engine/draft'
 
 const UNDO_WINDOW_MS = 5000
@@ -52,9 +52,24 @@ export function DraftBoard() {
   const makePick = useStore((s) => s.makePick)
   const simRestOfDraft = useStore((s) => s.simRestOfDraft)
   const [filter, setFilter] = useState<Filter>('ALL')
+  const [viewingTeamId, setViewingTeamId] = useState<string | null>(null)
 
   const currentPick = game?.draft.picks[game.draft.currentPickIdx]
   const currentTeam = game?.teams.find((t) => t.id === currentPick?.teamId)
+  const currentPickIdx = game?.draft.currentPickIdx ?? 0
+
+  // Snap back to current picker whenever the pick advances
+  useEffect(() => {
+    setViewingTeamId(null)
+  }, [currentPickIdx])
+
+  const viewedTeam = viewingTeamId
+    ? game?.teams.find((t) => t.id === viewingTeamId)
+    : currentTeam
+  const isViewingOther =
+    viewingTeamId !== null &&
+    !!currentTeam &&
+    viewingTeamId !== currentTeam.id
 
   const usedIds = useMemo(() => {
     const set = new Set<string>()
@@ -78,22 +93,24 @@ export function DraftBoard() {
       <div className="flex gap-2 p-3 bg-slate-900">
         {game.teams.map((t) => {
           const isCurrent = t.id === currentTeam?.id
+          const isViewed = viewingTeamId === t.id && !isCurrent
           const owned = game.draft.picks.filter(
             (p) => p.teamId === t.id && p.playerId,
           ).length
           return (
-            <div
+            <button
               key={t.id}
-              className={`flex-1 px-2 py-2 rounded-lg text-center transition ${
+              onClick={() => setViewingTeamId(t.id)}
+              className={`flex-1 px-2 py-2 rounded-lg text-center transition active:scale-95 ${
                 isCurrent ? 'ring-4 ring-white' : ''
-              }`}
+              } ${isViewed ? 'ring-2 ring-amber-400' : ''}`}
               style={{ background: t.color }}
             >
               <div className="text-xs font-bold text-white truncate">
                 {t.name}
               </div>
-              <div className="text-xs text-white/80">{owned}/17</div>
-            </div>
+              <div className="text-xs text-white/80">{owned}/{ROSTER_SIZE}</div>
+            </button>
           )
         })}
       </div>
@@ -116,7 +133,12 @@ export function DraftBoard() {
       </div>
 
       <div className="flex-1 flex overflow-hidden">
-        {currentTeam && <RosterPanel team={currentTeam} />}
+        {viewedTeam && (
+          <RosterPanel
+            team={viewedTeam}
+            isViewingOtherTeam={isViewingOther}
+          />
+        )}
 
         <div className="flex-1 flex flex-col overflow-hidden">
           <div className="flex gap-2 px-4 py-2 overflow-x-auto bg-slate-800 shrink-0">

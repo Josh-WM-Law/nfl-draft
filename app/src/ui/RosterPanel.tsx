@@ -25,7 +25,13 @@ const lastName = (full: string): string => {
   return parts.slice(1).join(' ')
 }
 
-export function RosterPanel({ team }: { team: TeamSeat }) {
+export function RosterPanel({
+  team,
+  isViewingOtherTeam = false,
+}: {
+  team: TeamSeat
+  isViewingOtherTeam?: boolean
+}) {
   const playersById = useStore((s) => s.playersById)
 
   return (
@@ -34,6 +40,11 @@ export function RosterPanel({ team }: { team: TeamSeat }) {
         className="px-2 py-2 border-b border-slate-800"
         style={{ background: team.color }}
       >
+        {isViewingOtherTeam && (
+          <div className="text-[8px] uppercase tracking-widest text-white/70 font-bold">
+            Viewing
+          </div>
+        )}
         <div className="text-[10px] uppercase tracking-widest text-white/80 font-bold truncate">
           {team.name}
         </div>
