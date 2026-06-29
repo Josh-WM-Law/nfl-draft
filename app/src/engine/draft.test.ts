@@ -6,6 +6,7 @@ import {
   canTeamPick,
   fillSlot,
   pickForCPU,
+  shuffleArray,
 } from './draft'
 import type { Player, TeamSeat } from '../state/types'
 import { ROSTER_SIZE, ROSTER_SLOTS } from '../state/types'
@@ -37,6 +38,36 @@ const makePlayer = (
   archetype: null,
   notes: '',
   needsRating: false,
+})
+
+describe('shuffleArray', () => {
+  it('preserves all elements', () => {
+    const input = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    const shuffled = shuffleArray(input, makeRng(42))
+    expect(shuffled.length).toBe(input.length)
+    expect(shuffled.slice().sort()).toEqual(input.slice().sort())
+  })
+
+  it('is deterministic for the same seed', () => {
+    const input = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    expect(shuffleArray(input, makeRng(42))).toEqual(
+      shuffleArray(input, makeRng(42)),
+    )
+  })
+
+  it('produces different orderings for different seeds (usually)', () => {
+    const input = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    const a = shuffleArray(input, makeRng(1))
+    const b = shuffleArray(input, makeRng(2))
+    expect(a).not.toEqual(b)
+  })
+
+  it('does not mutate the input array', () => {
+    const input = ['a', 'b', 'c', 'd']
+    const original = input.slice()
+    shuffleArray(input, makeRng(99))
+    expect(input).toEqual(original)
+  })
 })
 
 describe('generateSnakeOrder', () => {

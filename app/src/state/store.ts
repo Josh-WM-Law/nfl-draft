@@ -14,6 +14,7 @@ import {
   pickForCPU,
   canTeamPick,
   fillSlot,
+  shuffleArray,
 } from '../engine/draft'
 import { computeGrades } from '../engine/grade'
 import { makeRng } from '../engine/rng'
@@ -36,7 +37,9 @@ type Store = {
   setScreen: (screen: LeagueScreen) => void
   updateTeam: (teamId: string, patch: { name?: string; color?: string }) => void
   setHumanCount: (count: number) => void
-  startDraftFromSetup: () => void
+  revealDraftOrder: () => void
+  revealNextOrderPick: () => void
+  beginDraft: () => void
   makePick: (playerId: string) => void
   undoLastPick: () => void
   simRestOfDraft: () => void
@@ -177,7 +180,42 @@ export const useStore = create<Store>()((set, get) => ({
     saveGame(updated)
   },
 
-  startDraftFromSetup: () => {
+  revealDraftOrder: () => {
+    const { game } = get()
+    if (!game) return
+    const teamIds = game.teams.map((t) => t.id)
+    const rng = makeRng(game.seed + 12345)
+    const shuffled = shuffleArray(teamIds, rng)
+    const updated: Game = {
+      ...game,
+      draft: {
+        ...game.draft,
+        order: shuffled,
+        picks: generatePicks(shuffled, ROSTER_SIZE),
+        orderRevealedCount: 0,
+        currentPickIdx: 0,
+        status: 'pending',
+      },
+      screen: 'draft_order',
+    }
+    set({ game: updated, lastPickSnapshot: null })
+    saveGame(updated)
+  },
+
+  revealNextOrderPick: () => {
+    const { game } = get()
+    if (!game) return
+    const current = game.draft.orderRevealedCount ?? 0
+    if (current >= game.teams.length) return
+    const updated: Game = {
+      ...game,
+      draft: { ...game.draft, orderRevealedCount: current + 1 },
+    }
+    set({ game: updated })
+    saveGame(updated)
+  },
+
+  beginDraft: () => {
     const { game, playersById } = get()
     if (!game) return
     const ready: Game = {

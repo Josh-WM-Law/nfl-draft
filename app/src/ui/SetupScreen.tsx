@@ -15,7 +15,7 @@ export function SetupScreen() {
   const game = useStore((s) => s.game)
   const updateTeam = useStore((s) => s.updateTeam)
   const setHumanCount = useStore((s) => s.setHumanCount)
-  const startDraft = useStore((s) => s.startDraftFromSetup)
+  const revealDraftOrder = useStore((s) => s.revealDraftOrder)
   const setScreen = useStore((s) => s.setScreen)
 
   if (!game) return null
@@ -106,10 +106,10 @@ export function SetupScreen() {
       </section>
 
       <button
-        onClick={startDraft}
+        onClick={revealDraftOrder}
         className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-xl text-lg"
       >
-        Start the Draft →
+        Run the Draft Lottery →
       </button>
     </div>
   )

@@ -6,6 +6,17 @@ import {
   ROSTER_SLOTS,
 } from '../state/types'
 
+export const shuffleArray = <T>(arr: T[], rng: () => number): T[] => {
+  const result = arr.slice()
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1))
+    const tmp = result[i]
+    result[i] = result[j]
+    result[j] = tmp
+  }
+  return result
+}
+
 export const generateSnakeOrder = (
   teamIds: string[],
   rounds: number,

@@ -6,6 +6,7 @@ import { SeasonScreen } from './ui/SeasonScreen'
 import { BracketScreen } from './ui/BracketScreen'
 import { TrophyScreen } from './ui/TrophyScreen'
 import { SetupScreen } from './ui/SetupScreen'
+import { DraftOrderScreen } from './ui/DraftOrderScreen'
 
 function Landing({ onStart }: { onStart: () => void }) {
   return (
@@ -45,6 +46,8 @@ export default function App() {
   switch (game.screen) {
     case 'setup':
       return <SetupScreen />
+    case 'draft_order':
+      return <DraftOrderScreen />
     case 'draft':
       return <DraftBoard />
     case 'grade':

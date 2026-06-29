@@ -81,6 +81,9 @@ export type Draft = {
   status: 'pending' | 'in_progress' | 'complete'
   currentPickIdx: number
   queueByTeam: Record<string, string[]>
+  // Lottery reveal: 0 = nothing revealed, N = bottom N picks revealed (so
+  // when N=8, all 8 picks have been shown, starting from #8 down to #1).
+  orderRevealedCount?: number
 }
 
 export type GameResult = {
@@ -146,6 +149,7 @@ export type Season = {
 export type LeagueScreen =
   | 'landing'
   | 'setup'
+  | 'draft_order'
   | 'draft'
   | 'grade'
   | 'season'
@@ -178,6 +182,7 @@ export const createEmptyGame = (id: string, name: string, seed: number): Game =>
     status: 'pending',
     currentPickIdx: 0,
     queueByTeam: {},
+    orderRevealedCount: 0,
   },
   season: {
     weeks: [],
