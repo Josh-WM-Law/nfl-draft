@@ -4,11 +4,14 @@ import type {
   GameResult,
   BracketSlot,
   SeasonAward,
+  Position,
 } from '../state/types'
+import { ROSTER_SLOTS } from '../state/types'
 import {
   teamStrength,
   passMatchupEdge,
   runMatchupEdge,
+  POSITION_WEIGHTS,
 } from './teamStrength'
 import { makeRng } from './rng'
 import type { Matchup } from './schedule'
@@ -16,8 +19,54 @@ import { computeAwards } from './awards'
 
 const BASELINE_SCORE = 17
 const STRENGTH_SCALE = 20
-const MATCHUP_SCALE = 15
+const MATCHUP_SCALE = 10
 const NOISE_AMPLITUDE = 4
+const HOME_FIELD_BONUS = 3
+const FLUX_CHANCE = 0.05
+const FLUX_DELTA = 15
+const FLUX_HEADLINE_THRESHOLD = 18
+
+const lastName = (full: string): string => {
+  const parts = full.split(' ').filter(Boolean)
+  if (parts.length === 0) return full
+  return parts.slice(1).join(' ') || parts[0]
+}
+
+type FluxEvent = {
+  playerName: string
+  slot: Position
+  delta: number
+  impact: number
+}
+
+const rollPlayerFlux = (
+  team: TeamSeat,
+  playersById: Map<string, Player>,
+  rng: () => number,
+): { fluxMap: Map<string, number>; events: FluxEvent[] } => {
+  const fluxMap = new Map<string, number>()
+  const events: FluxEvent[] = []
+  team.roster.forEach((pid, i) => {
+    if (!pid) return
+    const r = rng()
+    let delta = 0
+    if (r < FLUX_CHANCE) delta = FLUX_DELTA
+    else if (r > 1 - FLUX_CHANCE) delta = -FLUX_DELTA
+    if (delta === 0) return
+    const slot = ROSTER_SLOTS[i]
+    const player = playersById.get(pid)
+    if (!player) return
+    fluxMap.set(pid, delta)
+    const weight = POSITION_WEIGHTS[slot] ?? 1.0
+    events.push({
+      playerName: player.name,
+      slot,
+      delta,
+      impact: Math.abs(delta) * weight,
+    })
+  })
+  return { fluxMap, events }
+}
 
 const buildHeadline = (
   aPass: number,
@@ -26,7 +75,32 @@ const buildHeadline = (
   bRun: number,
   scoreA: number,
   scoreB: number,
+  fluxEvents: { team: 'A' | 'B'; event: FluxEvent }[],
 ): string => {
+  // Surface biggest flux event if it meets threshold
+  const topFlux = fluxEvents
+    .filter((f) => f.event.impact >= FLUX_HEADLINE_THRESHOLD)
+    .sort((a, b) => b.event.impact - a.event.impact)[0]
+  if (topFlux) {
+    const name = lastName(topFlux.event.playerName)
+    const slot = topFlux.event.slot
+    if (topFlux.event.delta > 0) {
+      const great = [
+        `${name} (${slot}) had the game of his life`,
+        `${name} (${slot}) was unstoppable`,
+        `${name} (${slot}) put up vintage numbers`,
+      ]
+      return great[Math.abs(scoreA + scoreB) % great.length]
+    }
+    const off = [
+      `${name} (${slot}) couldn't find a rhythm`,
+      `${name} (${slot}) had a day to forget`,
+      `${name} (${slot}) was a no-show`,
+    ]
+    return off[Math.abs(scoreA + scoreB) % off.length]
+  }
+
+  // Fall back to matchup-based headline
   const winner = scoreA > scoreB ? 'A' : scoreB > scoreA ? 'B' : 'TIE'
   const edges = [
     { val: aPass, msg: 'Air raid lit up the secondary' },
@@ -47,13 +121,18 @@ export const simGame = (
   playersById: Map<string, Player>,
   seed: number,
   weekNumber = 1,
+  neutralSite = false,
 ): GameResult => {
   const rng = makeRng(seed)
 
-  const aOff = teamStrength(teamA, playersById, 'offense')
-  const aDef = teamStrength(teamA, playersById, 'defense')
-  const bOff = teamStrength(teamB, playersById, 'offense')
-  const bDef = teamStrength(teamB, playersById, 'defense')
+  // Per-game flux: each player has a small chance of a great/off game
+  const aFlux = rollPlayerFlux(teamA, playersById, rng)
+  const bFlux = rollPlayerFlux(teamB, playersById, rng)
+
+  const aOff = teamStrength(teamA, playersById, 'offense', aFlux.fluxMap)
+  const aDef = teamStrength(teamA, playersById, 'defense', aFlux.fluxMap)
+  const bOff = teamStrength(teamB, playersById, 'offense', bFlux.fluxMap)
+  const bDef = teamStrength(teamB, playersById, 'defense', bFlux.fluxMap)
 
   const aPass = passMatchupEdge(teamA, teamB, playersById)
   const aRun = runMatchupEdge(teamA, teamB, playersById)
@@ -64,6 +143,7 @@ export const simGame = (
   scoreA += (aOff - bDef) / STRENGTH_SCALE
   scoreA += (aPass + aRun) / MATCHUP_SCALE
   scoreA += (rng() - 0.5) * 2 * NOISE_AMPLITUDE
+  if (!neutralSite) scoreA += HOME_FIELD_BONUS
 
   let scoreB = BASELINE_SCORE
   scoreB += (bOff - aDef) / STRENGTH_SCALE
@@ -73,13 +153,18 @@ export const simGame = (
   scoreA = Math.max(0, Math.round(scoreA))
   scoreB = Math.max(0, Math.round(scoreB))
 
+  const fluxEventsForHeadline: { team: 'A' | 'B'; event: FluxEvent }[] = [
+    ...aFlux.events.map((e) => ({ team: 'A' as const, event: e })),
+    ...bFlux.events.map((e) => ({ team: 'B' as const, event: e })),
+  ]
+
   return {
     weekNumber,
     homeTeamId: teamA.id,
     awayTeamId: teamB.id,
     homeScore: scoreA,
     awayScore: scoreB,
-    headline: buildHeadline(aPass, aRun, bPass, bRun, scoreA, scoreB),
+    headline: buildHeadline(aPass, aRun, bPass, bRun, scoreA, scoreB, fluxEventsForHeadline),
   }
 }
 
@@ -164,6 +249,7 @@ export const simSeason = (
   const semi2Seed = seed + 999_001
   const finalSeed = seed + 999_999
 
+  // Semis: higher seed hosts (home-field applies)
   const semi1 = simGame(seeds[0], seeds[3], playersById, semi1Seed, 8)
   const semi2 = simGame(seeds[1], seeds[2], playersById, semi2Seed, 8)
   const semi1WinnerId =
@@ -171,12 +257,14 @@ export const simSeason = (
   const semi2WinnerId =
     semi2.homeScore >= semi2.awayScore ? semi2.homeTeamId : semi2.awayTeamId
 
+  // Championship: neutral site (no home-field)
   const finalGame = simGame(
     teamById.get(semi1WinnerId)!,
     teamById.get(semi2WinnerId)!,
     playersById,
     finalSeed,
     9,
+    true,
   )
   const champion =
     finalGame.homeScore >= finalGame.awayScore

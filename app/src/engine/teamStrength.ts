@@ -22,6 +22,7 @@ export const teamStrength = (
   team: TeamSeat,
   playersById: Map<string, Player>,
   side: 'offense' | 'defense',
+  flux?: Map<string, number>,
 ): number => {
   let sum = 0
   team.roster.forEach((pid, i) => {
@@ -31,7 +32,8 @@ export const teamStrength = (
     if (!inSide) return
     const p = playersById.get(pid)
     if (!p) return
-    sum += p.value * (POSITION_WEIGHTS[slot] ?? 1.0)
+    const fluxDelta = flux?.get(pid) ?? 0
+    sum += (p.value + fluxDelta) * (POSITION_WEIGHTS[slot] ?? 1.0)
   })
   return sum
 }

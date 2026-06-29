@@ -82,19 +82,31 @@ describe('simGame', () => {
     expect(aWins).toBeGreaterThan(70)
   })
 
-  it('underdog can win when teams are close', () => {
+  it('home-field bonus helps the first-arg team when not neutral site', () => {
+    const a = buildTeam('a', 80)
+    const b = buildTeam('b', 80)
+    const players = new Map<string, Player>()
+    for (const p of [...a.players, ...b.players]) players.set(p.id, p)
+    const withHome = simGame(a.team, b.team, players, 42, 1, false)
+    const neutral = simGame(a.team, b.team, players, 42, 1, true)
+    expect(withHome.homeScore - neutral.homeScore).toBe(3)
+    expect(withHome.awayScore).toBe(neutral.awayScore)
+  })
+
+  it('underdog can win when teams are close (neutral site)', () => {
     const a = buildTeam('a', 80)
     const b = buildTeam('b', 78)
     const players = new Map<string, Player>()
     for (const p of [...a.players, ...b.players]) players.set(p.id, p)
     let aWins = 0
     let bWins = 0
+    // Neutral site removes home-field; we're testing variance from strength
+    // diff + per-game flux + noise, not the home bonus.
     for (let s = 0; s < 100; s++) {
-      const r = simGame(a.team, b.team, players, s)
+      const r = simGame(a.team, b.team, players, s, 1, true)
       if (r.homeScore > r.awayScore) aWins++
       else if (r.awayScore > r.homeScore) bWins++
     }
-    // Favored team should win most, but underdog should pull off some upsets
     expect(aWins).toBeGreaterThan(50)
     expect(bWins).toBeGreaterThanOrEqual(10)
   })
