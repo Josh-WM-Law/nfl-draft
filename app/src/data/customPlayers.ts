@@ -84,4 +84,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-eli-woolsey',
+      name: 'Eli Woolsey',
+      nflTeam: 'WLY',
+      position: 'WR',
+      photoUrl: '/players/eli-woolsey.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-eli-woolsey',
+      value: 91,
+      subscores: { separation: 6, deep: 4 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
