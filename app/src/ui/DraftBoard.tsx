@@ -44,7 +44,7 @@ function UndoToast() {
   )
 }
 
-type Filter = Position | 'ALL'
+type Filter = Position | 'ALL' | 'ROOKIES'
 
 export function DraftBoard() {
   const game = useStore((s) => s.game)
@@ -86,7 +86,11 @@ export function DraftBoard() {
   const available = useMemo(() => {
     return players
       .filter((p) => !usedIds.has(p.id) && !excludedIds.has(p.id))
-      .filter((p) => filter === 'ALL' || p.position === filter)
+      .filter((p) => {
+        if (filter === 'ALL') return true
+        if (filter === 'ROOKIES') return p.yearsExp === 0
+        return p.position === filter
+      })
       .sort((a, b) => b.value - a.value)
   }, [players, usedIds, excludedIds, filter])
 
@@ -162,6 +166,16 @@ export function DraftBoard() {
               }`}
             >
               ALL
+            </button>
+            <button
+              onClick={() => setFilter('ROOKIES')}
+              className={`px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap ${
+                filter === 'ROOKIES'
+                  ? 'bg-amber-400 text-black'
+                  : 'bg-amber-900/60 text-amber-200'
+              }`}
+            >
+              ROOKIES
             </button>
             {ALL_POSITIONS.map((pos) => (
               <button
