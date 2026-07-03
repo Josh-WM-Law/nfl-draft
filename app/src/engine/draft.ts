@@ -5,7 +5,7 @@ import {
   type DraftPick,
   ROSTER_SLOTS,
 } from '../state/types'
-import { canAffordPlayer, priceOf } from './salaryCap'
+import { canAffordPlayer } from './salaryCap'
 
 export const shuffleArray = <T>(arr: T[], rng: () => number): T[] => {
   const result = arr.slice()
@@ -128,53 +128,62 @@ export const pickForCPU = (
   rng: () => number,
   budgetCtx?: CpuBudgetContext,
 ): CpuPickChoice => {
-  // If a salary cap is in effect, filter the pool to players this team can
-  // still afford while leaving veteran-minimum headroom for the rest of
-  // their remaining slots. Otherwise pass through.
-  let workingPool = pool
-  if (budgetCtx) {
-    workingPool = pool.filter((p) =>
-      canAffordPlayer(team, p, budgetCtx.playersById, budgetCtx.budget),
-    )
-    if (workingPool.length === 0) {
-      // Fallback: single cheapest available player. Avoids a hard throw if
-      // a team somehow paints itself into a corner.
-      workingPool = pool
-        .slice()
-        .sort((a, b) => priceOf(a.value) - priceOf(b.value))
-        .slice(0, 1)
-    }
+  if (pool.length === 0) {
+    throw new Error(`No players in pool for CPU team ${team.id}`)
   }
   const open = openSlotsByPosition(team)
   const benchOpen = openBenchSlots(team)
   const anyStarterOpen = Object.values(open).some((n) => (n ?? 0) > 0)
 
-  // Prefer to fill starter slots first — bench is for later-round stash picks.
-  if (anyStarterOpen) {
-    const eligible = workingPool.filter((p) => (open[p.position] ?? 0) > 0)
-    if (eligible.length > 0) {
-      const scored = eligible.map((p) => ({
-        p,
-        score: p.value + (open[p.position] ?? 0) * 0.5,
-      }))
-      scored.sort((a, b) => b.score - a.score)
-      const topN = Math.min(8, scored.length)
-      const idx = Math.floor(rng() * topN)
-      return { playerId: scored[idx].p.id, target: 'starter' }
+  // Two passes: first with the cap enforced, then (if we come up empty on a
+  // legal placement) with the cap waived. This is what keeps salary-cap
+  // drafts from dead-ending when the cheap-tier players get vacuumed up.
+  const capOnPool = (): Player[] => {
+    if (!budgetCtx) return pool
+    return pool.filter((p) =>
+      canAffordPlayer(team, p, budgetCtx.playersById, budgetCtx.budget),
+    )
+  }
+
+  const tryPlacement = (
+    candidatePool: Player[],
+  ): CpuPickChoice | null => {
+    if (candidatePool.length === 0) return null
+    if (anyStarterOpen) {
+      const eligible = candidatePool.filter(
+        (p) => (open[p.position] ?? 0) > 0,
+      )
+      if (eligible.length > 0) {
+        const scored = eligible.map((p) => ({
+          p,
+          score: p.value + (open[p.position] ?? 0) * 0.5,
+        }))
+        scored.sort((a, b) => b.score - a.score)
+        const topN = Math.min(8, scored.length)
+        const idx = Math.floor(rng() * topN)
+        return { playerId: scored[idx].p.id, target: 'starter' }
+      }
     }
+    if (benchOpen > 0) {
+      const scored = candidatePool.map((p) => {
+        const age = p.age ?? p.yearsExp + 22
+        const youthBonus = age <= 23 ? 3 : age <= 25 ? 1 : 0
+        return { p, score: p.value + youthBonus }
+      })
+      scored.sort((a, b) => b.score - a.score)
+      const topN = Math.min(6, scored.length)
+      const idx = Math.floor(rng() * topN)
+      return { playerId: scored[idx].p.id, target: 'bench' }
+    }
+    return null
   }
-  if (benchOpen > 0 && workingPool.length > 0) {
-    // For bench picks, take best-available; light preference for younger
-    // players (rookies) so bench actually stashes prospects.
-    const scored = workingPool.map((p) => {
-      const age = p.age ?? p.yearsExp + 22
-      const youthBonus = age <= 23 ? 3 : age <= 25 ? 1 : 0
-      return { p, score: p.value + youthBonus }
-    })
-    scored.sort((a, b) => b.score - a.score)
-    const topN = Math.min(6, scored.length)
-    const idx = Math.floor(rng() * topN)
-    return { playerId: scored[idx].p.id, target: 'bench' }
-  }
+
+  // Pass 1: cap-respecting pool.
+  const capped = tryPlacement(capOnPool())
+  if (capped) return capped
+  // Pass 2: waive cap. Some team painted themselves into a corner — better
+  // to overpay than to hard-throw and stall the draft.
+  const waived = tryPlacement(pool)
+  if (waived) return waived
   throw new Error(`No eligible players in pool for CPU team ${team.id}`)
 }

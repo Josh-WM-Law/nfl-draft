@@ -209,36 +209,58 @@ export function DraftBoard() {
           </div>
 
           <div className="flex-1 overflow-y-auto p-4">
+            {/* When cap mode is on and the team has NO affordable options
+                left, cap enforcement is waived so the draft can complete. */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {available.slice(0, 80).map((p) => {
-                const slotOk = currentTeam
-                  ? canTeamPick(currentTeam, p.position)
-                  : false
-                const affordable =
-                  !currentTeam ||
-                  game?.capBudget == null ||
-                  canAffordPlayer(currentTeam, p, playersById, game.capBudget)
-                const canPick = slotOk && affordable
-                const showBenchOption = !!currentTeam &&
-                  canTeamStart(currentTeam, p.position) &&
-                  canTeamBench(currentTeam)
-                const cost = game?.capBudget != null ? priceOf(p.value) : null
-                return (
-                  <PlayerCard
-                    key={p.id}
-                    player={p}
-                    onTap={() => makePick(p.id)}
-                    onBench={
-                      showBenchOption
-                        ? () => makePick(p.id, 'bench')
-                        : undefined
-                    }
-                    disabled={!canPick}
-                    cost={cost}
-                    unaffordable={!affordable && slotOk}
-                  />
-                )
-              })}
+              {(() => {
+                const teamStuck =
+                  !!currentTeam &&
+                  game?.capBudget != null &&
+                  !available.some((p) =>
+                    canAffordPlayer(
+                      currentTeam,
+                      p,
+                      playersById,
+                      game.capBudget!,
+                    ),
+                  )
+                return available.slice(0, 80).map((p) => {
+                  const slotOk = currentTeam
+                    ? canTeamPick(currentTeam, p.position)
+                    : false
+                  const affordable =
+                    !currentTeam ||
+                    game?.capBudget == null ||
+                    canAffordPlayer(
+                      currentTeam,
+                      p,
+                      playersById,
+                      game.capBudget,
+                    )
+                  const canPick = slotOk && (affordable || teamStuck)
+                  const showBenchOption =
+                    !!currentTeam &&
+                    canTeamStart(currentTeam, p.position) &&
+                    canTeamBench(currentTeam)
+                  const cost =
+                    game?.capBudget != null ? priceOf(p.value) : null
+                  return (
+                    <PlayerCard
+                      key={p.id}
+                      player={p}
+                      onTap={() => makePick(p.id)}
+                      onBench={
+                        showBenchOption
+                          ? () => makePick(p.id, 'bench')
+                          : undefined
+                      }
+                      disabled={!canPick}
+                      cost={cost}
+                      unaffordable={!affordable && slotOk}
+                    />
+                  )
+                })
+              })()}
             </div>
           </div>
         </div>

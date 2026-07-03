@@ -968,14 +968,22 @@ export const useStore = create<Store>()((set, get) => ({
     if (!team || team.isComputer) return
     if (!canTeamPick(team, player.position)) return
     if (usedPlayerIds(game).has(playerId)) return
-    // Salary-cap dynasties enforce affordability at pick time. If the human
-    // taps a player they can't afford (typically not shown as clickable,
-    // but a race is possible), silently no-op.
+    // Salary-cap enforcement: reject the tap ONLY if the user still has
+    // other affordable options. If nothing in the pool is affordable, the
+    // team's boxed in and we let this pick go through (cap waived) rather
+    // than dead-end the draft.
     if (
       game.capBudget != null &&
       !canAffordPlayer(team, player, playersById, game.capBudget)
     ) {
-      return
+      const usedNow = usedPlayerIds(game)
+      const anyAffordable = get().players.some(
+        (p) =>
+          !usedNow.has(p.id) &&
+          canAffordPlayer(team, p, playersById, game.capBudget!),
+      )
+      if (anyAffordable) return
+      // else fall through: cap waived for a forced pick
     }
 
     // Auto-resolve target when the caller didn't specify: prefer starter if
