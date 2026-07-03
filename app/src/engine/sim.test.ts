@@ -33,7 +33,10 @@ const buildTeam = (
   const roster: (string | null)[] = []
   ROSTER_SLOTS.forEach((slot, i) => {
     const pid = `${id}-p${i}`
-    players.push(mkPlayer(pid, slot, playerValue))
+    // Bench slots are position-agnostic; fill them with a K so the test
+    // player shape stays uniform.
+    const pos = slot === 'BENCH' ? 'K' : slot
+    players.push(mkPlayer(pid, pos, playerValue))
     roster.push(pid)
   })
   return {
