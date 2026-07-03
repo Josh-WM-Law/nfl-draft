@@ -12,6 +12,7 @@ import { NflTeamSelectionScreen } from './ui/NflTeamSelectionScreen'
 import { OffseasonSummaryScreen } from './ui/OffseasonSummaryScreen'
 import { KeeperSelectionScreen } from './ui/KeeperSelectionScreen'
 import { DynastyHubScreen } from './ui/DynastyHubScreen'
+import { DynastyMenuButton } from './ui/DynastyMenuButton'
 import { CustomPlayersSection } from './ui/CustomPlayersSection'
 
 function DynastyNameModal({
@@ -220,7 +221,19 @@ export default function App() {
     return <Landing />
   }
 
-  switch (game.screen) {
+  const screen = renderScreen(game.screen)
+  return (
+    <>
+      {screen}
+      {/* Floating dynasty menu — visible on every dynasty mid-flow screen
+          so the user can always reach the Hub or leave the dynasty. */}
+      <DynastyMenuButton />
+    </>
+  )
+}
+
+function renderScreen(screen: string) {
+  switch (screen) {
     case 'nfl_team_selection':
       return <NflTeamSelectionScreen />
     case 'coach_creation':
