@@ -31,6 +31,7 @@ export const teamStrength = (
   team.roster.forEach((pid, i) => {
     if (!pid) return
     const slot = ROSTER_SLOTS[i]
+    if (slot === 'BENCH') return
     const inSide = side === 'offense' ? OFFENSE.has(slot) : DEFENSE.has(slot)
     if (!inSide) return
     const p = playersById.get(pid)
@@ -50,6 +51,7 @@ const sumSubscores = (
   team.roster.forEach((pid, i) => {
     if (!pid) return
     const slot = ROSTER_SLOTS[i]
+    if (slot === 'BENCH') return
     const keys = spec[slot]
     if (!keys) return
     const p = playersById.get(pid)

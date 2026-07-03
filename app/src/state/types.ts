@@ -1,4 +1,4 @@
-export const CURRENT_SCHEMA_VERSION = 2
+export const CURRENT_SCHEMA_VERSION = 3
 
 export type Position =
   | 'QB' | 'RB' | 'WR' | 'TE'
@@ -38,7 +38,13 @@ export type PlayerRating = {
 
 export type Player = PlayerCore & PlayerRating
 
-export const ROSTER_SLOTS: Position[] = [
+// Roster shape: 18 positional starters followed by 2 flex bench slots. The
+// starter slots contribute to team strength, sim, and grade; bench slots are
+// stash spots for rookies / long-term prospects and are inert until they get
+// promoted (which today only happens via keeper selection each offseason).
+export type RosterSlotType = Position | 'BENCH'
+
+export const ROSTER_SLOTS: RosterSlotType[] = [
   'QB',
   'RB',
   'WR', 'WR',
@@ -51,8 +57,11 @@ export const ROSTER_SLOTS: Position[] = [
   'CB', 'CB',
   'S',
   'K',
+  'BENCH', 'BENCH',
 ]
 
+export const STARTER_ROSTER_SIZE = 18
+export const BENCH_ROSTER_SIZE = 2
 export const ROSTER_SIZE = ROSTER_SLOTS.length
 
 export type TeamSeat = {
@@ -192,7 +201,7 @@ export type Game = {
   screenBeforeHub?: LeagueScreen
 }
 
-export const CURRENT_DYNASTY_SCHEMA_VERSION = 2
+export const CURRENT_DYNASTY_SCHEMA_VERSION = 3
 
 export type CoachTrait =
   | 'offensive_guru'
@@ -297,8 +306,11 @@ export type Dynasty = {
   // minus retirees, with ratings/ages that evolve each offseason).
   livePool: Player[]
   // Populated during the keeper_selection screen. Missing entries fall back
-  // to top-4-by-value at confirm time.
-  pendingKeepers?: Record<string, string[]>
+  // to top-4 starters + top-2 bench at confirm time.
+  pendingKeepers?: Record<
+    string,
+    { starters: string[]; bench: string[] }
+  >
   // Latest offseason report — drives the offseason summary screen.
   lastOffseason?: OffseasonReport
   // Career-long stats accumulated across every offseason. Keyed by playerId.

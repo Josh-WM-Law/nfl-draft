@@ -1,17 +1,23 @@
 import type { TeamSeat, Player, Coach } from '../state/types'
+import { ROSTER_SLOTS, STARTER_ROSTER_SIZE } from '../state/types'
 import { coachEffect } from './coachEffects'
 
 const LETTERS = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'D']
 
+// Grade reflects the starting lineup only — bench prospects don't help win
+// today, so they shouldn't drag the grade up or down.
 export const teamValueSum = (
   team: TeamSeat,
   playersById: Map<string, Player>,
 ): number => {
-  return team.roster.reduce<number>((acc, pid) => {
-    if (!pid) return acc
+  let sum = 0
+  team.roster.forEach((pid, i) => {
+    if (!pid) return
+    if (ROSTER_SLOTS[i] === 'BENCH') return
     const p = playersById.get(pid)
-    return acc + (p?.value ?? 0)
-  }, 0)
+    sum += p?.value ?? 0
+  })
+  return sum
 }
 
 export const computeGrades = (
@@ -30,9 +36,9 @@ export const computeGrades = (
   const gradeByTeamId = new Map<string, { letter: string; score: number }>()
   sorted.forEach((entry, idx) => {
     const eff = coachEffect(coachByTeamId?.get(entry.team.id) ?? null)
-    const baseScore = Math.round(
-      entry.sum / Math.max(1, entry.team.roster.length),
-    )
+    // Divide by starter count (not roster.length) so adding bench slots
+    // doesn't dilute the numeric score.
+    const baseScore = Math.round(entry.sum / STARTER_ROSTER_SIZE)
     gradeByTeamId.set(entry.team.id, {
       letter: LETTERS[idx] ?? 'D',
       score: baseScore + eff.gradeBonus,

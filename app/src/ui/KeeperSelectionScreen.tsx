@@ -1,7 +1,8 @@
 import { useStore } from '../state/store'
-import type { Player } from '../state/types'
+import { ROSTER_SLOTS, STARTER_ROSTER_SIZE, type Player } from '../state/types'
 
-const KEEPER_LIMIT = 4
+const STARTER_LIMIT = 4
+const BENCH_LIMIT = 2
 
 const initials = (name: string): string =>
   name
@@ -100,12 +101,23 @@ export function KeeperSelectionScreen() {
   const userTeam = game.teams.find((t) => t.id === dynasty.userTeamId)
   if (!userTeam) return null
 
-  const currentKeepers = dynasty.pendingKeepers?.[dynasty.userTeamId] ?? []
-  const rosterIds = userTeam.roster.filter((x): x is string => !!x)
-  // A "dead" (retired) player is one whose ID is no longer in the live pool.
-  const rosterEntries = rosterIds.map((id) => {
+  const pending = dynasty.pendingKeepers?.[dynasty.userTeamId] ?? {
+    starters: [],
+    bench: [],
+  }
+  const starterKept = pending.starters
+  const benchKept = pending.bench
+
+  const starterEntries: { id: string; player?: Player; dead: boolean }[] = []
+  const benchEntries: { id: string; player?: Player; dead: boolean }[] = []
+  userTeam.roster.forEach((id, i) => {
+    if (!id) return
     const p = playersById.get(id)
-    return { id, player: p, dead: !p }
+    const entry = { id, player: p, dead: !p }
+    if (ROSTER_SLOTS[i] === 'BENCH') benchEntries.push(entry)
+    else starterEntries.push(entry)
+    // Silence unused var warning about STARTER_ROSTER_SIZE by referencing it.
+    void STARTER_ROSTER_SIZE
   })
 
   return (
@@ -114,48 +126,92 @@ export function KeeperSelectionScreen() {
         <div className="text-xs tracking-widest text-amber-400 uppercase">
           {dynasty.name} · Entering Year {dynasty.currentYear + 1}
         </div>
-        <h1 className="text-3xl font-black mt-1">KEEP 4 PLAYERS</h1>
+        <h1 className="text-3xl font-black mt-1">KEEP 4 + 2</h1>
         <p className="text-sm text-slate-400 mt-1">
-          Choose any 4 to carry into next season. Everyone else goes into the
-          redraft pool. Retired players can't be kept.
+          Pick up to 4 starters and 2 bench players to carry over. Everyone
+          else goes back into the redraft pool. Retired players can't be kept.
         </p>
       </div>
 
-      <div className="mb-4 flex items-center justify-between">
-        <div className="text-xs uppercase tracking-widest text-slate-400">
-          Your Roster
+      <section className="mb-6">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="text-xs uppercase tracking-widest text-slate-400">
+            Starters
+          </div>
+          <div className="text-sm font-bold">
+            {starterKept.length} / {STARTER_LIMIT} kept
+          </div>
         </div>
-        <div className="text-sm font-bold">
-          {currentKeepers.length} / {KEEPER_LIMIT} kept
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        {rosterEntries.map((entry) => {
-          const player = entry.player
-          if (!player) {
+        <div className="space-y-2">
+          {starterEntries.map((entry) => {
+            const player = entry.player
+            if (!player) {
+              return (
+                <div
+                  key={entry.id}
+                  className="rounded-xl p-3 bg-slate-900 text-slate-600 italic"
+                >
+                  Retired · unavailable
+                </div>
+              )
+            }
+            const selected = starterKept.includes(player.id)
             return (
-              <div
-                key={entry.id}
-                className="rounded-xl p-3 bg-slate-900 text-slate-600 italic"
-              >
-                Retired · unavailable
-              </div>
+              <KeeperCard
+                key={player.id}
+                player={player}
+                selected={selected}
+                onToggle={() => toggleKeeper(player.id, 'starter')}
+                atLimit={starterKept.length >= STARTER_LIMIT}
+                dead={entry.dead}
+              />
             )
-          }
-          const selected = currentKeepers.includes(player.id)
-          return (
-            <KeeperCard
-              key={player.id}
-              player={player}
-              selected={selected}
-              onToggle={() => toggleKeeper(player.id)}
-              atLimit={currentKeepers.length >= KEEPER_LIMIT}
-              dead={entry.dead}
-            />
-          )
-        })}
-      </div>
+          })}
+        </div>
+      </section>
+
+      <section className="mb-6">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="text-xs uppercase tracking-widest text-amber-400">
+            Bench
+          </div>
+          <div className="text-sm font-bold">
+            {benchKept.length} / {BENCH_LIMIT} kept
+          </div>
+        </div>
+        {benchEntries.length === 0 ? (
+          <div className="rounded-xl p-3 bg-slate-900 text-sm text-slate-500 italic">
+            You didn't stash anyone on the bench this year.
+          </div>
+        ) : (
+          <div className="space-y-2">
+            {benchEntries.map((entry) => {
+              const player = entry.player
+              if (!player) {
+                return (
+                  <div
+                    key={entry.id}
+                    className="rounded-xl p-3 bg-slate-900 text-slate-600 italic"
+                  >
+                    Retired · unavailable
+                  </div>
+                )
+              }
+              const selected = benchKept.includes(player.id)
+              return (
+                <KeeperCard
+                  key={player.id}
+                  player={player}
+                  selected={selected}
+                  onToggle={() => toggleKeeper(player.id, 'bench')}
+                  atLimit={benchKept.length >= BENCH_LIMIT}
+                  dead={entry.dead}
+                />
+              )
+            })}
+          </div>
+        )}
+      </section>
 
       <div className="fixed left-0 right-0 bottom-0 p-4 bg-slate-950 border-t border-slate-800">
         <div className="max-w-2xl mx-auto">
@@ -166,7 +222,8 @@ export function KeeperSelectionScreen() {
             Confirm Keepers →
           </button>
           <p className="text-xs text-slate-500 mt-2 text-center">
-            CPU teams auto-keep their top 4 by OVR. Draft order is random.
+            CPU teams auto-keep their top 4 starters + top 2 bench. Draft
+            order is random.
           </p>
         </div>
       </div>

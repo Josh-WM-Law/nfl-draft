@@ -53,26 +53,41 @@ export function RosterPanel({
         {ROSTER_SLOTS.map((slot, i) => {
           const pid = team.roster[i]
           const player = pid ? playersById.get(pid) : null
+          const isBench = slot === 'BENCH'
+          const prevIsStarter = i > 0 && ROSTER_SLOTS[i - 1] !== 'BENCH'
+          const startsBenchSection = isBench && prevIsStarter
           return (
-            <div
-              key={i}
-              className={`px-2 py-1.5 border-b border-slate-800/50 ${
-                player ? '' : 'bg-slate-950/40'
-              }`}
-            >
+            <div key={i}>
+              {startsBenchSection && (
+                <div className="px-2 pt-2 pb-1 border-t-2 border-amber-500/40 bg-amber-900/10 text-[9px] uppercase tracking-widest font-bold text-amber-400">
+                  Bench
+                </div>
+              )}
               <div
-                className={`text-[10px] font-bold tracking-wider ${
-                  POSITION_COLOR[slot] ?? 'text-slate-400'
-                }`}
+                className={`px-2 py-1.5 border-b border-slate-800/50 ${
+                  player ? '' : 'bg-slate-950/40'
+                } ${isBench ? 'bg-amber-900/10' : ''}`}
               >
-                {slot}
-              </div>
-              <div
-                className={`text-xs leading-tight truncate ${
-                  player ? 'text-white font-semibold' : 'text-slate-600'
-                }`}
-              >
-                {player ? lastName(player.name) : '—'}
+                {!isBench && (
+                  <div
+                    className={`text-[10px] font-bold tracking-wider ${
+                      POSITION_COLOR[slot as Position] ?? 'text-slate-400'
+                    }`}
+                  >
+                    {slot}
+                  </div>
+                )}
+                <div
+                  className={`text-xs leading-tight truncate ${
+                    player ? 'text-white font-semibold' : 'text-slate-600'
+                  }`}
+                >
+                  {player
+                    ? isBench
+                      ? `${player.position} · ${lastName(player.name)}`
+                      : lastName(player.name)
+                    : '—'}
+                </div>
               </div>
             </div>
           )

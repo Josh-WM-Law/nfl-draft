@@ -3,7 +3,7 @@ import { useStore } from '../state/store'
 import { PlayerCard } from './PlayerCard'
 import { RosterPanel } from './RosterPanel'
 import { ALL_POSITIONS, ROSTER_SIZE, type Position } from '../state/types'
-import { canTeamPick } from '../engine/draft'
+import { canTeamPick, canTeamStart, canTeamBench } from '../engine/draft'
 
 const UNDO_WINDOW_MS = 5000
 
@@ -194,14 +194,27 @@ export function DraftBoard() {
 
           <div className="flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {available.slice(0, 80).map((p) => (
-                <PlayerCard
-                  key={p.id}
-                  player={p}
-                  onTap={() => makePick(p.id)}
-                  disabled={currentTeam ? !canTeamPick(currentTeam, p.position) : true}
-                />
-              ))}
+              {available.slice(0, 80).map((p) => {
+                const canPick = currentTeam
+                  ? canTeamPick(currentTeam, p.position)
+                  : false
+                const showBenchOption = !!currentTeam &&
+                  canTeamStart(currentTeam, p.position) &&
+                  canTeamBench(currentTeam)
+                return (
+                  <PlayerCard
+                    key={p.id}
+                    player={p}
+                    onTap={() => makePick(p.id)}
+                    onBench={
+                      showBenchOption
+                        ? () => makePick(p.id, 'bench')
+                        : undefined
+                    }
+                    disabled={!canPick}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>

@@ -21,11 +21,12 @@ const teamPlayersAt = (
   playersById: Map<string, Player>,
   positions: Position[],
 ): { player: Player; slot: Position }[] => {
-  const allowed = new Set(positions)
+  const allowed = new Set<Position>(positions)
   const out: { player: Player; slot: Position }[] = []
   team.roster.forEach((pid, i) => {
     if (!pid) return
     const slot = ROSTER_SLOTS[i]
+    if (slot === 'BENCH') return
     if (!allowed.has(slot)) return
     const p = playersById.get(pid)
     if (!p) return

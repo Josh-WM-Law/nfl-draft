@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { loadAllPlayers } from '../data/loadPlayers'
 import type { Player, TeamSeat } from '../state/types'
 import { ROSTER_SIZE } from '../state/types'
-import { generatePicks, pickForCPU, fillSlot } from './draft'
+import { generatePicks, pickForCPU, fillSlot, fillBench } from './draft'
 import { computeGrades } from './grade'
 import { simSeason } from './sim'
 import { roundRobinSchedule } from './schedule'
@@ -28,12 +28,15 @@ const draftLeague = (
     const teamIdx = teams.findIndex((t) => t.id === pick.teamId)
     const team = teams[teamIdx]
     const available = players.filter((p) => !used.has(p.id))
-    const pickedId = pickForCPU(team, available, rng)
-    const player = playersById.get(pickedId)!
+    const choice = pickForCPU(team, available, rng)
+    const player = playersById.get(choice.playerId)!
     const newTeams = teams.slice()
-    newTeams[teamIdx] = fillSlot(team, pickedId, player.position)
+    newTeams[teamIdx] =
+      choice.target === 'bench'
+        ? fillBench(team, choice.playerId)
+        : fillSlot(team, choice.playerId, player.position)
     teams = newTeams
-    used.add(pickedId)
+    used.add(choice.playerId)
   }
   return teams
 }

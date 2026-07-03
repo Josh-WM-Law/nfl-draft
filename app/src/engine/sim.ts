@@ -45,12 +45,13 @@ const rollPlayerFlux = (
   const events: FluxEvent[] = []
   team.roster.forEach((pid, i) => {
     if (!pid) return
+    const slot = ROSTER_SLOTS[i]
+    if (slot === 'BENCH') return
     const r = rng()
     let delta = 0
     if (r < FLUX_CHANCE) delta = FLUX_DELTA
     else if (r > 1 - FLUX_CHANCE) delta = -FLUX_DELTA
     if (delta === 0) return
-    const slot = ROSTER_SLOTS[i]
     const player = playersById.get(pid)
     if (!player) return
     fluxMap.set(pid, delta)

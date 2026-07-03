@@ -390,20 +390,31 @@ export const pickTopKeepers = (
 
 // ------------------------- Roster reset for new year -------------------------
 
-// Turn a roster of 18 slots into a new empty roster, then place the kept
-// players back into their position slots. Any excess keeper of a position
-// (shouldn't happen: max 4 keepers, positions rarely stack that high) is
-// silently dropped.
+// Turn a fresh 20-slot roster (18 starters + 2 bench) and place keepers into
+// their designated slot type. Starter keepers land in a matching position
+// slot; bench keepers land in a BENCH slot. Excess keepers that don't fit
+// (e.g., 3 QBs among starter keepers when there's only 1 QB slot) are
+// silently dropped — should never happen since positional slots cap what a
+// user could have on their roster to begin with.
 export const rosterWithKeepers = (
-  keeperIds: string[],
+  starterKeeperIds: string[],
+  benchKeeperIds: string[],
   playersById: Map<string, Player>,
 ): (string | null)[] => {
   const roster: (string | null)[] = ROSTER_SLOTS.map(() => null)
-  for (const pid of keeperIds) {
+  for (const pid of starterKeeperIds) {
     const player = playersById.get(pid)
     if (!player) continue
     const idx = ROSTER_SLOTS.findIndex(
       (slot, i) => slot === player.position && roster[i] === null,
+    )
+    if (idx === -1) continue
+    roster[idx] = pid
+  }
+  for (const pid of benchKeeperIds) {
+    if (!playersById.has(pid)) continue
+    const idx = ROSTER_SLOTS.findIndex(
+      (slot, i) => slot === 'BENCH' && roster[i] === null,
     )
     if (idx === -1) continue
     roster[idx] = pid

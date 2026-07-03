@@ -38,7 +38,10 @@ import {
   generatePicks,
   pickForCPU,
   canTeamPick,
+  canTeamStart,
+  canTeamBench,
   fillSlot,
+  fillBench,
   shuffleArray,
 } from '../engine/draft'
 import { computeGrades } from '../engine/grade'
@@ -85,7 +88,7 @@ type Store = {
   revealDraftOrder: () => void
   revealNextOrderPick: () => void
   beginDraft: () => void
-  makePick: (playerId: string) => void
+  makePick: (playerId: string, target?: 'starter' | 'bench') => void
   undoLastPick: () => void
   simRestOfDraft: () => void
   playSeason: (mode?: 'weekly' | 'instant') => void
@@ -97,7 +100,7 @@ type Store = {
   toggleUserPlayerInclusion: (id: string) => void
   startOffseason: () => void
   advanceToKeepers: () => void
-  toggleKeeper: (playerId: string) => void
+  toggleKeeper: (playerId: string, source: 'starter' | 'bench') => void
   confirmKeepers: () => void
   openDynastyHub: () => void
   closeDynastyHub: () => void
@@ -148,11 +151,15 @@ const advanceAfterPick = (
     if (!team.isComputer) break
     const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919)
     const pool = availablePool(g, playersById)
-    const pickedId = pickForCPU(team, pool, rng)
+    const cpuChoice = pickForCPU(team, pool, rng)
+    const pickedId = cpuChoice.playerId
     const player = playersById.get(pickedId)!
     const teamIdx = g.teams.findIndex((t) => t.id === team.id)
     const newTeams = g.teams.slice()
-    newTeams[teamIdx] = fillSlot(team, pickedId, player.position)
+    newTeams[teamIdx] =
+      cpuChoice.target === 'bench'
+        ? fillBench(team, pickedId)
+        : fillSlot(team, pickedId, player.position)
     const newPicks = g.draft.picks.slice()
     newPicks[g.draft.currentPickIdx] = { ...currentPick, playerId: pickedId }
     g = {
@@ -611,21 +618,29 @@ export const useStore = create<Store>()((set, get) => ({
     set({ dynasty: nextDynasty, game: updated })
   },
 
-  toggleKeeper: (playerId) => {
+  toggleKeeper: (playerId, source) => {
     const { dynasty, game } = get()
     if (!dynasty || !game) return
     const userTeamId = dynasty.userTeamId
-    const current = dynasty.pendingKeepers?.[userTeamId] ?? []
-    let next: string[]
-    if (current.includes(playerId)) {
-      next = current.filter((id) => id !== playerId)
-    } else {
-      if (current.length >= 4) return
-      next = [...current, playerId]
+    const currentEntry = dynasty.pendingKeepers?.[userTeamId] ?? {
+      starters: [],
+      bench: [],
     }
+    const limits = { starter: 4, bench: 2 } as const
+    const key = source === 'bench' ? 'bench' : 'starters'
+    const currentList = currentEntry[key]
+    let nextList: string[]
+    if (currentList.includes(playerId)) {
+      nextList = currentList.filter((id) => id !== playerId)
+    } else {
+      const limit = source === 'bench' ? limits.bench : limits.starter
+      if (currentList.length >= limit) return
+      nextList = [...currentList, playerId]
+    }
+    const nextEntry = { ...currentEntry, [key]: nextList }
     const pending = {
       ...(dynasty.pendingKeepers ?? {}),
-      [userTeamId]: next,
+      [userTeamId]: nextEntry,
     }
     const nextDynasty: Dynasty = {
       ...dynasty,
@@ -645,16 +660,29 @@ export const useStore = create<Store>()((set, get) => ({
     const newGameId = `${dynasty.id}-y${nextYear}`
     const newGame = createEmptyGame(newGameId, dynasty.name, seed)
 
-    // Rebuild every team's roster from its 4 keepers (user's explicit,
-    // CPUs auto-selected top-4-by-value).
+    // Split each team's roster into its starter and bench sub-rosters, then
+    // apply keepers. User keepers come from pendingKeepers; CPUs auto-pick
+    // top-4 starters + top-2 bench by value.
+    const KEEPER_STARTER_LIMIT = 4
+    const KEEPER_BENCH_LIMIT = 2
     const newTeams: TeamSeat[] = game.teams.map((t) => {
+      const starterIds: (string | null)[] = t.roster.slice(0, 18)
+      const benchIds: (string | null)[] = t.roster.slice(18)
       const isUser = t.id === dynasty.userTeamId
-      const keepers = isUser
-        ? (dynasty.pendingKeepers?.[t.id] ?? pickTopKeepers(t.roster, playersById, 4))
-        : pickTopKeepers(t.roster, playersById, 4)
+      const explicit = isUser ? dynasty.pendingKeepers?.[t.id] : undefined
+      const starterKeepers = explicit
+        ? explicit.starters
+        : pickTopKeepers(starterIds, playersById, KEEPER_STARTER_LIMIT)
+      const benchKeepers = explicit
+        ? explicit.bench
+        : pickTopKeepers(benchIds, playersById, KEEPER_BENCH_LIMIT)
       return {
         ...t,
-        roster: rosterWithKeepers(keepers, playersById),
+        roster: rosterWithKeepers(
+          starterKeepers,
+          benchKeepers,
+          playersById,
+        ),
         grade: undefined,
         record: undefined,
       }
@@ -668,9 +696,11 @@ export const useStore = create<Store>()((set, get) => ({
       orderRng,
     )
     newGame.draft.order = shuffledIds
-    // Each team already has 4 keepers, so we only draft (ROSTER_SIZE - 4)
-    // rounds this year.
-    newGame.draft.picks = generatePicks(shuffledIds, ROSTER_SIZE - 4)
+    // Each team keeps 6 (4 starters + 2 bench), so we draft ROSTER_SIZE - 6.
+    newGame.draft.picks = generatePicks(
+      shuffledIds,
+      ROSTER_SIZE - KEEPER_STARTER_LIMIT - KEEPER_BENCH_LIMIT,
+    )
     newGame.draft.orderRevealedCount = 0
     newGame.draft.status = 'pending'
     newGame.screen = 'draft_order'
@@ -892,7 +922,7 @@ export const useStore = create<Store>()((set, get) => ({
     persistGame(updated, get, set)
   },
 
-  makePick: (playerId) => {
+  makePick: (playerId, target) => {
     const { game, playersById, dynasty } = get()
     if (!game) return
     const player = playersById.get(playerId)
@@ -905,10 +935,30 @@ export const useStore = create<Store>()((set, get) => ({
     if (!canTeamPick(team, player.position)) return
     if (usedPlayerIds(game).has(playerId)) return
 
+    // Auto-resolve target when the caller didn't specify: prefer starter if
+    // a starter slot is open for this position, otherwise fall to bench.
+    let resolvedTarget: 'starter' | 'bench'
+    if (target === 'bench') {
+      if (!canTeamBench(team)) return
+      resolvedTarget = 'bench'
+    } else if (target === 'starter') {
+      if (!canTeamStart(team, player.position)) return
+      resolvedTarget = 'starter'
+    } else if (canTeamStart(team, player.position)) {
+      resolvedTarget = 'starter'
+    } else if (canTeamBench(team)) {
+      resolvedTarget = 'bench'
+    } else {
+      return
+    }
+
     const snapshot: Game = JSON.parse(JSON.stringify(game))
 
     const newTeams = game.teams.slice()
-    newTeams[teamIdx] = fillSlot(team, playerId, player.position)
+    newTeams[teamIdx] =
+      resolvedTarget === 'bench'
+        ? fillBench(team, playerId)
+        : fillSlot(team, playerId, player.position)
     const newPicks = game.draft.picks.slice()
     newPicks[game.draft.currentPickIdx] = { ...currentPick, playerId }
     let updated: Game = {
@@ -1035,11 +1085,15 @@ export const useStore = create<Store>()((set, get) => ({
       if (!team) break
       const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919 + 31)
       const pool = availablePool(g, playersById)
-      const pickedId = pickForCPU(team, pool, rng)
+      const cpuChoice = pickForCPU(team, pool, rng)
+      const pickedId = cpuChoice.playerId
       const player = playersById.get(pickedId)!
       const teamIdx = g.teams.findIndex((t) => t.id === team.id)
       const newTeams = g.teams.slice()
-      newTeams[teamIdx] = fillSlot(team, pickedId, player.position)
+      newTeams[teamIdx] =
+        cpuChoice.target === 'bench'
+          ? fillBench(team, pickedId)
+          : fillSlot(team, pickedId, player.position)
       const newPicks = g.draft.picks.slice()
       newPicks[g.draft.currentPickIdx] = { ...currentPick, playerId: pickedId }
       g = {

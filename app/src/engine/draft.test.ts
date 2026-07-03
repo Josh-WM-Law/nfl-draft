@@ -117,11 +117,26 @@ describe('openSlotsByPosition', () => {
 })
 
 describe('canTeamPick', () => {
-  it('rejects a position with no open slots', () => {
+  it('allows a filled position through open bench slots', () => {
+    // Bench is a fallback destination, so a full QB slot doesn't block
+    // picking another QB (they'd land on the bench).
     let team = makeTeam('t1')
     team = fillSlot(team, 'p-qb1', 'QB')
-    expect(canTeamPick(team, 'QB')).toBe(false)
+    expect(canTeamPick(team, 'QB')).toBe(true)
     expect(canTeamPick(team, 'WR')).toBe(true)
+  })
+
+  it('rejects only when both starter AND bench slots are exhausted', () => {
+    let team = makeTeam('t1')
+    // Fill every starter slot with a QB where possible; also fill bench.
+    ROSTER_SLOTS.forEach((slot, i) => {
+      team = {
+        ...team,
+        roster: team.roster.map((p, j) => (j === i ? `stub-${i}` : p)),
+      }
+      void slot
+    })
+    expect(canTeamPick(team, 'QB')).toBe(false)
   })
 })
 
@@ -151,19 +166,22 @@ describe('pickForCPU', () => {
   it('picks from top-value eligible players', () => {
     const team = makeTeam('t1')
     const rng = makeRng(42)
-    const picked = pickForCPU(team, pool, rng)
+    const choice = pickForCPU(team, pool, rng)
     // Top 5 in pool above by value: qb1, qb2, wr1, wr2, k1
     // All eligible for empty team. CPU picks from top 8 (=5 available).
-    expect(['qb1', 'qb2', 'wr1', 'wr2', 'k1']).toContain(picked)
+    expect(['qb1', 'qb2', 'wr1', 'wr2', 'k1']).toContain(choice.playerId)
+    expect(choice.target).toBe('starter')
   })
 
-  it('skips players whose position has no open slots', () => {
+  it('routes to a starter slot when one is open for the player', () => {
     let team = makeTeam('t1')
     team = fillSlot(team, 'qb1', 'QB')
-    // QB slot full, so qb2 (which is by far the best remaining) should NOT be picked
+    // QB slot full, so qb2 should NOT be picked as a starter (there's still
+    // a WR slot open, so CPU prefers WRs which have an open starter slot).
     const rng = makeRng(42)
-    const picked = pickForCPU(team, pool, rng)
-    expect(picked).not.toBe('qb2')
+    const choice = pickForCPU(team, pool, rng)
+    expect(choice.playerId).not.toBe('qb2')
+    expect(choice.target).toBe('starter')
   })
 
   it('throws if no eligible players exist', () => {
