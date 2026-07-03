@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useStore } from '../state/store'
 import { CustomPlayersSection } from './CustomPlayersSection'
 import { COACH_TRAIT_LABELS } from '../state/types'
@@ -21,14 +22,17 @@ export function SetupScreen() {
   const setScreen = useStore((s) => s.setScreen)
   const dynasty = useStore((s) => s.dynasty)
   const mode = useStore((s) => s.mode)
+  const leaveDynasty = useStore((s) => s.leaveDynasty)
+  const [confirmLeave, setConfirmLeave] = useState(false)
 
   if (!game) return null
   const humanCount = game.teams.filter((t) => !t.isComputer).length
   const coach = mode === 'dynasty' ? dynasty?.coach : null
+  const isDynasty = mode === 'dynasty' && !!dynasty
 
   return (
     <div className="min-h-screen bg-slate-950 p-4 text-white">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-start justify-between mb-4 gap-3">
         <div>
           {mode === 'dynasty' && dynasty && (
             <div className="text-xs tracking-widest text-amber-400 uppercase">
@@ -39,13 +43,58 @@ export function SetupScreen() {
             {mode === 'dynasty' ? 'SET UP YEAR' : 'SET UP YOUR LEAGUE'}
           </h1>
         </div>
-        <button
-          onClick={() => setScreen('landing')}
-          className="text-xs text-slate-400 underline"
-        >
-          Cancel
-        </button>
+        <div className="flex flex-col items-end gap-1 shrink-0">
+          <button
+            onClick={() => setScreen('landing')}
+            className="text-xs text-slate-400 underline"
+          >
+            Cancel
+          </button>
+          {isDynasty && (
+            <button
+              onClick={() => setConfirmLeave(true)}
+              className="text-xs font-bold px-2 py-1 rounded bg-red-950 text-red-300 border border-red-800 hover:bg-red-900"
+            >
+              Leave Dynasty
+            </button>
+          )}
+        </div>
       </div>
+
+      {confirmLeave && dynasty && (
+        <div
+          style={{ zIndex: 10000 }}
+          className="fixed inset-0 flex items-center justify-center bg-black/70 p-4"
+        >
+          <div className="bg-slate-900 rounded-2xl w-full max-w-md p-5 text-left">
+            <h2 className="text-base font-black mb-2">
+              LEAVE {dynasty.name.toUpperCase()}?
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+              This will permanently delete this dynasty — {dynasty.currentYear}{' '}
+              year{dynasty.currentYear === 1 ? '' : 's'} of history, career
+              stats, and every snapshot. Cannot be undone.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setConfirmLeave(false)}
+                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold text-white"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setConfirmLeave(false)
+                  leaveDynasty()
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold"
+              >
+                Leave & Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {coach && (
         <section className="mb-6 rounded-xl bg-slate-900 p-3">
