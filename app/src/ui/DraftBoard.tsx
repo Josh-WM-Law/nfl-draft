@@ -78,12 +78,17 @@ export function DraftBoard() {
     return set
   }, [game])
 
+  const excludedIds = useMemo(
+    () => new Set(game?.excludedUserPlayerIds ?? []),
+    [game],
+  )
+
   const available = useMemo(() => {
     return players
-      .filter((p) => !usedIds.has(p.id))
+      .filter((p) => !usedIds.has(p.id) && !excludedIds.has(p.id))
       .filter((p) => filter === 'ALL' || p.position === filter)
       .sort((a, b) => b.value - a.value)
-  }, [players, usedIds, filter])
+  }, [players, usedIds, excludedIds, filter])
 
   if (!game) return null
 

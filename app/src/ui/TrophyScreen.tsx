@@ -56,8 +56,13 @@ export function TrophyScreen() {
   const game = useStore((s) => s.game)
   const startNewLeague = useStore((s) => s.startNewLeague)
   const setScreen = useStore((s) => s.setScreen)
+  const mode = useStore((s) => s.mode)
+  const dynasty = useStore((s) => s.dynasty)
+  const startOffseason = useStore((s) => s.startOffseason)
+  const openDynastyHub = useStore((s) => s.openDynastyHub)
 
   if (!game) return null
+  const isDynasty = mode === 'dynasty' && !!dynasty
 
   const championId = game.season.champion
   const champion = championId
@@ -136,12 +141,29 @@ export function TrophyScreen() {
         >
           Back to Bracket
         </button>
-        <button
-          onClick={() => startNewLeague(1)}
-          className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
-        >
-          New League
-        </button>
+        {isDynasty && (
+          <button
+            onClick={openDynastyHub}
+            className="w-full py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl"
+          >
+            Dynasty Hub
+          </button>
+        )}
+        {isDynasty ? (
+          <button
+            onClick={startOffseason}
+            className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-xl text-lg"
+          >
+            Start Year {(dynasty?.currentYear ?? 1) + 1} Offseason →
+          </button>
+        ) : (
+          <button
+            onClick={() => startNewLeague(1)}
+            className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"
+          >
+            New League
+          </button>
+        )}
       </div>
     </div>
   )

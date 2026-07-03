@@ -21,6 +21,9 @@ export type PlayerCore = {
   photoUrl: string
   status: 'active' | 'retired' | 'cut'
   yearsExp: number
+  // Populated when a dynasty is initialized; used for retirement +
+  // development curves. Missing = treated as ~24 by the offseason engine.
+  age?: number
 }
 
 export type PlayerRating = {
@@ -157,6 +160,7 @@ export type Season = {
 
 export type LeagueScreen =
   | 'landing'
+  | 'coach_creation'
   | 'setup'
   | 'draft_order'
   | 'draft'
@@ -164,6 +168,9 @@ export type LeagueScreen =
   | 'season'
   | 'bracket'
   | 'trophy'
+  | 'offseason_summary'
+  | 'keeper_selection'
+  | 'dynasty_hub'
 
 export type Game = {
   schemaVersion: number
@@ -175,6 +182,150 @@ export type Game = {
   teams: TeamSeat[]
   draft: Draft
   season: Season
+  // User-created players (from customPlayers via localStorage) whose IDs are
+  // in this list are kept out of THIS league's draft pool. Missing = none
+  // excluded. Only meaningful while draft.status === 'pending'.
+  excludedUserPlayerIds?: string[]
+  // Screen to return to when the user closes the Dynasty Hub. Written by
+  // openDynastyHub, cleared by closeDynastyHub.
+  screenBeforeHub?: LeagueScreen
+}
+
+export const CURRENT_DYNASTY_SCHEMA_VERSION = 2
+
+export type CoachTrait =
+  | 'offensive_guru'
+  | 'defensive_mastermind'
+  | 'talent_evaluator'
+  | 'player_developer'
+  | 'motivator'
+  | 'special_teams_ace'
+
+export const COACH_TRAIT_LABELS: Record<CoachTrait, string> = {
+  offensive_guru: 'Offensive Guru',
+  defensive_mastermind: 'Defensive Mastermind',
+  talent_evaluator: 'Talent Evaluator',
+  player_developer: 'Player Developer',
+  motivator: 'Motivator',
+  special_teams_ace: 'Special Teams Ace',
+}
+
+export const COACH_TRAIT_DESCRIPTIONS: Record<CoachTrait, string> = {
+  offensive_guru: 'Small offensive boost in sim.',
+  defensive_mastermind: 'Small defensive boost in sim.',
+  talent_evaluator: 'Better draft-pick suggestions.',
+  player_developer: 'Larger young-player gains each offseason.',
+  motivator: 'Edge in close, late-game situations.',
+  special_teams_ace: 'Kicker + return game boost.',
+}
+
+export type Coach = {
+  name: string
+  traits: CoachTrait[]
+  createdAt: string
+}
+
+export type SeasonResult = {
+  year: number
+  championTeamId: string | null
+  runnerUpTeamId: string | null
+  userGrade?: { letter: string; score: number }
+  awards: SeasonAward[]
+  finalStandings: {
+    teamId: string
+    teamName: string
+    wins: number
+    losses: number
+    pointDiff: number
+  }[]
+  draftGrade?: { letter: string; score: number }
+}
+
+export type DynastySnapshot = {
+  id: string
+  name: string
+  createdAt: string
+  atYear: number
+  // Frozen JSON of the dynasty at snapshot time (excluding its own snapshots
+  // list to keep it flat).
+  snapshotJson: string
+}
+
+export type OffseasonEvent = {
+  type: 'retired' | 'improved' | 'regressed'
+  playerId: string
+  playerName: string
+  position: Position
+  fromValue?: number
+  toValue?: number
+  age?: number
+  reason?: string
+}
+
+export type OffseasonReport = {
+  atYear: number
+  retirements: OffseasonEvent[]
+  developments: OffseasonEvent[]
+  rookies: Player[]
+}
+
+export type PlayerCareer = {
+  playerId: string
+  playerName: string
+  position: Position
+  peakValue: number
+  status: 'active' | 'retired'
+  championshipYears: number[]
+  awardYears: { year: number; awardId: SeasonAward['id'] }[]
+  yearsOnUserTeam: number[]
+}
+
+export type Dynasty = {
+  schemaVersion: number
+  id: string
+  name: string
+  createdAt: string
+  updatedAt: string
+  userTeamId: string
+  coach: Coach | null
+  currentYear: number
+  currentGame: Game
+  history: SeasonResult[]
+  snapshots: DynastySnapshot[]
+  // The living player pool for this dynasty (base + custom + rookies,
+  // minus retirees, with ratings/ages that evolve each offseason).
+  livePool: Player[]
+  // Populated during the keeper_selection screen. Missing entries fall back
+  // to top-4-by-value at confirm time.
+  pendingKeepers?: Record<string, string[]>
+  // Latest offseason report — drives the offseason summary screen.
+  lastOffseason?: OffseasonReport
+  // Career-long stats accumulated across every offseason. Keyed by playerId.
+  playerCareerStats?: Record<string, PlayerCareer>
+}
+
+export const createEmptyDynasty = (
+  id: string,
+  name: string,
+  userTeamId: string,
+  firstGame: Game,
+  livePool: Player[],
+): Dynasty => {
+  const now = new Date().toISOString()
+  return {
+    schemaVersion: CURRENT_DYNASTY_SCHEMA_VERSION,
+    id,
+    name,
+    createdAt: now,
+    updatedAt: now,
+    userTeamId,
+    coach: null,
+    currentYear: 1,
+    currentGame: firstGame,
+    history: [],
+    snapshots: [],
+    livePool,
+  }
 }
 
 export const createEmptyGame = (id: string, name: string, seed: number): Game => ({
@@ -201,4 +352,5 @@ export const createEmptyGame = (id: string, name: string, seed: number): Game =>
     champion: null,
     status: 'not_started',
   },
+  excludedUserPlayerIds: [],
 })

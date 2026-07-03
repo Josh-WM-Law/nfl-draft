@@ -6,6 +6,7 @@ import type {
   SeasonAward,
   Position,
   QuarterScore,
+  Coach,
 } from '../state/types'
 import { ROSTER_SLOTS } from '../state/types'
 import {
@@ -18,6 +19,7 @@ import { makeRng } from './rng'
 import type { Matchup } from './schedule'
 import { computeAwards } from './awards'
 import { generateGameFeatures } from './playerFeatures'
+import { coachEffect } from './coachEffects'
 
 const BASELINE_SCORE = 17
 const STRENGTH_SCALE = 20
@@ -124,17 +126,22 @@ export const simGame = (
   seed: number,
   weekNumber = 1,
   neutralSite = false,
+  coachA?: Coach | null,
+  coachB?: Coach | null,
 ): GameResult => {
   const rng = makeRng(seed)
+
+  const effA = coachEffect(coachA)
+  const effB = coachEffect(coachB)
 
   // Per-game flux: each player has a small chance of a great/off game
   const aFlux = rollPlayerFlux(teamA, playersById, rng)
   const bFlux = rollPlayerFlux(teamB, playersById, rng)
 
-  const aOff = teamStrength(teamA, playersById, 'offense', aFlux.fluxMap)
-  const aDef = teamStrength(teamA, playersById, 'defense', aFlux.fluxMap)
-  const bOff = teamStrength(teamB, playersById, 'offense', bFlux.fluxMap)
-  const bDef = teamStrength(teamB, playersById, 'defense', bFlux.fluxMap)
+  const aOff = teamStrength(teamA, playersById, 'offense', aFlux.fluxMap, effA.offMul)
+  const aDef = teamStrength(teamA, playersById, 'defense', aFlux.fluxMap, effA.defMul)
+  const bOff = teamStrength(teamB, playersById, 'offense', bFlux.fluxMap, effB.offMul)
+  const bDef = teamStrength(teamB, playersById, 'defense', bFlux.fluxMap, effB.defMul)
 
   const aPass = passMatchupEdge(teamA, teamB, playersById)
   const aRun = runMatchupEdge(teamA, teamB, playersById)
@@ -145,12 +152,14 @@ export const simGame = (
   scoreA += (aOff - bDef) / STRENGTH_SCALE
   scoreA += (aPass + aRun) / MATCHUP_SCALE
   scoreA += (rng() - 0.5) * 2 * NOISE_AMPLITUDE
+  scoreA += effA.scoreBonus
   if (!neutralSite) scoreA += HOME_FIELD_BONUS
 
   let scoreB = BASELINE_SCORE
   scoreB += (bOff - aDef) / STRENGTH_SCALE
   scoreB += (bPass + bRun) / MATCHUP_SCALE
   scoreB += (rng() - 0.5) * 2 * NOISE_AMPLITUDE
+  scoreB += effB.scoreBonus
 
   scoreA = Math.max(0, Math.round(scoreA))
   scoreB = Math.max(0, Math.round(scoreB))
@@ -202,10 +211,13 @@ export const simSeason = (
   playersById: Map<string, Player>,
   seed: number,
   schedule: Matchup[][],
+  coachByTeamId?: Map<string, Coach | null>,
 ): SeasonResult => {
   const results: GameResult[] = []
   const weeks: SeasonResult['weeks'] = []
   const teamById = new Map(teams.map((t) => [t.id, t]))
+  const coachFor = (id: string): Coach | null =>
+    coachByTeamId?.get(id) ?? null
 
   schedule.forEach((round, weekIdx) => {
     const weekNumber = weekIdx + 1
@@ -221,7 +233,18 @@ export const simSeason = (
       const away = teamById.get(m.away)
       if (!home || !away) return
       const gameSeed = seed + weekNumber * 10000 + gameIdx
-      results.push(simGame(home, away, playersById, gameSeed, weekNumber))
+      results.push(
+        simGame(
+          home,
+          away,
+          playersById,
+          gameSeed,
+          weekNumber,
+          false,
+          coachFor(home.id),
+          coachFor(away.id),
+        ),
+      )
     })
   })
 
@@ -262,8 +285,26 @@ export const simSeason = (
   const finalSeed = seed + 999_999
 
   // Semis: higher seed hosts (home-field applies)
-  const semi1 = simGame(seeds[0], seeds[3], playersById, semi1Seed, 8)
-  const semi2 = simGame(seeds[1], seeds[2], playersById, semi2Seed, 8)
+  const semi1 = simGame(
+    seeds[0],
+    seeds[3],
+    playersById,
+    semi1Seed,
+    8,
+    false,
+    coachFor(seeds[0].id),
+    coachFor(seeds[3].id),
+  )
+  const semi2 = simGame(
+    seeds[1],
+    seeds[2],
+    playersById,
+    semi2Seed,
+    8,
+    false,
+    coachFor(seeds[1].id),
+    coachFor(seeds[2].id),
+  )
   const semi1WinnerId =
     semi1.homeScore >= semi1.awayScore ? semi1.homeTeamId : semi1.awayTeamId
   const semi2WinnerId =
@@ -277,6 +318,8 @@ export const simSeason = (
     finalSeed,
     9,
     true,
+    coachFor(semi1WinnerId),
+    coachFor(semi2WinnerId),
   )
   const champion =
     finalGame.homeScore >= finalGame.awayScore

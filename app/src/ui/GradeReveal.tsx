@@ -4,8 +4,10 @@ export function GradeReveal() {
   const game = useStore((s) => s.game)
   const startNewLeague = useStore((s) => s.startNewLeague)
   const playSeason = useStore((s) => s.playSeason)
+  const mode = useStore((s) => s.mode)
 
   if (!game) return null
+  const isDynasty = mode === 'dynasty'
 
   const sorted = game.teams
     .slice()
@@ -46,12 +48,14 @@ export function GradeReveal() {
       </div>
 
       <div className="flex gap-3 mt-8">
-        <button
-          onClick={() => startNewLeague(1)}
-          className="flex-1 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl"
-        >
-          New League
-        </button>
+        {!isDynasty && (
+          <button
+            onClick={() => startNewLeague(1)}
+            className="flex-1 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl"
+          >
+            New League
+          </button>
+        )}
         <button
           onClick={() => playSeason('weekly')}
           className="flex-1 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl"

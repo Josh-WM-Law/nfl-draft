@@ -25,6 +25,7 @@ export const teamStrength = (
   playersById: Map<string, Player>,
   side: 'offense' | 'defense',
   flux?: Map<string, number>,
+  sideMultiplier = 1,
 ): number => {
   let sum = 0
   team.roster.forEach((pid, i) => {
@@ -37,7 +38,7 @@ export const teamStrength = (
     const fluxDelta = flux?.get(pid) ?? 0
     sum += (p.value + fluxDelta) * (POSITION_WEIGHTS[slot] ?? 1.0)
   })
-  return sum
+  return sum * sideMultiplier
 }
 
 const sumSubscores = (

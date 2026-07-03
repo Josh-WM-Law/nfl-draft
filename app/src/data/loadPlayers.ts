@@ -1,6 +1,7 @@
 import playersData from './players.json'
 import ratingsData from './ratings.json'
 import { CUSTOM_PLAYERS } from './customPlayers'
+import { loadUserPlayers } from './userPlayers'
 import type { Player, PlayerCore, PlayerRating } from '../state/types'
 
 export const loadAllPlayers = (): Player[] => {
@@ -16,6 +17,9 @@ export const loadAllPlayers = (): Player[] => {
   }
   for (const custom of CUSTOM_PLAYERS) {
     result.push({ ...custom.core, ...custom.rating })
+  }
+  for (const user of loadUserPlayers()) {
+    result.push({ ...user.core, ...user.rating })
   }
   return result
 }

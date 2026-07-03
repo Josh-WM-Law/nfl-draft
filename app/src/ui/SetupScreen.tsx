@@ -1,4 +1,6 @@
 import { useStore } from '../state/store'
+import { CustomPlayersSection } from './CustomPlayersSection'
+import { COACH_TRAIT_LABELS } from '../state/types'
 
 const PALETTE = [
   '#0a84ff',
@@ -17,14 +19,26 @@ export function SetupScreen() {
   const setHumanCount = useStore((s) => s.setHumanCount)
   const revealDraftOrder = useStore((s) => s.revealDraftOrder)
   const setScreen = useStore((s) => s.setScreen)
+  const dynasty = useStore((s) => s.dynasty)
+  const mode = useStore((s) => s.mode)
 
   if (!game) return null
   const humanCount = game.teams.filter((t) => !t.isComputer).length
+  const coach = mode === 'dynasty' ? dynasty?.coach : null
 
   return (
     <div className="min-h-screen bg-slate-950 p-4 text-white">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-black">SET UP YOUR LEAGUE</h1>
+        <div>
+          {mode === 'dynasty' && dynasty && (
+            <div className="text-xs tracking-widest text-amber-400 uppercase">
+              {dynasty.name} · Year {dynasty.currentYear}
+            </div>
+          )}
+          <h1 className="text-2xl font-black mt-1">
+            {mode === 'dynasty' ? 'SET UP YEAR' : 'SET UP YOUR LEAGUE'}
+          </h1>
+        </div>
         <button
           onClick={() => setScreen('landing')}
           className="text-xs text-slate-400 underline"
@@ -32,6 +46,18 @@ export function SetupScreen() {
           Cancel
         </button>
       </div>
+
+      {coach && (
+        <section className="mb-6 rounded-xl bg-slate-900 p-3">
+          <div className="text-xs uppercase tracking-widest text-slate-400 mb-1">
+            Head Coach
+          </div>
+          <div className="font-bold">{coach.name}</div>
+          <div className="text-xs text-slate-400">
+            {coach.traits.map((t) => COACH_TRAIT_LABELS[t]).join(' · ')}
+          </div>
+        </section>
+      )}
 
       <section className="mb-6">
         <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
@@ -104,6 +130,8 @@ export function SetupScreen() {
           ))}
         </div>
       </section>
+
+      <CustomPlayersSection variant="panel" />
 
       <button
         onClick={revealDraftOrder}
