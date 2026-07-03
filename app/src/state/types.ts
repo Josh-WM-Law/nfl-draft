@@ -199,6 +199,9 @@ export type Game = {
   // Screen to return to when the user closes the Dynasty Hub. Written by
   // openDynastyHub, cleared by closeDynastyHub.
   screenBeforeHub?: LeagueScreen
+  // Present only in salary-cap dynasties. Each team gets this budget (in $M)
+  // to spend on their roster this draft year. Not set = uncapped mode.
+  capBudget?: number
 }
 
 export const CURRENT_DYNASTY_SCHEMA_VERSION = 3
@@ -299,6 +302,9 @@ export type Dynasty = {
   userTeamId: string
   coach: Coach | null
   currentYear: number
+  // When true, every draft this dynasty enforces a per-team salary cap
+  // (Game.capBudget) so users can't stockpile 90+ OVR at every position.
+  capMode?: boolean
   currentGame: Game
   history: SeasonResult[]
   snapshots: DynastySnapshot[]

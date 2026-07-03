@@ -19,12 +19,13 @@ function DynastyNameModal({
   onSubmit,
 }: {
   onClose: () => void
-  onSubmit: (name: string) => void
+  onSubmit: (name: string, capMode: boolean) => void
 }) {
   const [name, setName] = useState('')
+  const [capMode, setCapMode] = useState(false)
   const submit = () => {
     const trimmed = name.trim() || 'My Dynasty'
-    onSubmit(trimmed)
+    onSubmit(trimmed, capMode)
   }
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
@@ -57,6 +58,23 @@ function DynastyNameModal({
             You'll build a team, draft each year, keep 4 players between seasons,
             and chase a career ring count.
           </p>
+
+          <label className="mt-5 flex items-start gap-3 cursor-pointer p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800">
+            <input
+              type="checkbox"
+              checked={capMode}
+              onChange={(e) => setCapMode(e.target.checked)}
+              className="mt-0.5 w-5 h-5 accent-emerald-500"
+            />
+            <div className="flex-1">
+              <div className="font-bold text-emerald-300">Salary Cap mode</div>
+              <div className="text-xs text-slate-400 mt-1">
+                Each team drafts within a fixed budget ($220M). Higher-rated
+                players cost more, forcing a stars-and-scrubs roster instead
+                of stacking 90+ OVR at every position.
+              </div>
+            </div>
+          </label>
         </div>
         <div className="p-5 border-t border-slate-800">
           <button
@@ -76,8 +94,10 @@ function Landing() {
   const startDynasty = useStore((s) => s.startDynasty)
   const resumeDynasty = useStore((s) => s.resumeDynasty)
   const openDynastyHub = useStore((s) => s.openDynastyHub)
+  const leaveDynasty = useStore((s) => s.leaveDynasty)
   const dynasty = useStore((s) => s.dynasty)
   const [showDynastyModal, setShowDynastyModal] = useState(false)
+  const [confirmLeave, setConfirmLeave] = useState(false)
 
   const hasDynasty = !!dynasty
   // Show the Hub button when the dynasty has any history (otherwise the hub
@@ -117,6 +137,12 @@ function Landing() {
               Dynasty Hub
             </button>
           )}
+          <button
+            onClick={() => setConfirmLeave(true)}
+            className="w-full text-xs text-red-400 hover:text-red-300 underline mt-1"
+          >
+            Leave dynasty
+          </button>
         </div>
       )}
 
@@ -140,11 +166,43 @@ function Landing() {
       {showDynastyModal && (
         <DynastyNameModal
           onClose={() => setShowDynastyModal(false)}
-          onSubmit={(name) => {
+          onSubmit={(name, capMode) => {
             setShowDynastyModal(false)
-            startDynasty(name, 1)
+            startDynasty(name, 1, capMode)
           }}
         />
+      )}
+
+      {confirmLeave && dynasty && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="bg-slate-900 rounded-2xl w-full max-w-md p-5 text-left">
+            <h2 className="text-base font-black mb-2">
+              LEAVE {dynasty.name.toUpperCase()}?
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+              This will permanently delete this dynasty — {dynasty.currentYear}{' '}
+              year{dynasty.currentYear === 1 ? '' : 's'} of history and every
+              snapshot. Cannot be undone.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setConfirmLeave(false)}
+                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold text-white"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setConfirmLeave(false)
+                  leaveDynasty()
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold"
+              >
+                Leave & Delete
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

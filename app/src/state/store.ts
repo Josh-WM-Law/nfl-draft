@@ -21,6 +21,7 @@ import {
   deleteGame,
   saveDynasty,
   loadDynasty,
+  deleteDynasty as persistDeleteDynasty,
   getActiveDynastyId,
   setActiveDynastyId,
   clearActiveDynastyId,
@@ -57,6 +58,7 @@ import {
   rosterWithKeepers,
 } from '../engine/offseason'
 import { NFL_TEAMS, NFL_TEAM_BY_ID } from '../data/nflTeams'
+import { CAP_BUDGET_M, canAffordPlayer } from '../engine/salaryCap'
 
 const DEFAULT_GAME_ID = 'default'
 const TEAM_COLORS = [
@@ -77,7 +79,11 @@ type Store = {
   lastPickSnapshot: Game | null
   initialize: () => void
   startNewLeague: (humanCount?: number) => void
-  startDynasty: (dynastyName: string, humanCount?: number) => void
+  startDynasty: (
+    dynastyName: string,
+    humanCount?: number,
+    capMode?: boolean,
+  ) => void
   resumeDynasty: (id: string) => void
   pickNflTeam: (nflTeamId: string) => void
   setCoach: (name: string, traits: CoachTrait[]) => void
@@ -107,6 +113,7 @@ type Store = {
   createSnapshot: (name?: string) => void
   loadSnapshot: (id: string) => void
   deleteSnapshot: (id: string) => void
+  leaveDynasty: () => void
 }
 
 const usedPlayerIds = (game: Game): Set<string> => {
@@ -151,7 +158,10 @@ const advanceAfterPick = (
     if (!team.isComputer) break
     const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919)
     const pool = availablePool(g, playersById)
-    const cpuChoice = pickForCPU(team, pool, rng)
+    const budgetCtx = g.capBudget
+      ? { budget: g.capBudget, playersById }
+      : undefined
+    const cpuChoice = pickForCPU(team, pool, rng, budgetCtx)
     const pickedId = cpuChoice.playerId
     const player = playersById.get(pickedId)!
     const teamIdx = g.teams.findIndex((t) => t.id === team.id)
@@ -341,10 +351,11 @@ export const useStore = create<Store>()((set, get) => ({
     saveGame(game)
   },
 
-  startDynasty: (dynastyName, humanCount = 1) => {
+  startDynasty: (dynastyName, humanCount = 1, capMode = false) => {
     const seed = Math.floor(Math.random() * 1_000_000)
     const gameId = `dyn-${Date.now().toString(36)}-y1`
     const game = createEmptyGame(gameId, dynastyName, seed)
+    if (capMode) game.capBudget = CAP_BUDGET_M
     const teams: TeamSeat[] = Array.from({ length: 8 }, (_, i) => ({
       id: `team-${i + 1}`,
       name:
@@ -367,13 +378,16 @@ export const useStore = create<Store>()((set, get) => ({
     const basePool = get().players.length > 0 ? get().players : loadAllPlayers()
     const livePool = withInitialAges(basePool)
     const dynastyId = `dyn-${Date.now().toString(36)}`
-    const dynasty = createEmptyDynasty(
-      dynastyId,
-      dynastyName || 'My Dynasty',
-      'team-1',
-      game,
-      livePool,
-    )
+    const dynasty: Dynasty = {
+      ...createEmptyDynasty(
+        dynastyId,
+        dynastyName || 'My Dynasty',
+        'team-1',
+        game,
+        livePool,
+      ),
+      capMode,
+    }
     saveDynasty(dynasty)
     setActiveDynastyId(dynastyId)
     set({
@@ -659,6 +673,7 @@ export const useStore = create<Store>()((set, get) => ({
     const seed = Math.floor(Math.random() * 1_000_000)
     const newGameId = `${dynasty.id}-y${nextYear}`
     const newGame = createEmptyGame(newGameId, dynasty.name, seed)
+    if (dynasty.capMode) newGame.capBudget = CAP_BUDGET_M
 
     // Split each team's roster into its starter and bench sub-rosters, then
     // apply keepers. User keepers come from pendingKeepers; CPUs auto-pick
@@ -813,6 +828,25 @@ export const useStore = create<Store>()((set, get) => ({
     set({ dynasty: nextDynasty })
   },
 
+  leaveDynasty: () => {
+    const { dynasty } = get()
+    if (!dynasty) return
+    // Wipe the saved dynasty + snapshots from localStorage and reset the
+    // store back to the fresh-app state so the landing shows the mode
+    // picker without any resume affordance.
+    persistDeleteDynasty(dynasty.id)
+    const basePool = loadAllPlayers()
+    set({
+      dynasty: null,
+      game: null,
+      mode: null,
+      lastPickSnapshot: null,
+      dynastyIds: listDynastyIds(),
+      players: basePool,
+      playersById: new Map(basePool.map((p) => [p.id, p])),
+    })
+  },
+
   exitToLanding: () => {
     // Bounce the user back to the landing page without wiping saves. When
     // there's a Quick League game in memory, put its screen back to landing;
@@ -934,6 +968,15 @@ export const useStore = create<Store>()((set, get) => ({
     if (!team || team.isComputer) return
     if (!canTeamPick(team, player.position)) return
     if (usedPlayerIds(game).has(playerId)) return
+    // Salary-cap dynasties enforce affordability at pick time. If the human
+    // taps a player they can't afford (typically not shown as clickable,
+    // but a race is possible), silently no-op.
+    if (
+      game.capBudget != null &&
+      !canAffordPlayer(team, player, playersById, game.capBudget)
+    ) {
+      return
+    }
 
     // Auto-resolve target when the caller didn't specify: prefer starter if
     // a starter slot is open for this position, otherwise fall to bench.
@@ -1085,7 +1128,10 @@ export const useStore = create<Store>()((set, get) => ({
       if (!team) break
       const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919 + 31)
       const pool = availablePool(g, playersById)
-      const cpuChoice = pickForCPU(team, pool, rng)
+      const budgetCtx = g.capBudget
+        ? { budget: g.capBudget, playersById }
+        : undefined
+      const cpuChoice = pickForCPU(team, pool, rng, budgetCtx)
       const pickedId = cpuChoice.playerId
       const player = playersById.get(pickedId)!
       const teamIdx = g.teams.findIndex((t) => t.id === team.id)

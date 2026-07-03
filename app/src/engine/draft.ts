@@ -5,6 +5,7 @@ import {
   type DraftPick,
   ROSTER_SLOTS,
 } from '../state/types'
+import { canAffordPlayer, priceOf } from './salaryCap'
 
 export const shuffleArray = <T>(arr: T[], rng: () => number): T[] => {
   const result = arr.slice()
@@ -116,18 +117,41 @@ export type CpuPickChoice = {
   target: 'starter' | 'bench'
 }
 
+export type CpuBudgetContext = {
+  budget: number
+  playersById: Map<string, Player>
+}
+
 export const pickForCPU = (
   team: TeamSeat,
   pool: Player[],
   rng: () => number,
+  budgetCtx?: CpuBudgetContext,
 ): CpuPickChoice => {
+  // If a salary cap is in effect, filter the pool to players this team can
+  // still afford while leaving veteran-minimum headroom for the rest of
+  // their remaining slots. Otherwise pass through.
+  let workingPool = pool
+  if (budgetCtx) {
+    workingPool = pool.filter((p) =>
+      canAffordPlayer(team, p, budgetCtx.playersById, budgetCtx.budget),
+    )
+    if (workingPool.length === 0) {
+      // Fallback: single cheapest available player. Avoids a hard throw if
+      // a team somehow paints itself into a corner.
+      workingPool = pool
+        .slice()
+        .sort((a, b) => priceOf(a.value) - priceOf(b.value))
+        .slice(0, 1)
+    }
+  }
   const open = openSlotsByPosition(team)
   const benchOpen = openBenchSlots(team)
   const anyStarterOpen = Object.values(open).some((n) => (n ?? 0) > 0)
 
   // Prefer to fill starter slots first — bench is for later-round stash picks.
   if (anyStarterOpen) {
-    const eligible = pool.filter((p) => (open[p.position] ?? 0) > 0)
+    const eligible = workingPool.filter((p) => (open[p.position] ?? 0) > 0)
     if (eligible.length > 0) {
       const scored = eligible.map((p) => ({
         p,
@@ -139,10 +163,10 @@ export const pickForCPU = (
       return { playerId: scored[idx].p.id, target: 'starter' }
     }
   }
-  if (benchOpen > 0 && pool.length > 0) {
+  if (benchOpen > 0 && workingPool.length > 0) {
     // For bench picks, take best-available; light preference for younger
     // players (rookies) so bench actually stashes prospects.
-    const scored = pool.map((p) => {
+    const scored = workingPool.map((p) => {
       const age = p.age ?? p.yearsExp + 22
       const youthBonus = age <= 23 ? 3 : age <= 25 ? 1 : 0
       return { p, score: p.value + youthBonus }

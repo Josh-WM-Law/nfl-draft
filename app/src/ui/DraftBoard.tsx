@@ -4,6 +4,12 @@ import { PlayerCard } from './PlayerCard'
 import { RosterPanel } from './RosterPanel'
 import { ALL_POSITIONS, ROSTER_SIZE, type Position } from '../state/types'
 import { canTeamPick, canTeamStart, canTeamBench } from '../engine/draft'
+import {
+  priceOf,
+  teamRemainingBudget,
+  canAffordPlayer,
+  formatMoney,
+} from '../engine/salaryCap'
 
 const UNDO_WINDOW_MS = 5000
 
@@ -49,6 +55,7 @@ type Filter = Position | 'ALL' | 'ROOKIES'
 export function DraftBoard() {
   const game = useStore((s) => s.game)
   const players = useStore((s) => s.players)
+  const playersById = useStore((s) => s.playersById)
   const makePick = useStore((s) => s.makePick)
   const simRestOfDraft = useStore((s) => s.simRestOfDraft)
   const [filter, setFilter] = useState<Filter>('ALL')
@@ -109,6 +116,10 @@ export function DraftBoard() {
             (p) => p.teamId === t.id && p.playerId,
           ).length
           const pickNumber = idx + 1
+          const remaining =
+            game.capBudget != null
+              ? teamRemainingBudget(t, playersById, game.capBudget)
+              : null
           return (
             <button
               key={t.id}
@@ -125,6 +136,11 @@ export function DraftBoard() {
                 {t.name}
               </div>
               <div className="text-xs text-white/80">{owned}/{ROSTER_SIZE}</div>
+              {remaining != null && (
+                <div className="text-[10px] text-white/90 font-bold">
+                  {formatMoney(remaining)}
+                </div>
+              )}
             </button>
           )
         })}
@@ -195,12 +211,18 @@ export function DraftBoard() {
           <div className="flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {available.slice(0, 80).map((p) => {
-                const canPick = currentTeam
+                const slotOk = currentTeam
                   ? canTeamPick(currentTeam, p.position)
                   : false
+                const affordable =
+                  !currentTeam ||
+                  game?.capBudget == null ||
+                  canAffordPlayer(currentTeam, p, playersById, game.capBudget)
+                const canPick = slotOk && affordable
                 const showBenchOption = !!currentTeam &&
                   canTeamStart(currentTeam, p.position) &&
                   canTeamBench(currentTeam)
+                const cost = game?.capBudget != null ? priceOf(p.value) : null
                 return (
                   <PlayerCard
                     key={p.id}
@@ -212,6 +234,8 @@ export function DraftBoard() {
                         : undefined
                     }
                     disabled={!canPick}
+                    cost={cost}
+                    unaffordable={!affordable && slotOk}
                   />
                 )
               })}

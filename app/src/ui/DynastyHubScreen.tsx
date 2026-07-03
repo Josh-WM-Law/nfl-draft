@@ -242,9 +242,11 @@ export function DynastyHubScreen() {
   const loadSnapshot = useStore((s) => s.loadSnapshot)
   const deleteSnapshot = useStore((s) => s.deleteSnapshot)
   const [leadersFilter, setLeadersFilter] = useState<'all' | 'yours'>('all')
+  const leaveDynasty = useStore((s) => s.leaveDynasty)
   const [showSnapshotModal, setShowSnapshotModal] = useState(false)
   const [confirmLoadId, setConfirmLoadId] = useState<string | null>(null)
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null)
+  const [confirmLeave, setConfirmLeave] = useState(false)
 
   if (!dynasty || !game) return null
   const userTeam = game.teams.find((t) => t.id === dynasty.userTeamId)
@@ -557,6 +559,55 @@ export function DynastyHubScreen() {
           )}
         </div>
       </section>
+
+      <section className="mb-6 pt-6 border-t border-slate-800">
+        <div className="text-xs uppercase tracking-widest text-red-400 mb-2">
+          Danger Zone
+        </div>
+        <button
+          onClick={() => setConfirmLeave(true)}
+          className="w-full py-3 rounded-xl bg-red-950 hover:bg-red-900 border border-red-800 text-red-300 font-bold"
+        >
+          Leave Dynasty
+        </button>
+        <p className="text-xs text-slate-500 mt-2">
+          Deletes this dynasty (and its snapshots) and returns you to the
+          landing page. Cannot be undone.
+        </p>
+      </section>
+
+      {confirmLeave && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="bg-slate-900 rounded-2xl w-full max-w-md p-5">
+            <h2 className="text-base font-black mb-2">
+              LEAVE {dynasty.name.toUpperCase()}?
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+              This will permanently delete this dynasty — {dynasty.currentYear}{' '}
+              year{dynasty.currentYear === 1 ? '' : 's'} of history, career
+              stats, and every snapshot. You'll be returned to the landing
+              page to start fresh.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setConfirmLeave(false)}
+                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setConfirmLeave(false)
+                  leaveDynasty()
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold"
+              >
+                Leave & Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showSnapshotModal && (
         <SnapshotNameModal

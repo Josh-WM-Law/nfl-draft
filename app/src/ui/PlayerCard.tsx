@@ -30,6 +30,8 @@ export function PlayerCard({
   onTap,
   onBench,
   disabled = false,
+  cost = null,
+  unaffordable = false,
 }: {
   player: Player
   onTap?: () => void
@@ -37,12 +39,20 @@ export function PlayerCard({
   // player to a bench slot instead of a starter slot.
   onBench?: () => void
   disabled?: boolean
+  // In salary-cap dynasties, the player's price in $M is shown on the card.
+  cost?: number | null
+  // Distinct visual for "you'd love this pick but can't afford it".
+  unaffordable?: boolean
 }) {
   const [imgError, setImgError] = useState(false)
   return (
     <div
       className={`relative flex flex-col items-stretch bg-slate-800 rounded-2xl overflow-hidden w-full text-left transition ${
-        disabled ? 'opacity-40' : 'hover:bg-slate-700'
+        disabled
+          ? unaffordable
+            ? 'opacity-70 ring-2 ring-red-500/40'
+            : 'opacity-40'
+          : 'hover:bg-slate-700'
       }`}
     >
       <button
@@ -80,8 +90,19 @@ export function PlayerCard({
           <div className="font-bold text-sm leading-tight truncate">
             {player.name}
           </div>
-          <div className="text-xs text-slate-400 uppercase tracking-wider">
-            {player.nflTeam}
+          <div className="flex items-center justify-between gap-1">
+            <div className="text-xs text-slate-400 uppercase tracking-wider truncate">
+              {player.nflTeam}
+            </div>
+            {cost != null && (
+              <div
+                className={`text-xs font-bold whitespace-nowrap ${
+                  unaffordable ? 'text-red-400' : 'text-emerald-400'
+                }`}
+              >
+                ${cost.toFixed(1)}M
+              </div>
+            )}
           </div>
         </div>
       </button>

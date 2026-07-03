@@ -1,5 +1,6 @@
 import { useStore } from '../state/store'
 import { ROSTER_SLOTS, STARTER_ROSTER_SIZE, type Player } from '../state/types'
+import { priceOf } from '../engine/salaryCap'
 
 const STARTER_LIMIT = 4
 const BENCH_LIMIT = 2
@@ -18,12 +19,14 @@ function KeeperCard({
   onToggle,
   atLimit,
   dead,
+  showCost = false,
 }: {
   player: Player
   selected: boolean
   onToggle: () => void
   atLimit: boolean
   dead: boolean
+  showCost?: boolean
 }) {
   const disabled = dead || (!selected && atLimit)
   return (
@@ -85,6 +88,15 @@ function KeeperCard({
             {dead && ' · RETIRED'}
           </div>
         </div>
+        {showCost && !dead && (
+          <div
+            className={`text-xs font-bold whitespace-nowrap ${
+              selected ? 'text-black' : 'text-emerald-400'
+            }`}
+          >
+            ${priceOf(player.value).toFixed(1)}M
+          </div>
+        )}
       </div>
     </button>
   )
@@ -100,6 +112,7 @@ export function KeeperSelectionScreen() {
   if (!dynasty || !game) return null
   const userTeam = game.teams.find((t) => t.id === dynasty.userTeamId)
   if (!userTeam) return null
+  const showCost = !!dynasty.capMode
 
   const pending = dynasty.pendingKeepers?.[dynasty.userTeamId] ?? {
     starters: [],
@@ -164,6 +177,7 @@ export function KeeperSelectionScreen() {
                 onToggle={() => toggleKeeper(player.id, 'starter')}
                 atLimit={starterKept.length >= STARTER_LIMIT}
                 dead={entry.dead}
+                showCost={showCost}
               />
             )
           })}
@@ -206,6 +220,7 @@ export function KeeperSelectionScreen() {
                   onToggle={() => toggleKeeper(player.id, 'bench')}
                   atLimit={benchKept.length >= BENCH_LIMIT}
                   dead={entry.dead}
+                  showCost={showCost}
                 />
               )
             })}

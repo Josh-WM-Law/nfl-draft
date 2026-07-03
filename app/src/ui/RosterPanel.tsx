@@ -1,6 +1,7 @@
 import { useStore } from '../state/store'
 import type { TeamSeat, Position } from '../state/types'
 import { ROSTER_SLOTS } from '../state/types'
+import { teamRemainingBudget, formatMoney } from '../engine/salaryCap'
 
 const POSITION_COLOR: Record<Position, string> = {
   QB: 'text-red-400',
@@ -33,6 +34,11 @@ export function RosterPanel({
   isViewingOtherTeam?: boolean
 }) {
   const playersById = useStore((s) => s.playersById)
+  const game = useStore((s) => s.game)
+  const remaining =
+    game?.capBudget != null
+      ? teamRemainingBudget(team, playersById, game.capBudget)
+      : null
 
   return (
     <aside className="w-24 md:w-28 flex flex-col bg-slate-900 border-r border-slate-800 shrink-0">
@@ -48,6 +54,11 @@ export function RosterPanel({
         <div className="text-[10px] uppercase tracking-widest text-white/80 font-bold truncate">
           {team.name}
         </div>
+        {remaining != null && (
+          <div className="text-[10px] text-white/90 font-bold">
+            {formatMoney(remaining)}
+          </div>
+        )}
       </div>
       <div className="flex-1 overflow-y-auto">
         {ROSTER_SLOTS.map((slot, i) => {
