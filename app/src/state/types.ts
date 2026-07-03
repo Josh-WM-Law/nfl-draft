@@ -160,6 +160,7 @@ export type Season = {
 
 export type LeagueScreen =
   | 'landing'
+  | 'nfl_team_selection'
   | 'coach_creation'
   | 'setup'
   | 'draft_order'

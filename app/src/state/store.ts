@@ -53,6 +53,7 @@ import {
   pickTopKeepers,
   rosterWithKeepers,
 } from '../engine/offseason'
+import { NFL_TEAMS, NFL_TEAM_BY_ID } from '../data/nflTeams'
 
 const DEFAULT_GAME_ID = 'default'
 const TEAM_COLORS = [
@@ -75,6 +76,7 @@ type Store = {
   startNewLeague: (humanCount?: number) => void
   startDynasty: (dynastyName: string, humanCount?: number) => void
   resumeDynasty: (id: string) => void
+  pickNflTeam: (nflTeamId: string) => void
   setCoach: (name: string, traits: CoachTrait[]) => void
   exitToLanding: () => void
   setScreen: (screen: LeagueScreen) => void
@@ -351,8 +353,8 @@ export const useStore = create<Store>()((set, get) => ({
     game.teams = teams
     game.draft.order = teams.map((t) => t.id)
     game.draft.picks = generatePicks(game.draft.order, ROSTER_SIZE)
-    // Dynasty starts by creating a head coach before setup / draft.
-    game.screen = 'coach_creation'
+    // Dynasty first stop: pick an NFL team. Coach hire + setup follow.
+    game.screen = 'nfl_team_selection'
     // Snapshot the pool with initial ages so retirement/development curves
     // have something to work with once the offseason hits.
     const basePool = get().players.length > 0 ? get().players : loadAllPlayers()
@@ -411,6 +413,45 @@ export const useStore = create<Store>()((set, get) => ({
       players: dynasty.livePool,
       playersById: new Map(dynasty.livePool.map((p) => [p.id, p])),
     })
+  },
+
+  pickNflTeam: (nflTeamId) => {
+    const { game, dynasty } = get()
+    if (!game || !dynasty) return
+    const chosen = NFL_TEAM_BY_ID.get(nflTeamId)
+    if (!chosen) return
+
+    // Assign remaining 7 CPU teams uniquely from the other 31 NFL franchises.
+    const others = NFL_TEAMS.filter((t) => t.id !== chosen.id)
+    // Fisher-Yates on a fresh copy.
+    for (let i = others.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const tmp = others[i]
+      others[i] = others[j]
+      others[j] = tmp
+    }
+    const cpuTeams = others.slice(0, game.teams.length - 1)
+
+    const newTeams = game.teams.map((t, i) => {
+      if (i === 0) {
+        return { ...t, name: chosen.nickname, color: chosen.primaryColor }
+      }
+      const cpu = cpuTeams[i - 1]
+      return { ...t, name: cpu.nickname, color: cpu.primaryColor }
+    })
+
+    const updatedGame: Game = {
+      ...game,
+      teams: newTeams,
+      screen: 'coach_creation',
+    }
+    const nextDynasty: Dynasty = {
+      ...dynasty,
+      currentGame: updatedGame,
+      updatedAt: new Date().toISOString(),
+    }
+    saveDynasty(nextDynasty)
+    set({ dynasty: nextDynasty, game: updatedGame })
   },
 
   startOffseason: () => {

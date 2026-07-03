@@ -8,6 +8,7 @@ import { TrophyScreen } from './ui/TrophyScreen'
 import { SetupScreen } from './ui/SetupScreen'
 import { DraftOrderScreen } from './ui/DraftOrderScreen'
 import { CoachCreationScreen } from './ui/CoachCreationScreen'
+import { NflTeamSelectionScreen } from './ui/NflTeamSelectionScreen'
 import { OffseasonSummaryScreen } from './ui/OffseasonSummaryScreen'
 import { KeeperSelectionScreen } from './ui/KeeperSelectionScreen'
 import { DynastyHubScreen } from './ui/DynastyHubScreen'
@@ -162,6 +163,8 @@ export default function App() {
   }
 
   switch (game.screen) {
+    case 'nfl_team_selection':
+      return <NflTeamSelectionScreen />
     case 'coach_creation':
       return <CoachCreationScreen />
     case 'setup':
