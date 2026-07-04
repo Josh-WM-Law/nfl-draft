@@ -4,6 +4,7 @@ import {
   CURRENT_SCHEMA_VERSION,
   CURRENT_DYNASTY_SCHEMA_VERSION,
 } from './types'
+import { priceOf } from '../engine/salaryCap'
 
 const KEY_PREFIX = 'ontheclock:game:'
 const DYNASTY_KEY_PREFIX = 'ontheclock:dynasty:'
@@ -136,20 +137,52 @@ const migrateDynasty = (dynasty: Dynasty): Dynasty => {
   return d
 }
 
+// One-shot backfill for cap-mode dynasties created before playerSalaries
+// existed. For every player on any roster, seed a locked-in salary at their
+// current market rate — no earlier data to reward with, so today's market is
+// the fair baseline. Next keeper cycle then applies the 15% growth cap on
+// top of these seeded numbers.
+const backfillPlayerSalaries = (dynasty: Dynasty): Dynasty => {
+  if (!dynasty.capMode) return dynasty
+  if (dynasty.playerSalaries) return dynasty
+  const byId = new Map(dynasty.livePool.map((p) => [p.id, p]))
+  const salaries: Record<string, number> = {}
+  for (const t of dynasty.currentGame.teams) {
+    for (const pid of t.roster) {
+      if (!pid) continue
+      const p = byId.get(pid)
+      if (!p) continue
+      salaries[pid] = priceOf(p.value)
+    }
+  }
+  return { ...dynasty, playerSalaries: salaries }
+}
+
 export const loadDynasty = (id: string): Dynasty | null => {
   const raw = localStorage.getItem(DYNASTY_KEY_PREFIX + id)
   if (!raw) return null
   const parsed = JSON.parse(raw) as Dynasty
-  if (parsed.schemaVersion === CURRENT_DYNASTY_SCHEMA_VERSION) return parsed
-  const migrated = migrateDynasty(parsed)
-  if (migrated.schemaVersion !== CURRENT_DYNASTY_SCHEMA_VERSION) {
+  let d =
+    parsed.schemaVersion === CURRENT_DYNASTY_SCHEMA_VERSION
+      ? parsed
+      : migrateDynasty(parsed)
+  if (d.schemaVersion !== CURRENT_DYNASTY_SCHEMA_VERSION) {
     throw new SchemaVersionError(
       parsed.schemaVersion,
       CURRENT_DYNASTY_SCHEMA_VERSION,
     )
   }
-  localStorage.setItem(DYNASTY_KEY_PREFIX + id, JSON.stringify(migrated))
-  return migrated
+  // Additive fix-ups that don't require a schema bump — safe to run on every
+  // load. Currently: seed playerSalaries for cap dynasties that predate it.
+  const backfilled = backfillPlayerSalaries(d)
+  if (backfilled !== d) {
+    d = backfilled
+    localStorage.setItem(DYNASTY_KEY_PREFIX + id, JSON.stringify(d))
+  } else if (d !== parsed) {
+    // Legit v2→v3 migration; persist the upgraded form.
+    localStorage.setItem(DYNASTY_KEY_PREFIX + id, JSON.stringify(d))
+  }
+  return d
 }
 
 export const deleteDynasty = (id: string): void => {
