@@ -5,7 +5,7 @@ import { RosterPanel } from './RosterPanel'
 import { ALL_POSITIONS, ROSTER_SIZE, type Position } from '../state/types'
 import { canTeamPick, canTeamStart, canTeamBench } from '../engine/draft'
 import {
-  priceOf,
+  salaryFor,
   teamRemainingBudget,
   canAffordPlayer,
   formatMoney,
@@ -56,6 +56,7 @@ export function DraftBoard() {
   const game = useStore((s) => s.game)
   const players = useStore((s) => s.players)
   const playersById = useStore((s) => s.playersById)
+  const salaries = useStore((s) => s.dynasty?.playerSalaries)
   const makePick = useStore((s) => s.makePick)
   const simRestOfDraft = useStore((s) => s.simRestOfDraft)
   const [filter, setFilter] = useState<Filter>('ALL')
@@ -118,7 +119,7 @@ export function DraftBoard() {
           const pickNumber = idx + 1
           const remaining =
             game.capBudget != null
-              ? teamRemainingBudget(t, playersById, game.capBudget)
+              ? teamRemainingBudget(t, playersById, game.capBudget, salaries)
               : null
           return (
             <button
@@ -222,6 +223,7 @@ export function DraftBoard() {
                       p,
                       playersById,
                       game.capBudget!,
+                      salaries,
                     ),
                   )
                 return available.slice(0, 80).map((p) => {
@@ -236,6 +238,7 @@ export function DraftBoard() {
                       p,
                       playersById,
                       game.capBudget,
+                      salaries,
                     )
                   const canPick = slotOk && (affordable || teamStuck)
                   const showBenchOption =
@@ -243,7 +246,7 @@ export function DraftBoard() {
                     canTeamStart(currentTeam, p.position) &&
                     canTeamBench(currentTeam)
                   const cost =
-                    game?.capBudget != null ? priceOf(p.value) : null
+                    game?.capBudget != null ? salaryFor(p, salaries) : null
                   return (
                     <PlayerCard
                       key={p.id}

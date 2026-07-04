@@ -38,8 +38,9 @@ const RETIRE_BASE_BY_AGE: Record<number, number> = {
 
 const retireProbability = (age: number, value: number): number => {
   const base = age >= 37 ? 1 : (RETIRE_BASE_BY_AGE[age] ?? 0)
-  // Old + poor = retires. A 35 year old with a 60 OVR is almost certainly done.
-  const floor = age >= 30 && value < 60 ? 0.5 : 0
+  // Old + at the OVR floor = retires. 60 is the absolute floor for any live
+  // player, so this triggers when a 30+ veteran has hit the bottom.
+  const floor = age >= 30 && value <= 60 ? 0.5 : 0
   return Math.max(base, floor)
 }
 
@@ -125,7 +126,7 @@ const developOne = (
     }
   }
 
-  const nextValue = Math.max(40, Math.min(99, p.value + delta))
+  const nextValue = Math.max(60, Math.min(99, p.value + delta))
   const changed = nextValue !== p.value
   const next: Player = { ...p, age, yearsExp, value: nextValue }
   if (!changed) return { next }

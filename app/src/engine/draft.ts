@@ -120,6 +120,9 @@ export type CpuPickChoice = {
 export type CpuBudgetContext = {
   budget: number
   playersById: Map<string, Player>
+  // Locked-in salaries carried over from prior years (keepers). Missing =
+  // player pays market rate on this pick.
+  salaries?: Record<string, number>
 }
 
 export const pickForCPU = (
@@ -141,7 +144,13 @@ export const pickForCPU = (
   const capOnPool = (): Player[] => {
     if (!budgetCtx) return pool
     return pool.filter((p) =>
-      canAffordPlayer(team, p, budgetCtx.playersById, budgetCtx.budget),
+      canAffordPlayer(
+        team,
+        p,
+        budgetCtx.playersById,
+        budgetCtx.budget,
+        budgetCtx.salaries,
+      ),
     )
   }
 

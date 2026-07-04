@@ -58,7 +58,12 @@ import {
   rosterWithKeepers,
 } from '../engine/offseason'
 import { NFL_TEAMS, NFL_TEAM_BY_ID } from '../data/nflTeams'
-import { CAP_BUDGET_M, canAffordPlayer } from '../engine/salaryCap'
+import {
+  CAP_BUDGET_M,
+  canAffordPlayer,
+  priceOf,
+  nextKeeperSalary,
+} from '../engine/salaryCap'
 
 const DEFAULT_GAME_ID = 'default'
 const TEAM_COLORS = [
@@ -145,12 +150,23 @@ const buildCoachMap = (
   return map
 }
 
+// Result of advancing the draft through 0+ CPU picks. When cap mode is on we
+// also return the new salaries recorded during this advance so the caller
+// can merge them into the dynasty.
+type AdvanceResult = {
+  game: Game
+  addedSalaries: Record<string, number>
+}
+
 const advanceAfterPick = (
   game: Game,
   playersById: Map<string, Player>,
+  salaries: Record<string, number>,
   coachByTeamId?: Map<string, Coach | null>,
-): Game => {
+): AdvanceResult => {
   let g = game
+  const workingSalaries: Record<string, number> = { ...salaries }
+  const added: Record<string, number> = {}
   while (g.draft.currentPickIdx < g.draft.picks.length) {
     const currentPick = g.draft.picks[g.draft.currentPickIdx]
     const team = g.teams.find((t) => t.id === currentPick.teamId)
@@ -159,7 +175,7 @@ const advanceAfterPick = (
     const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919)
     const pool = availablePool(g, playersById)
     const budgetCtx = g.capBudget
-      ? { budget: g.capBudget, playersById }
+      ? { budget: g.capBudget, playersById, salaries: workingSalaries }
       : undefined
     const cpuChoice = pickForCPU(team, pool, rng, budgetCtx)
     const pickedId = cpuChoice.playerId
@@ -172,6 +188,12 @@ const advanceAfterPick = (
         : fillSlot(team, pickedId, player.position)
     const newPicks = g.draft.picks.slice()
     newPicks[g.draft.currentPickIdx] = { ...currentPick, playerId: pickedId }
+    // Salary: locked-in (keeper) if already present, else market price now.
+    if (g.capBudget != null && workingSalaries[pickedId] == null) {
+      const signed = priceOf(player.value)
+      workingSalaries[pickedId] = signed
+      added[pickedId] = signed
+    }
     g = {
       ...g,
       teams: newTeams,
@@ -191,7 +213,7 @@ const advanceAfterPick = (
       screen: 'grade',
     }
   }
-  return g
+  return { game: g, addedSalaries: added }
 }
 
 // In dynasty mode, the truth of the current season lives on
@@ -213,6 +235,34 @@ const persistGame = (
     set({ dynasty: nextDynasty } as Partial<Store>)
   } else {
     saveGame(updatedGame)
+  }
+}
+
+// Persist the result of advancing the draft: merge any newly-signed salaries
+// into the dynasty as well as writing the updated Game. In non-dynasty mode
+// the salaries payload is ignored (Quick League has no cap).
+const commitAdvance = (
+  advanced: AdvanceResult,
+  get: () => Store,
+  set: (partial: Partial<Store>) => void,
+): void => {
+  const { dynasty, mode } = get()
+  if (mode === 'dynasty' && dynasty) {
+    const mergedSalaries = {
+      ...(dynasty.playerSalaries ?? {}),
+      ...advanced.addedSalaries,
+    }
+    const nextDynasty: Dynasty = {
+      ...dynasty,
+      currentGame: advanced.game,
+      playerSalaries: mergedSalaries,
+      updatedAt: new Date().toISOString(),
+    }
+    saveDynasty(nextDynasty)
+    set({ dynasty: nextDynasty, game: advanced.game } as Partial<Store>)
+  } else {
+    saveGame(advanced.game)
+    set({ game: advanced.game } as Partial<Store>)
   }
 }
 
@@ -720,11 +770,29 @@ export const useStore = create<Store>()((set, get) => ({
     newGame.draft.status = 'pending'
     newGame.screen = 'draft_order'
 
+    // Roll the salary book forward: kept players keep their salary (capped
+    // at 15% growth over last year, or market if regressing); everyone else
+    // drops off and will pay market when re-drafted.
+    let nextSalaries: Record<string, number> | undefined
+    if (dynasty.capMode) {
+      const prior = dynasty.playerSalaries ?? {}
+      nextSalaries = {}
+      for (const t of newTeams) {
+        for (const pid of t.roster) {
+          if (!pid) continue
+          const p = playersById.get(pid)
+          if (!p) continue
+          nextSalaries[pid] = nextKeeperSalary(p.value, prior[pid])
+        }
+      }
+    }
+
     const nextDynasty: Dynasty = {
       ...dynasty,
       currentYear: nextYear,
       currentGame: newGame,
       pendingKeepers: undefined,
+      playerSalaries: nextSalaries,
       updatedAt: new Date().toISOString(),
     }
     saveDynasty(nextDynasty)
@@ -943,9 +1011,15 @@ export const useStore = create<Store>()((set, get) => ({
       draft: { ...game.draft, status: 'in_progress', currentPickIdx: 0 },
       screen: 'draft',
     }
-    const advanced = advanceAfterPick(ready, playersById, buildCoachMap(dynasty))
-    set({ game: advanced, lastPickSnapshot: null })
-    persistGame(advanced, get, set)
+    const salaries = dynasty?.playerSalaries ?? {}
+    const advanced = advanceAfterPick(
+      ready,
+      playersById,
+      salaries,
+      buildCoachMap(dynasty),
+    )
+    commitAdvance(advanced, get, set)
+    set({ lastPickSnapshot: null })
   },
 
   setScreen: (screen) => {
@@ -972,15 +1046,16 @@ export const useStore = create<Store>()((set, get) => ({
     // other affordable options. If nothing in the pool is affordable, the
     // team's boxed in and we let this pick go through (cap waived) rather
     // than dead-end the draft.
+    const salaries = dynasty?.playerSalaries ?? {}
     if (
       game.capBudget != null &&
-      !canAffordPlayer(team, player, playersById, game.capBudget)
+      !canAffordPlayer(team, player, playersById, game.capBudget, salaries)
     ) {
       const usedNow = usedPlayerIds(game)
       const anyAffordable = get().players.some(
         (p) =>
           !usedNow.has(p.id) &&
-          canAffordPlayer(team, p, playersById, game.capBudget!),
+          canAffordPlayer(team, p, playersById, game.capBudget!, salaries),
       )
       if (anyAffordable) return
       // else fall through: cap waived for a forced pick
@@ -1012,7 +1087,7 @@ export const useStore = create<Store>()((set, get) => ({
         : fillSlot(team, playerId, player.position)
     const newPicks = game.draft.picks.slice()
     newPicks[game.draft.currentPickIdx] = { ...currentPick, playerId }
-    let updated: Game = {
+    const updated: Game = {
       ...game,
       teams: newTeams,
       draft: {
@@ -1021,9 +1096,25 @@ export const useStore = create<Store>()((set, get) => ({
         currentPickIdx: game.draft.currentPickIdx + 1,
       },
     }
-    updated = advanceAfterPick(updated, playersById, buildCoachMap(dynasty))
-    set({ game: updated, lastPickSnapshot: snapshot })
-    persistGame(updated, get, set)
+    // Register a market-rate salary for this user pick if it isn't already
+    // a locked-in keeper carrying over.
+    const humanSalaries: Record<string, number> = {}
+    if (game.capBudget != null && salaries[playerId] == null) {
+      humanSalaries[playerId] = priceOf(player.value)
+    }
+    const combinedSalaries = { ...salaries, ...humanSalaries }
+    const advanced = advanceAfterPick(
+      updated,
+      playersById,
+      combinedSalaries,
+      buildCoachMap(dynasty),
+    )
+    const merged: AdvanceResult = {
+      game: advanced.game,
+      addedSalaries: { ...humanSalaries, ...advanced.addedSalaries },
+    }
+    set({ lastPickSnapshot: snapshot })
+    commitAdvance(merged, get, set)
   },
 
   undoLastPick: () => {
@@ -1130,6 +1221,10 @@ export const useStore = create<Store>()((set, get) => ({
     const { game, playersById, dynasty } = get()
     if (!game) return
     let g = game
+    const carryingSalaries: Record<string, number> = {
+      ...(dynasty?.playerSalaries ?? {}),
+    }
+    const added: Record<string, number> = {}
     while (g.draft.currentPickIdx < g.draft.picks.length) {
       const currentPick = g.draft.picks[g.draft.currentPickIdx]
       const team = g.teams.find((t) => t.id === currentPick.teamId)
@@ -1137,7 +1232,7 @@ export const useStore = create<Store>()((set, get) => ({
       const rng = makeRng(g.seed + g.draft.currentPickIdx * 7919 + 31)
       const pool = availablePool(g, playersById)
       const budgetCtx = g.capBudget
-        ? { budget: g.capBudget, playersById }
+        ? { budget: g.capBudget, playersById, salaries: carryingSalaries }
         : undefined
       const cpuChoice = pickForCPU(team, pool, rng, budgetCtx)
       const pickedId = cpuChoice.playerId
@@ -1150,6 +1245,11 @@ export const useStore = create<Store>()((set, get) => ({
           : fillSlot(team, pickedId, player.position)
       const newPicks = g.draft.picks.slice()
       newPicks[g.draft.currentPickIdx] = { ...currentPick, playerId: pickedId }
+      if (g.capBudget != null && carryingSalaries[pickedId] == null) {
+        const signed = priceOf(player.value)
+        carryingSalaries[pickedId] = signed
+        added[pickedId] = signed
+      }
       g = {
         ...g,
         teams: newTeams,
@@ -1167,7 +1267,6 @@ export const useStore = create<Store>()((set, get) => ({
       draft: { ...g.draft, status: 'complete' },
       screen: 'grade',
     }
-    set({ game: g })
-    persistGame(g, get, set)
+    commitAdvance({ game: g, addedSalaries: added }, get, set)
   },
 }))

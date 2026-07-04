@@ -1,6 +1,6 @@
 import { useStore } from '../state/store'
 import { ROSTER_SLOTS, STARTER_ROSTER_SIZE, type Player } from '../state/types'
-import { priceOf } from '../engine/salaryCap'
+import { priceOf, nextKeeperSalary } from '../engine/salaryCap'
 
 const STARTER_LIMIT = 4
 const BENCH_LIMIT = 2
@@ -20,6 +20,7 @@ function KeeperCard({
   atLimit,
   dead,
   showCost = false,
+  priorSalary,
 }: {
   player: Player
   selected: boolean
@@ -27,8 +28,12 @@ function KeeperCard({
   atLimit: boolean
   dead: boolean
   showCost?: boolean
+  priorSalary?: number
 }) {
   const disabled = dead || (!selected && atLimit)
+  const market = priceOf(player.value)
+  const kept = nextKeeperSalary(player.value, priorSalary)
+  const hasDiscount = showCost && !dead && kept + 0.05 < market
   return (
     <button
       onClick={onToggle}
@@ -89,12 +94,27 @@ function KeeperCard({
           </div>
         </div>
         {showCost && !dead && (
-          <div
-            className={`text-xs font-bold whitespace-nowrap ${
-              selected ? 'text-black' : 'text-emerald-400'
-            }`}
-          >
-            ${priceOf(player.value).toFixed(1)}M
+          <div className="text-right whitespace-nowrap">
+            {hasDiscount && (
+              <div
+                className={`text-[10px] line-through ${
+                  selected ? 'text-black/50' : 'text-slate-500'
+                }`}
+              >
+                ${market.toFixed(1)}M
+              </div>
+            )}
+            <div
+              className={`text-xs font-bold ${
+                selected
+                  ? 'text-black'
+                  : hasDiscount
+                    ? 'text-amber-400'
+                    : 'text-emerald-400'
+              }`}
+            >
+              ${kept.toFixed(1)}M
+            </div>
           </div>
         )}
       </div>
@@ -113,6 +133,7 @@ export function KeeperSelectionScreen() {
   const userTeam = game.teams.find((t) => t.id === dynasty.userTeamId)
   if (!userTeam) return null
   const showCost = !!dynasty.capMode
+  const priorSalaries = dynasty.playerSalaries ?? {}
 
   const pending = dynasty.pendingKeepers?.[dynasty.userTeamId] ?? {
     starters: [],
@@ -144,6 +165,13 @@ export function KeeperSelectionScreen() {
           Pick up to 4 starters and 2 bench players to carry over. Everyone
           else goes back into the redraft pool. Retired players can't be kept.
         </p>
+        {showCost && (
+          <p className="text-xs text-amber-400 mt-2">
+            Keeper bonus: a kept player's salary can only rise 15% per year.
+            Players you develop stay cheap — market prices they'd fetch in
+            the open draft are struck through.
+          </p>
+        )}
       </div>
 
       <section className="mb-6">
@@ -178,6 +206,7 @@ export function KeeperSelectionScreen() {
                 atLimit={starterKept.length >= STARTER_LIMIT}
                 dead={entry.dead}
                 showCost={showCost}
+                priorSalary={priorSalaries[player.id]}
               />
             )
           })}
@@ -221,6 +250,7 @@ export function KeeperSelectionScreen() {
                   atLimit={benchKept.length >= BENCH_LIMIT}
                   dead={entry.dead}
                   showCost={showCost}
+                  priorSalary={priorSalaries[player.id]}
                 />
               )
             })}

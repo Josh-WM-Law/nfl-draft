@@ -35,9 +35,10 @@ export function RosterPanel({
 }) {
   const playersById = useStore((s) => s.playersById)
   const game = useStore((s) => s.game)
+  const salaries = useStore((s) => s.dynasty?.playerSalaries)
   const remaining =
     game?.capBudget != null
-      ? teamRemainingBudget(team, playersById, game.capBudget)
+      ? teamRemainingBudget(team, playersById, game.capBudget, salaries)
       : null
 
   return (

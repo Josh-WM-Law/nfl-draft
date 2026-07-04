@@ -11,6 +11,11 @@ export const CAP_BUDGET_M = 220
 // with the cheapest available bodies.
 export const MIN_PLAYER_COST_M = 0.5
 
+// Maximum year-over-year growth for a kept player's salary. If you draft a
+// rookie for $1.7M and they blossom into an $9M market player, keeping them
+// locks in $1.7 × 1.15 ≈ $1.95M — the reward for developing your own guys.
+export const KEEPER_MAX_GROWTH = 1.15
+
 // OVR → cost in $M. Piecewise curve that rewards depth over top-heavy
 // hoarding: doubling from 88 to 92 costs a lot more than doubling from
 // 70 to 74. Yields a stars-and-scrubs equilibrium under the cap.
@@ -26,23 +31,50 @@ export const priceOf = (value: number): number => {
   return Math.max(MIN_PLAYER_COST_M, Math.round(cost * 10) / 10)
 }
 
+// Salary paid for a player right now: whatever's locked in on the dynasty,
+// falling back to open-market price. Non-cap games always resolve to
+// priceOf, since salaries will be undefined.
+export const salaryFor = (
+  player: Player,
+  salaries?: Record<string, number>,
+): number => {
+  const locked = salaries?.[player.id]
+  if (locked != null) return Math.round(locked * 10) / 10
+  return priceOf(player.value)
+}
+
+// New salary for a kept player entering next season. Capped at 15% growth
+// over the prior salary, but never higher than the market price (so
+// regression flows through cleanly).
+export const nextKeeperSalary = (
+  newValue: number,
+  priorSalary: number | undefined,
+): number => {
+  const market = priceOf(newValue)
+  if (priorSalary == null) return market
+  const capped = priorSalary * KEEPER_MAX_GROWTH
+  const raw = Math.min(market, capped)
+  return Math.max(MIN_PLAYER_COST_M, Math.round(raw * 10) / 10)
+}
+
 export const formatMoney = (m: number): string => {
   if (m >= 100) return `$${m.toFixed(0)}M`
   return `$${m.toFixed(1)}M`
 }
 
-// Sum of prices of all players currently on a team roster (both starters
+// Sum of salaries of all players currently on a team roster (both starters
 // and bench count against the cap).
 export const teamSpent = (
   team: TeamSeat,
   playersById: Map<string, Player>,
+  salaries?: Record<string, number>,
 ): number => {
   let sum = 0
   for (const pid of team.roster) {
     if (!pid) continue
     const p = playersById.get(pid)
     if (!p) continue
-    sum += priceOf(p.value)
+    sum += salaryFor(p, salaries)
   }
   return sum
 }
@@ -51,7 +83,9 @@ export const teamRemainingBudget = (
   team: TeamSeat,
   playersById: Map<string, Player>,
   budget: number,
-): number => Math.round((budget - teamSpent(team, playersById)) * 10) / 10
+  salaries?: Record<string, number>,
+): number =>
+  Math.round((budget - teamSpent(team, playersById, salaries)) * 10) / 10
 
 export const emptyRosterSlots = (team: TeamSeat): number => {
   let n = 0
@@ -63,14 +97,17 @@ export const emptyRosterSlots = (team: TeamSeat): number => {
 
 // True if a team can afford to pick `player` this turn and still have enough
 // left over to fill their remaining slots with veteran-minimum players.
+// Uses the player's locked salary if one exists (keeper carrying over), or
+// current market price for a fresh draftee.
 export const canAffordPlayer = (
   team: TeamSeat,
   player: Player,
   playersById: Map<string, Player>,
   budget: number,
+  salaries?: Record<string, number>,
 ): boolean => {
-  const remaining = teamRemainingBudget(team, playersById, budget)
+  const remaining = teamRemainingBudget(team, playersById, budget, salaries)
   const emptyAfterPick = emptyRosterSlots(team) - 1
   const reserveNeeded = Math.max(0, emptyAfterPick) * MIN_PLAYER_COST_M
-  return priceOf(player.value) <= remaining - reserveNeeded + 1e-6
+  return salaryFor(player, salaries) <= remaining - reserveNeeded + 1e-6
 }

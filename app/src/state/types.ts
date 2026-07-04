@@ -321,6 +321,13 @@ export type Dynasty = {
   lastOffseason?: OffseasonReport
   // Career-long stats accumulated across every offseason. Keyed by playerId.
   playerCareerStats?: Record<string, PlayerCareer>
+  // Salary-cap dynasties only: current locked-in salary (in $M) for each
+  // player currently on any team's roster. Fresh draft signings enter at
+  // priceOf(value); kept players carry their prior salary forward capped at
+  // 15% year-over-year growth, so developing a rookie into a star gives the
+  // owner huge value. Players who go back to the pool drop their entry.
+  // Missing entry (or non-cap dynasty) → fall back to priceOf(value).
+  playerSalaries?: Record<string, number>
 }
 
 export const createEmptyDynasty = (
