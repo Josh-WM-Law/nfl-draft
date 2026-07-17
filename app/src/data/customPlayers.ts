@@ -104,4 +104,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-mags-noe',
+      name: 'Mags Noe',
+      nflTeam: 'WLY',
+      position: 'TE',
+      photoUrl: '/players/mags-noe.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-mags-noe',
+      value: 91,
+      subscores: { catch: 5, block: 5 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
