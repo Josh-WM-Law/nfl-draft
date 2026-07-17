@@ -124,4 +124,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-liam-steuber',
+      name: 'Liam Steuber',
+      nflTeam: 'WLY',
+      position: 'QB',
+      photoUrl: '/players/liam-steuber.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-liam-steuber',
+      value: 91,
+      subscores: { arm: 7, mobility: 3 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
