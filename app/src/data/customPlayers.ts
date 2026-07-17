@@ -144,4 +144,24 @@ export const CUSTOM_PLAYERS: { core: PlayerCore; rating: PlayerRating }[] = [
       needsRating: false,
     },
   },
+  {
+    core: {
+      id: 'custom-sebo-vadbunker',
+      name: 'Sebo Vadbunker',
+      nflTeam: 'WLY',
+      position: 'RB',
+      photoUrl: '/players/sebo-vadbunker.png',
+      status: 'active',
+      yearsExp: 0,
+    },
+    rating: {
+      id: 'custom-sebo-vadbunker',
+      value: 91,
+      subscores: { power: 5, burst: 5 },
+      tier: 'S',
+      archetype: null,
+      notes: '',
+      needsRating: false,
+    },
+  },
 ]
